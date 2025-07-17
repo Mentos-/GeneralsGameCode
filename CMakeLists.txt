@@ -72,9 +72,5 @@ if(RTS_BUILD_ZEROHOUR)
     add_subdirectory(GeneralsMD)
 endif()
 
-if(RTS_BUILD_GENERALS)
-    add_subdirectory(Generals)
-endif()
-
 feature_summary(WHAT ENABLED_FEATURES DESCRIPTION "Enabled features:")
 feature_summary(WHAT DISABLED_FEATURES DESCRIPTION "Disabled features:")
