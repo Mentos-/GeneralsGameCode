@@ -101,7 +101,7 @@ void DebugCrash(const char *format, ...)
 	printf( "%s", theBuffer );
 
 	strcat(theBuffer, "\n\nAbort->exception; Retry->debugger; Ignore->continue\n");
-
+	/*
 	int result = doCrashBox(theBuffer, true);
 
 	if (result == IDIGNORE && TheCurrentIgnoreCrashPtr != NULL) 
@@ -110,6 +110,17 @@ void DebugCrash(const char *format, ...)
 		yn = ::MessageBox(NULL, "Ignore this crash from now on?", "", MB_YESNO|MB_APPLMODAL);
 		if (yn == IDYES)
 			*TheCurrentIgnoreCrashPtr = 1;
+	}
+	*/
+	
+	// Log the crash buffer instead of showing dialog
+	OutputDebugString(theBuffer);
+	printf("%s", theBuffer);
+	
+	// Set ignore flag if available
+	if (TheCurrentIgnoreCrashPtr != NULL) 
+	{
+		*TheCurrentIgnoreCrashPtr = 1;
 	}
 }
 

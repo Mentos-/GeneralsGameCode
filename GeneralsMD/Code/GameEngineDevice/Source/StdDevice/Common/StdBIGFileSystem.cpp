@@ -61,7 +61,7 @@ void StdBIGFileSystem::init() {
 #ifndef RTS_INTERNAL
     // had to make this non-internal only, otherwise we can't autobuild
     // GeneralsZH...
-    DEBUG_ASSERTCRASH(installPath != "", ("Be 1337! Go install Generals!"));
+    DEBUG_LOG(("Be 1337! Go install Generals!"));
 #endif
     if (installPath!="")
       loadBigFilesFromDirectory(installPath, "*.big");

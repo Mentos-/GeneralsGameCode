@@ -515,7 +515,7 @@ void DebugCrash(const char *format, ...)
 #endif
 
 	strcat(theCrashBuffer, "\n\nAbort->exception; Retry->debugger; Ignore->continue\n");
-
+	/*
 	int result = doCrashBox(theCrashBuffer, true);
 
 	if (result == IDIGNORE && TheCurrentIgnoreCrashPtr != NULL) 
@@ -536,7 +536,22 @@ void DebugCrash(const char *format, ...)
 		if( TheMouse )
 			TheMouse->reset();
 	}
-
+	*/
+	
+	// Log the crash buffer instead of showing dialog
+#ifdef DEBUG_LOGGING
+	doLogOutput(theCrashBuffer);
+#endif
+	
+	// Set ignore flag and reset input devices
+	if (TheCurrentIgnoreCrashPtr != NULL) 
+	{
+		*TheCurrentIgnoreCrashPtr = 1;
+	}
+	if( TheKeyboard )
+		TheKeyboard->resetKeys();
+	if( TheMouse )
+		TheMouse->reset();
 }  
 #endif
 
