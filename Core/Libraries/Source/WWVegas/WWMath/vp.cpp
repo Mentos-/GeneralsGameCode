@@ -503,13 +503,13 @@ void VectorProcessorClass::MinMax(Vector3 *src, Vector3 &min, Vector3 &max, cons
 
 	for (i=1; i<count; i++)
 	{
-		min.X=MIN(min.X,src[i].X);
-		min.Y=MIN(min.Y,src[i].Y);
-		min.Z=MIN(min.Z,src[i].Z);
+		min.X=GENERALS_MIN(min.X,src[i].X);
+		min.Y=GENERALS_MIN(min.Y,src[i].Y);
+		min.Z=GENERALS_MIN(min.Z,src[i].Z);
 
-		max.X=MAX(max.X,src[i].X);
-		max.Y=MAX(max.Y,src[i].Y);
-		max.Z=MAX(max.Z,src[i].Z);
+		max.X=GENERALS_MAX(max.X,src[i].X);
+		max.Y=GENERALS_MAX(max.Y,src[i].Y);
+		max.Z=GENERALS_MAX(max.Z,src[i].Z);
 	}
 }
 

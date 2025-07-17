@@ -259,7 +259,7 @@ CGraphicView::InitializeGraphicView (void)
 		// the display (kinda like a game loop iterator)
 		TIMECAPS caps = { 0 };
 		::timeGetDevCaps (&caps, sizeof (TIMECAPS));
-		UINT freq = max (caps.wPeriodMin, 16U);
+		UINT freq = generals_max (caps.wPeriodMin, 16U);
 		m_TimerID = (UINT)::timeSetEvent (freq,
 													 freq,
 													 fnTimerCallback,
@@ -1152,16 +1152,16 @@ CGraphicView::Reset_Camera_To_Display_Emitter (ParticleEmitterClass &emitter)
 	distance.Z = fabs (distance.Z);
 
 	// Determine what the maximum distance convered in a single direction is
-	float max_dist = max (distance.X, distance.Y);
-	max_dist = max (max_dist, distance.Z);
-	max_dist = max (max_dist, distance_maxima.X);
-	max_dist = max (max_dist, distance_maxima.Y);
-	max_dist = max (max_dist, distance_maxima.Z);
+	float max_dist = generals_max (distance.X, distance.Y);
+	max_dist = generals_max (max_dist, distance.Z);
+	max_dist = generals_max (max_dist, distance_maxima.X);
+	max_dist = generals_max (max_dist, distance_maxima.Y);
+	max_dist = generals_max (max_dist, distance_maxima.Z);
 
 	Vector3 center = distance / 2.00F;
-	center.X = max (center.X, distance_maxima.X / 2.00F);
-	center.Y = max (center.Y, distance_maxima.Y / 2.00F);
-	center.Z = max (center.Z, distance_maxima.Z / 2.00F);
+	center.X = generals_max (center.X, distance_maxima.X / 2.00F);
+	center.Y = generals_max (center.Y, distance_maxima.Y / 2.00F);
+	center.Z = generals_max (center.Z, distance_maxima.Z / 2.00F);
 
 	if (use_vel_rand) {
 		center.Set (0, 0, 0);
@@ -1171,7 +1171,7 @@ CGraphicView::Reset_Camera_To_Display_Emitter (ParticleEmitterClass &emitter)
 	// that should provide a good viewing distance for the emitter.
 	SphereClass sphere;
 	sphere.Center = center;
-	sphere.Radius = max (emitter.Get_Particle_Size () * 5, (max_dist * 3.0F) / 5.0F);
+	sphere.Radius = generals_max (emitter.Get_Particle_Size () * 5, (max_dist * 3.0F) / 5.0F);
 
 	// View this sphere
 	Reset_Camera_To_Display_Sphere (sphere);
@@ -1225,7 +1225,7 @@ CGraphicView::Reset_Camera_To_Display_Sphere (SphereClass &sphere)
 	}
 
 	float max_dist = m_CameraDistance * 60.0F;
-	float min_dist = max (0.2F, minZoomAdjust / 2);
+	float min_dist = generals_max (0.2F, minZoomAdjust / 2);
 
 	// Set the clipping planes so objects are clipped correctly
 	if (doc->Are_Clip_Planes_Manual () == false) {

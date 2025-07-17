@@ -1217,9 +1217,9 @@ CW3DViewDoc::GenerateLOD
 				if (Is_Model_Part_of_LOD (pszItemName, pszLODBaseName, type)) {
 					lod_count ++;
 					if (type == TYPE_COMMANDO) {
-						iStartingIndex = min (iStartingIndex, ::atoi (&pszItemName[::lstrlen (pszItemName)-1]));
+						iStartingIndex = generals_min (iStartingIndex, ::atoi (&pszItemName[::lstrlen (pszItemName)-1]));
 					} else {
-						starting_char = min (starting_char, (char)::toupper (pszItemName[::lstrlen (pszItemName)-1]));
+						starting_char = generals_min (starting_char, (char)::toupper (pszItemName[::lstrlen (pszItemName)-1]));
 					}
 				}
 			}

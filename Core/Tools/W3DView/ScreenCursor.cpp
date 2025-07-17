@@ -333,7 +333,7 @@ void
 ScreenCursorClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) const
 {
 	sphere.Center = Get_Transform().Get_Translation();	
-	sphere.Radius = max (m_Width, m_Height);
+	sphere.Radius = generals_max (m_Width, m_Height);
 }
 
 

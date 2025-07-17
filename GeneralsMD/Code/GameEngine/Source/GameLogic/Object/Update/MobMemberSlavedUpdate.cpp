@@ -104,7 +104,7 @@ void MobMemberSlavedUpdate::onObjectCreated()
 {
 
 	const MobMemberSlavedUpdateModuleData* data = getMobMemberSlavedUpdateModuleData();
-	m_squirrellinessRatio = MIN(MAX_SQUIRRELLINESS, MAX(0, data->m_squirrellinessRatio));
+	m_squirrellinessRatio = GENERALS_MIN(MAX_SQUIRRELLINESS, GENERALS_MAX(0, data->m_squirrellinessRatio));
 
 }
 

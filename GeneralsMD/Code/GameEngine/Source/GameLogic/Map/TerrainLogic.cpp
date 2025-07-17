@@ -2898,7 +2898,7 @@ void TerrainLogic::createCraterInTerrain(Object *obj)
 
         Real displacementAmount = radius * (1.0f - distance / radius );
 
-        Int targetHeight = MAX( 1, TheTerrainVisual->getRawMapHeight( &gridPos ) - displacementAmount );
+        Int targetHeight = GENERALS_MAX( 1, TheTerrainVisual->getRawMapHeight( &gridPos ) - displacementAmount );
 
 				TheTerrainVisual->setRawMapHeight( &gridPos, targetHeight );
 			}

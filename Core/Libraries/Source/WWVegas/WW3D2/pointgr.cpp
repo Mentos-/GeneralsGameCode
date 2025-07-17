@@ -727,7 +727,7 @@ unsigned char PointGroupClass::Get_Frame_Row_Column_Count_Log2(void)
  *========================================================================*/
 void PointGroupClass::Set_Frame_Row_Column_Count_Log2(unsigned char frccl2)
 {
-	FrameRowColumnCountLog2 = MIN(frccl2, 4);
+	FrameRowColumnCountLog2 = GENERALS_MIN(frccl2, 4);
 }
 
 /************************************************************************** 
@@ -946,7 +946,7 @@ void PointGroupClass::Render(RenderInfoClass &rinfo)
 	current = 0;
 	while (current<vnum)
 	{
-		delta=MIN(vnum-current,MAX_VB_SIZE);
+		delta=GENERALS_MIN(vnum-current,MAX_VB_SIZE);
 		DynamicVBAccessClass PointVerts (sort ? BUFFER_TYPE_DYNAMIC_SORTING : BUFFER_TYPE_DYNAMIC_DX8, dynamic_fvf_type, delta);
 
 		// Copy in the data to the VB
@@ -1858,7 +1858,7 @@ void PointGroupClass::RenderVolumeParticle(RenderInfoClass &rinfo, unsigned int 
 		current = 0;
 		while (current<vnum)
 		{
-			delta=MIN(vnum-current,MAX_VB_SIZE);
+			delta=GENERALS_MIN(vnum-current,MAX_VB_SIZE);
 			DynamicVBAccessClass PointVerts (sort ? BUFFER_TYPE_DYNAMIC_SORTING : BUFFER_TYPE_DYNAMIC_DX8, dynamic_fvf_type, delta);
 
 			// Copy in the data to the VB

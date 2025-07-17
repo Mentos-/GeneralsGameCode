@@ -507,9 +507,9 @@ SphereSizePropPageClass::Update_Scale_Array (void)
 			z_time = z_values[z_index].Get_Time ();
 		}
 
-		time = min (x_time, time);
-		time = min (y_time, time);
-		time = min (z_time, time);
+		time = generals_min (x_time, time);
+		time = generals_min (y_time, time);
+		time = generals_min (z_time, time);
 
 		if (x_time == time) {
 			x_index ++;

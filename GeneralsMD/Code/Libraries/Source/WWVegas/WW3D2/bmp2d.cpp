@@ -105,8 +105,8 @@ Bitmap2DObjClass::Bitmap2DObjClass
 	// support textures larger than that.
 	int surf_w = usable_width;
 	int surf_h = usable_height;
-	int piece = Find_POT(MIN(surf_w, surf_h));
-	piece = MIN(piece, 256);
+	int piece = Find_POT(GENERALS_MIN(surf_w, surf_h));
+	piece = GENERALS_MIN(piece, 256);
 
 	// now take the image in question and break it down into
 	// "piece"x"piece"-pixel polygons and calculate the number of textures
@@ -161,9 +161,9 @@ Bitmap2DObjClass::Bitmap2DObjClass
 		for (int lpx = 0, tlpx = 0; lpx < mw; lpx++, tlpx += piece) {
 
 			// figure the desired width and height of the texture (max "piece")
-			int iw				= MIN(piece, usable_width - (tlpx));
-			int ih				= MIN(piece, usable_height - (tlpy));
-			int pot				= MAX(Find_POT(iw), Find_POT(ih));
+			int iw				= GENERALS_MIN(piece, usable_width - (tlpx));
+			int ih				= GENERALS_MIN(piece, usable_height - (tlpy));
+			int pot				= GENERALS_MAX(Find_POT(iw), Find_POT(ih));
 
 			// create the texture and turn MIP-mapping off.
 			SurfaceClass *piece_surface=NEW_REF(SurfaceClass,(pot,pot,sd.Format));			

@@ -138,7 +138,7 @@ Bool SabotageSupplyCenterCrateCollide::executeCrateBehavior( Object *other )
 		UnsignedInt cash = targetMoney->countMoney();
 		UnsignedInt desiredAmount = getSabotageSupplyCenterCrateCollideModuleData()->m_stealCashAmount;
 		//Check to see if they have the cash, otherwise, take the remainder!
-		cash = min( desiredAmount, cash );
+		cash = generals_min( desiredAmount, cash );
 		if( cash > 0 )
 		{
 			//Steal the cash

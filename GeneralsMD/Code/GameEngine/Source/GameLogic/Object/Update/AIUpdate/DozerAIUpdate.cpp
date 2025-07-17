@@ -343,7 +343,7 @@ StateReturnType DozerActionMoveToActionPosState::update( void )
 	const Coord3D *goalPos = getMachine()->getGoalPosition();
 	Real distSqr = ThePartitionManager->getDistanceSquared( dozer, goalPos, FROM_BOUNDINGSPHERE_2D );
 	const Real SLOP = 15.0f;
-	Real allowableDistanceSqr = sqr(max( MIN_ACTION_TOLERANCE, dozer->getGeometryInfo().getBoundingSphereRadius() + SLOP ));
+	Real allowableDistanceSqr = sqr(generals_max( MIN_ACTION_TOLERANCE, dozer->getGeometryInfo().getBoundingSphereRadius() + SLOP ));
 
 
 	if( distSqr <= allowableDistanceSqr )

@@ -159,7 +159,7 @@ ObjectID CountermeasuresBehavior::calculateCountermeasureToDivertTo( const Objec
 
 	//Flares are pushed to the front of the list, but we only want to acquire the "newest" of the flares, therefore
 	//stop iterating after we've reached size of a single volley.
-	Int iteratorMax = MAX( data->m_volleySize, 1 );
+	Int iteratorMax = GENERALS_MAX( data->m_volleySize, 1 );
 
 	Real closestDist = 1e15f;
 	Object *closestFlare = NULL;

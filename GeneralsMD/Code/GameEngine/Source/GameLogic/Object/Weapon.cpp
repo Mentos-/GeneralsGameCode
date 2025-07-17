@@ -1290,7 +1290,7 @@ void WeaponTemplate::dealDamageInternal(ObjectID sourceID, ObjectID victimID, co
 		DEBUG_ASSERTCRASH(secondaryRadius >= primaryRadius || secondaryRadius == 0.0f, ("secondary radius should be >= primary radius (or zero)\n"));
 
 		Real primaryRadiusSqr = sqr(primaryRadius);
-		Real radius = max(primaryRadius, secondaryRadius);
+		Real radius = generals_max(primaryRadius, secondaryRadius);
 		if (radius > 0.0f)
 		{
 			iter = ThePartitionManager->iterateObjectsInRange(pos, radius, DAMAGE_RANGE_CALC_TYPE);

@@ -228,8 +228,8 @@ OpacityVectorDialogClass::Update_Value (void)
 	value.angle = ::Build_Quaternion (rot_mat);
 	
 	float percent = ::tan ((m_OpacityBar->Get_Selection_Pos () / 10.0F) * DEG_TO_RAD (84.5)) / 11.0F;
-	percent = min (1.0F, percent);
-	percent = max (0.0F, percent);
+	percent = generals_min (1.0F, percent);
+	percent = generals_max (0.0F, percent);
 
 	value.intensity = 10.0F * percent;	
 	return value;

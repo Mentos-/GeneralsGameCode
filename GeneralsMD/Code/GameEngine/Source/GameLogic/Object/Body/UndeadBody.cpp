@@ -85,7 +85,7 @@ void UndeadBody::attemptDamage( DamageInfo *damageInfo )
 			&& IsHealthDamagingDamage(damageInfo->in.m_damageType)
 			)
 	{
-		damageInfo->in.m_amount = min( damageInfo->in.m_amount, getHealth() - 1 );
+		damageInfo->in.m_amount = generals_min( damageInfo->in.m_amount, getHealth() - 1 );
 		shouldStartSecondLife = TRUE;
 	}
 

@@ -2000,8 +2000,8 @@ void
 WWAudioClass::Set_Sound_Effects_Volume (float volume)
 {
 	m_SoundVolume = volume;
-	m_SoundVolume = min (1.0F, m_SoundVolume);
-	m_SoundVolume = max (0.0F, m_SoundVolume);
+	m_SoundVolume = generals_min (1.0F, m_SoundVolume);
+	m_SoundVolume = generals_max (0.0F, m_SoundVolume);
 
 	// Update all the currently playing 'Sound Effects' to
 	// reflect this new volume
@@ -2025,8 +2025,8 @@ void
 WWAudioClass::Set_Music_Volume (float volume)
 {
 	m_MusicVolume = volume;
-	m_MusicVolume = min (1.0F, m_MusicVolume);
-	m_MusicVolume = max (0.0F, m_MusicVolume);
+	m_MusicVolume = generals_min (1.0F, m_MusicVolume);
+	m_MusicVolume = generals_max (0.0F, m_MusicVolume);
 
 	// Update all currently playing music to
 	// reflect this new volume

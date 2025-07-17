@@ -375,8 +375,8 @@ ColorPickerDialogClass::Update_Whiteness_Bar (void)
 	//
 	//	Given the current color, determine the 'whiteness' and update
 	//
-	float whiteness = min (m_CurrentRed, m_CurrentGreen);	
-	whiteness = min (whiteness, m_CurrentBlue);
+	float whiteness = generals_min (m_CurrentRed, m_CurrentGreen);	
+	whiteness = generals_min (whiteness, m_CurrentBlue);
 	float percent = whiteness / 255;
 	m_WhitenessColorBar->Set_Selection_Pos (whiteness);
 

@@ -342,10 +342,10 @@ void DynamicMeshModel::Render(RenderInfoClass & rinfo)
 
 			// Add vertex indices of tri[cur_tri_idx] to min_vert_idx, max_vert_idx
 			const TriIndex &tri = tris[cur_tri_idx];
-			unsigned short min_idx = (unsigned short)MIN(MIN(tri.I, tri.J), tri.K);
-			unsigned short max_idx = (unsigned short)MAX(MAX(tri.I, tri.J), tri.K);
-			min_vert_idx = MIN(min_vert_idx, min_idx);
-			max_vert_idx = MAX(max_vert_idx, max_idx);
+			unsigned short min_idx = (unsigned short)GENERALS_MIN(GENERALS_MIN(tri.I, tri.J), tri.K);
+			unsigned short max_idx = (unsigned short)GENERALS_MAX(GENERALS_MAX(tri.I, tri.J), tri.K);
+			min_vert_idx = GENERALS_MIN(min_vert_idx, min_idx);
+			max_vert_idx = GENERALS_MAX(max_vert_idx, max_idx);
 
 			// Check the next triangle to see if the current run has ended.
 			unsigned short next_tri_idx = cur_tri_idx + 1;

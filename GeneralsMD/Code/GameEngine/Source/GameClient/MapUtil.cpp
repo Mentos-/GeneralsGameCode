@@ -347,7 +347,7 @@ void WaypointMap::update( void )
 		}
 	}
 
-	m_numStartSpots = max(1, m_numStartSpots);
+	m_numStartSpots = generals_max(1, m_numStartSpots);
 }
 
 const char * MapCache::m_mapCacheName = "MapCache.ini";
@@ -820,7 +820,7 @@ Int populateMapListboxNoReset( GameWindow *listbox, Bool useSystemMaps, Bool isM
 		battleHonors = new SkirmishBattleHonors;
 
 		w = (brutalImage)?brutalImage->getImageWidth():10;
-		w = min(GadgetListBoxGetColumnWidth(listbox, 0), w);
+		w = generals_min(GadgetListBoxGetColumnWidth(listbox, 0), w);
 		h = w;
 	}
 
@@ -976,7 +976,7 @@ typedef MapDisplayToFileNameList::iterator MapDisplayToFileNameListIter;
 
 		if (selectionIndex >= bottomIndex)
 		{
-			Int newTop = max( 0, selectionIndex - max( 1, rowsOnScreen / 2 ) ); 
+			Int newTop = generals_max( 0, selectionIndex - generals_max( 1, rowsOnScreen / 2 ) ); 
 		//The trouble is that rowsonscreen/2 can be zero if bottom is 1 and top is zero
 			GadgetListBoxSetTopVisibleEntry( listbox, newTop );
 		}

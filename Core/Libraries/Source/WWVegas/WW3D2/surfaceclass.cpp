@@ -608,10 +608,10 @@ void SurfaceClass::FindBB(Vector2i *min,Vector2i*max)
 			unsigned char myalpha=alpha[size-1];
 			myalpha=(myalpha>>(8-alphabits)) & mask;
 			if (myalpha) {
-				realmin.I = MIN(realmin.I, x);
-				realmax.I = MAX(realmax.I, x);
-				realmin.J = MIN(realmin.J, y);
-				realmax.J = MAX(realmax.J, y);
+				realmin.I = GENERALS_MIN(realmin.I, x);
+				realmax.I = GENERALS_MAX(realmax.I, x);
+				realmin.J = GENERALS_MIN(realmin.J, y);
+				realmax.J = GENERALS_MAX(realmax.J, y);
 			}
 		}
 	}
@@ -711,8 +711,8 @@ void SurfaceClass::Get_Pixel(Vector3 &rgb, int x,int y)
 	SurfaceDescription sd;
 	Get_Description(sd);
 
-	x = min(x,(int)sd.Width - 1);
-	y = min(y,(int)sd.Height - 1);
+	x = generals_min(x,(int)sd.Width - 1);
+	y = generals_min(y,(int)sd.Height - 1);
 
 	D3DLOCKED_RECT lock_rect;
 	::ZeroMemory(&lock_rect, sizeof(D3DLOCKED_RECT));

@@ -1662,7 +1662,7 @@ int HLodClass::Get_Lod_Count(void) const
 void HLodClass::Set_LOD_Bias(float bias)
 {
 	assert(bias > 0.0f);
-	bias = MAX(bias, 0.0f);
+	bias = GENERALS_MAX(bias, 0.0f);
 	LODBias = bias;
 
 	int additional_count = AdditionalModels.Count();
@@ -3089,8 +3089,8 @@ float HLodClass::Get_Post_Increment_Value(void) const
  *=============================================================================================*/
 void HLodClass::Set_LOD_Level(int lod)
 {
-	lod = MAX(0, lod);
-	lod = MIN(lod, (LodCount - 1));
+	lod = GENERALS_MAX(0, lod);
+	lod = GENERALS_MIN(lod, (LodCount - 1));
 
 	if (lod == CurLod) return;
 

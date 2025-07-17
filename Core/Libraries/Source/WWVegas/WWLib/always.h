@@ -194,23 +194,23 @@ public:
 */
 #define NOMINMAX
 
-#ifndef MAX
-#define MAX(a,b)            (((a) > (b)) ? (a) : (b))
+#ifndef GENERALS_MAX
+#define GENERALS_MAX(a,b)            (((a) > (b)) ? (a) : (b))
 #endif
 
-#ifndef MIN
-#define MIN(a,b)            (((a) < (b)) ? (a) : (b))
+#ifndef GENERALS_MIN
+#define GENERALS_MIN(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
-#ifdef min
-#undef min
+#ifdef generals_min
+#undef generals_min
 #endif
 
-#ifdef max
-#undef max
+#ifdef generals_max
+#undef generals_max
 #endif
 
-template <class T> T min(T a,T b)
+template <class T> T generals_min(T a,T b)
 {
 	if (a<b) {
 		return a;
@@ -219,7 +219,7 @@ template <class T> T min(T a,T b)
 	}
 }
 
-template <class T> T max(T a,T b)
+template <class T> T generals_max(T a,T b)
 {
 	if (a>b) {
 		return a;

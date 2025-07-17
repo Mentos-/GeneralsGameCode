@@ -490,8 +490,8 @@ void RAMFileClass::Close(void)
 void RAMFileClass::Bias (int start, int length)
 {
 	Buffer	 = Buffer + start;
-	Length	 = MIN (Length, start + length) - start;
-	MaxLength =	MIN (MaxLength, start + length) - start;
+	Length	 = GENERALS_MIN (Length, start + length) - start;
+	MaxLength =	GENERALS_MIN (MaxLength, start + length) - start;
 
 	if (Is_Open()) {
 		Seek (0, SEEK_SET);

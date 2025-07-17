@@ -529,7 +529,7 @@ ColorPickerClass::Point_From_Color (COLORREF color)
 	int width = rect.right-rect.left;
 	int height = rect.bottom-rect.top;
 
-	float whiteness = (float)min (min (red, green), blue);	
+	float whiteness = (float)generals_min (generals_min (red, green), blue);	
 	float percent = whiteness / 255;
 	float darkness = 0;
 
@@ -540,7 +540,7 @@ ColorPickerClass::Point_From_Color (COLORREF color)
 		float start_red = (red - whiteness) / (1 - percent);
 		float start_green = (green - whiteness) / (1 - percent);
 		float start_blue = (blue - whiteness) / (1 - percent);
-		darkness = max (max (start_red, start_green), start_blue);
+		darkness = generals_max (generals_max (start_red, start_green), start_blue);
 	}
 
 	int x = int(width * hue);

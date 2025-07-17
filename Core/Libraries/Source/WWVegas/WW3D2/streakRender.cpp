@@ -362,7 +362,7 @@ void StreakRendererClass::RenderStreak
 	for (unsigned int chunkIndex = 0; chunkIndex < num_points - 1; chunkIndex += (chunk_size - 1)) 
 	{
 		unsigned int point_cnt = num_points - chunkIndex;
-		point_cnt = MIN(point_cnt, chunk_size);
+		point_cnt = GENERALS_MIN(point_cnt, chunk_size);
 
 		// We use these different loop indices (which loop INSIDE a chunk) to improve readability:
 		unsigned int pointIndex;	// Point index
@@ -1143,7 +1143,7 @@ void StreakRendererClass::RenderStreak
 		unsigned int residual_bottom_points = intersection[1][BOTTOM_EDGE].PointCount;
 
 		// Reduce both pointcounts by the same amount so the smaller one is 1 (skip points)
-		unsigned int delta = MIN(residual_top_points, residual_bottom_points) - 1;
+		unsigned int delta = GENERALS_MIN(residual_top_points, residual_bottom_points) - 1;
 		residual_top_points -= delta;
 		residual_bottom_points -= delta;
 		pointIndex += delta;
@@ -1257,7 +1257,7 @@ void StreakRendererClass::RenderStreak
 			}
 
 			// Reduce both pointcounts by the same amount so the smaller one is 1 (skip points)
-			delta = MIN(residual_top_points, residual_bottom_points) - 1;
+			delta = GENERALS_MIN(residual_top_points, residual_bottom_points) - 1;
 			residual_top_points -= delta;
 			residual_bottom_points -= delta;
 			pointIndex += delta;
@@ -1355,7 +1355,7 @@ void StreakRendererClass::RenderStreak
 				vertex->X = vertexArray[i].x;
 				vertex->Y = vertexArray[i].y;
 				vertex->Z = vertexArray[i].z;
-				*reinterpret_cast<unsigned int *>(vb + diffuseOffset) = DX8Wrapper::Convert_Color_Clamp(colors[MIN((i/2), point_cnt)]); // TODO: Does not work correctly when subdivision are not 0
+				*reinterpret_cast<unsigned int *>(vb + diffuseOffset) = DX8Wrapper::Convert_Color_Clamp(colors[GENERALS_MIN((i/2), point_cnt)]); // TODO: Does not work correctly when subdivision are not 0
 				Vector2 *texture = reinterpret_cast<Vector2 *>(vb + textureOffset);
 				texture->U = vertexArray[i].u1;
 				texture->V = vertexArray[i].v1;

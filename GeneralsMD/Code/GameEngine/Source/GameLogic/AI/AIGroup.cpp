@@ -1646,7 +1646,7 @@ void AIGroup::groupMoveToPosition( const Coord3D *p_posIn, Bool addWaypoint, Com
     if ( groupMember->isKindOf( KINDOF_PRODUCED_AT_HELIPAD ) )//helicopter
     {
       isFormation = FALSE;
-      extraMargin = MAX( extraMargin, groupMember->getGeometryInfo().getMajorRadius() );
+      extraMargin = GENERALS_MAX( extraMargin, groupMember->getGeometryInfo().getMajorRadius() );
     }
     else if ( groupMember->isKindOf( KINDOF_AIRCRAFT ) )// fixed wing aircraft only
     {
@@ -1656,7 +1656,7 @@ void AIGroup::groupMoveToPosition( const Coord3D *p_posIn, Bool addWaypoint, Com
 				isFormation = FALSE;//then keep spread formation after move
       }
 
-      extraMargin = MAX( extraMargin, STD_AIRCRAFT_EXTRA_MARGIN );
+      extraMargin = GENERALS_MAX( extraMargin, STD_AIRCRAFT_EXTRA_MARGIN );
 		}
 	} 
   

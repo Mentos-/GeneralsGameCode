@@ -90,7 +90,7 @@ public:
 	void	Inflate( const Vector2 & o ) { Left-=o.X; Top-=o.Y; Right+=o.X; Bottom+=o.Y; }
 
 	// Union
-	RectClass & operator += ( const RectClass & r ) { Left=MIN(Left,r.Left); Top=MIN(Top,r.Top); Right=MAX(Right,r.Right); Bottom=MAX(Bottom,r.Bottom); return *this; }
+	RectClass & operator += ( const RectClass & r ) { Left=GENERALS_MIN(Left,r.Left); Top=GENERALS_MIN(Top,r.Top); Right=GENERALS_MAX(Right,r.Right); Bottom=GENERALS_MAX(Bottom,r.Bottom); return *this; }
 
 	// Equality
 	bool operator == ( const RectClass &rval ) const { return (rval.Left == Left) && (rval.Right == Right) && (rval.Top == Top) && (rval.Bottom == Bottom); }

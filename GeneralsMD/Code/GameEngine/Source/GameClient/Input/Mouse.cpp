@@ -1010,7 +1010,7 @@ void Mouse::drawTooltip( void )
 			yPos -= /*40 +*/ height;
 		}
 
-		Int boxWidth = (m_tooltipAnimateBackground)?(min(width, m_highlightPos)):width;
+		Int boxWidth = (m_tooltipAnimateBackground)?(generals_min(width, m_highlightPos)):width;
 
 #define GMC(x) GameMakeColor(x.red, x.green, x.blue, x.alpha)
 #define COLOR(x) GMC(m_tooltipColor##x)

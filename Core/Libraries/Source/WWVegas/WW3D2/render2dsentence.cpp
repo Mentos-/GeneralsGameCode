@@ -522,10 +522,10 @@ Render2DSentenceClass::Draw_Sentence (uint32 color)
 				//	Clip the polygons to the specified area
 				//
 				RectClass clipped_rect;
-				clipped_rect.Left		= max (screen_rect.Left, ClipRect.Left);
-				clipped_rect.Right	= min (screen_rect.Right, ClipRect.Right);
-				clipped_rect.Top		= max (screen_rect.Top, ClipRect.Top);
-				clipped_rect.Bottom	= min (screen_rect.Bottom, ClipRect.Bottom);
+				clipped_rect.Left		= generals_max (screen_rect.Left, ClipRect.Left);
+				clipped_rect.Right	= generals_min (screen_rect.Right, ClipRect.Right);
+				clipped_rect.Top		= generals_max (screen_rect.Top, ClipRect.Top);
+				clipped_rect.Bottom	= generals_min (screen_rect.Bottom, ClipRect.Bottom);
 
 				//
 				//	Clip the texture to the specified area
@@ -673,7 +673,7 @@ Render2DSentenceClass::Allocate_New_Surface (const WCHAR *text, bool justCalcExt
 			// the remaining text?
 			//
 			int texture_count	= row_count / rows_per_texture;
-			texture_count		= max (texture_count, 1);
+			texture_count		= generals_max (texture_count, 1);
 
 			//
 			//	Is this the best usage of texture memory we've found yet?
@@ -689,7 +689,7 @@ Render2DSentenceClass::Allocate_New_Surface (const WCHAR *text, bool justCalcExt
 	//
 	//	Use whichever is larger, the hint or the calculated size
 	//
-	CurrTextureSize = max (TextureSizeHint, CurrTextureSize);
+	CurrTextureSize = generals_max (TextureSizeHint, CurrTextureSize);
 
 	if (!justCalcExtents)
 	{
@@ -1053,7 +1053,7 @@ Vector2	Render2DSentenceClass::Build_Sentence_Not_Centered (const WCHAR *text, i
 			//	Adjust the positions
 			//
 			Cursor.X			+= (TextureOffset.I - TextureStartX);
-			maxX = max(maxX, Cursor.X);
+			maxX = generals_max(maxX, Cursor.X);
 			TextureStartX	= TextureOffset.I;
 
 			//
@@ -1720,8 +1720,8 @@ FontCharsClass::Grow_Unicode_Array (WCHAR ch)
 		return ;
 	} 
 
-	uint16 first_index	= min( FirstUnicodeChar, static_cast<uint16>(ch) );
-	uint16 last_index		= max( LastUnicodeChar, static_cast<uint16>(ch) );
+	uint16 first_index	= generals_min( FirstUnicodeChar, static_cast<uint16>(ch) );
+	uint16 last_index		= generals_max( LastUnicodeChar, static_cast<uint16>(ch) );
 	uint16 count			= (last_index - first_index) + 1;
 
 	//

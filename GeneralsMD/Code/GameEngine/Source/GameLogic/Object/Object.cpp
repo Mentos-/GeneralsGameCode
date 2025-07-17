@@ -1831,7 +1831,7 @@ void Object::attemptDamage( DamageInfo *damageInfo )
 		{ 
 			// Calculate the shockwave taperoff amount due to distance from ground zero
 			Real shockWaveScalar = damageInfo->in.m_shockWaveVector.length();
-			Real distanceFromCenter = min(1.0f, shockWaveScalar / damageInfo->in.m_shockWaveRadius); 
+			Real distanceFromCenter = generals_min(1.0f, shockWaveScalar / damageInfo->in.m_shockWaveRadius); 
 			Real distanceTaper = (distanceFromCenter) * (1.0f - damageInfo->in.m_shockWaveTaperOff);
 			Real shockTaperMult = 1.0f - distanceTaper;
 
@@ -3428,9 +3428,9 @@ Bool Object::getHealthBoxDimensions(Real &healthBoxHeight, Real &healthBoxWidth)
 	}
 
 	//just add the major and minor axes
-	Real size = MAX(20.0f, MIN(150.0f, (getGeometryInfo().getMajorRadius() + getGeometryInfo().getMinorRadius())) );
+	Real size = GENERALS_MAX(20.0f, GENERALS_MIN(150.0f, (getGeometryInfo().getMajorRadius() + getGeometryInfo().getMinorRadius())) );
 	healthBoxHeight = 3.0f; 
-	healthBoxWidth = MAX(20.0f, size * 2.0f);
+	healthBoxWidth = GENERALS_MAX(20.0f, size * 2.0f);
 	return TRUE;
 
 #endif

@@ -303,9 +303,9 @@ void EMPUpdate::doDisableAttack( void )
 				{
 					Real victimHeight = curVictim->getGeometryInfo().getMaxHeightAbovePosition();
 					Real victimFootprintArea = curVictim->getGeometryInfo().getFootprintArea();
-					Real victimVolume = victimFootprintArea * MIN(victimHeight, 10.0f);
+					Real victimVolume = victimFootprintArea * GENERALS_MIN(victimHeight, 10.0f);
 
-					UnsignedInt emitterCount = MAX(15, REAL_TO_INT_CEIL(data->m_sparksPerCubicFoot * victimVolume));
+					UnsignedInt emitterCount = GENERALS_MAX(15, REAL_TO_INT_CEIL(data->m_sparksPerCubicFoot * victimVolume));
 			
 					for (UnsignedInt e = 0 ; e < emitterCount; ++e)
 					{
@@ -332,7 +332,7 @@ void EMPUpdate::doDisableAttack( void )
 
 							sys->attachToObject(curVictim);
 							sys->setPosition( &offs );
-							sys->setSystemLifetime(MAX(0, data->m_disabledDuration - 30));
+							sys->setSystemLifetime(GENERALS_MAX(0, data->m_disabledDuration - 30));
 							sys->setInitialDelay(GameLogicRandomValue(1,100));
 						}
 					}

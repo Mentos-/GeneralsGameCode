@@ -713,8 +713,8 @@ AudibleSoundClass::Set_Pan (float pan)
 	//
 	// Cache the normalized pan value
 	//
-	m_Pan = min (pan, 1.0F);
-	m_Pan = max (m_Pan, 0.0F);
+	m_Pan = generals_min (pan, 1.0F);
+	m_Pan = generals_max (m_Pan, 0.0F);
 
 	//
 	// Do we have a valid sample handle from miles?
@@ -830,8 +830,8 @@ AudibleSoundClass::Set_Volume (float volume)
 	MMSLockClass lock;
 
 	// Cache the normalized volume value
-	m_Volume = min (volume, 1.0F);
-	m_Volume = max (m_Volume, 0.0F);
+	m_Volume = generals_min (volume, 1.0F);
+	m_Volume = generals_max (m_Volume, 0.0F);
 
 	// Do we have a valid sample handle from miles?
 	if (m_SoundHandle != NULL) {
@@ -891,8 +891,8 @@ AudibleSoundClass::Set_Priority (float priority)
 	MMSLockClass lock;
 
 	// Cache the normalized priority
-	m_Priority = min (priority, 1.0F);
-	m_Priority = max (m_Priority, 0.0F);
+	m_Priority = generals_min (priority, 1.0F);
+	m_Priority = generals_max (m_Priority, 0.0F);
 	return ;
 }
 

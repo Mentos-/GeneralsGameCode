@@ -2277,7 +2277,7 @@ void PathfindZoneManager::markZonesDirty( Bool insert )  ///< Called when the zo
 //  if ( insert )
 //  	m_nextFrameToCalculateZones = TheGameLogic->getFrame();
 //  else
-    m_nextFrameToCalculateZones = MIN( m_nextFrameToCalculateZones, TheGameLogic->getFrame() + ZONE_UPDATE_FREQUENCY );
+    m_nextFrameToCalculateZones = GENERALS_MIN( m_nextFrameToCalculateZones, TheGameLogic->getFrame() + ZONE_UPDATE_FREQUENCY );
 } 
 
 /**

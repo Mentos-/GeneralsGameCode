@@ -1463,8 +1463,8 @@ ColorBarClass::OnMouseMove
 			//
 			//	Ensure the marker is in bounds
 			//
-			new_percent = max (min_percent, new_percent);
-			new_percent = min (max_percent, new_percent);
+			new_percent = generals_max (min_percent, new_percent);
+			new_percent = generals_min (max_percent, new_percent);
 
 			//
 			//	Move the marker
@@ -1656,8 +1656,8 @@ void
 ColorBarClass::Set_Selection_Pos (float pos)
 {
 	// Ensure the new position is in bounds
-	pos = max (pos, m_MinPos);
-	pos = min (pos, m_MaxPos);
+	pos = generals_max (pos, m_MinPos);
+	pos = generals_min (pos, m_MaxPos);
 
 	// Move the selection
 	Move_Selection (pos, false);
@@ -1683,8 +1683,8 @@ ColorBarClass::Move_Selection (CPoint point, bool send_notify)
 		percent = (((float)(point.y - m_ColorArea.top)) / ((float)m_ColorArea.Height ()));				
 	}
 	float new_pos = m_MinPos + (percent * (m_MaxPos - m_MinPos));			
-	new_pos = max (new_pos, m_MinPos);
-	new_pos = min (new_pos, m_MaxPos);
+	new_pos = generals_max (new_pos, m_MinPos);
+	new_pos = generals_min (new_pos, m_MaxPos);
 
 	// Do the actual move
 	Move_Selection (new_pos, send_notify);

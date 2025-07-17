@@ -1127,10 +1127,10 @@ void Drawable::setEffectiveOpacity( Real pulseFactor, Real explicitOpacity /* = 
 {
 	if( explicitOpacity != -1.0f )
 	{
-		m_stealthOpacity = MIN( 1.0f, MAX( 0.0f, explicitOpacity ) );
+		m_stealthOpacity = GENERALS_MIN( 1.0f, GENERALS_MAX( 0.0f, explicitOpacity ) );
 	}
 
-	Real pf = MIN(1.0f, MAX(0.0f, pulseFactor));
+	Real pf = GENERALS_MIN(1.0f, GENERALS_MAX(0.0f, pulseFactor));
 
 	Real pulseMargin = (1.0f - m_stealthOpacity);
 	Real pulseAmount = pulseMargin * pf;
@@ -3947,7 +3947,7 @@ void Drawable::drawHealthBar(const IRegion2D* healthBarRegion)
 ///		Real scale = 1.3f / TheTacticalView->getZoom();
 		Real healthBoxWidth = healthBarRegion->hi.x - healthBarRegion->lo.x;
 			
-		Real healthBoxHeight = max(3, healthBarRegion->hi.y - healthBarRegion->lo.y);
+		Real healthBoxHeight = generals_max(3, healthBarRegion->hi.y - healthBarRegion->lo.y);
 		Real healthBoxOutlineSize = 1.0f;
 
 		// draw the health box outline
@@ -5513,7 +5513,7 @@ void TintEnvelope::play(const RGBColor *peak, UnsignedInt atackFrames, UnsignedI
 //-------------------------------------------------------------------------------------------------
 void TintEnvelope::setAttackFrames(UnsignedInt frames) 
 {
-	Real recipFrames = 1.0f / (Real)MAX(1,frames);
+	Real recipFrames = 1.0f / (Real)GENERALS_MAX(1,frames);
 	m_attackRate.Set( m_currentColor );
 	Vector3::Subtract( m_peakColor, m_attackRate, &m_attackRate);
 	m_attackRate.Scale( Vector3(recipFrames, recipFrames, recipFrames) );
@@ -5522,7 +5522,7 @@ void TintEnvelope::setAttackFrames(UnsignedInt frames)
 //-------------------------------------------------------------------------------------------------
 void TintEnvelope::setDecayFrames( UnsignedInt frames )
 {
-	Real recipFrames = ( -1.0f ) / (Real)MAX(1,frames);
+	Real recipFrames = ( -1.0f ) / (Real)GENERALS_MAX(1,frames);
 	m_decayRate.Set( m_peakColor );
 	m_decayRate.Scale( Vector3(recipFrames, recipFrames, recipFrames) );
 }
