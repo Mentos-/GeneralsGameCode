@@ -614,9 +614,9 @@ GlobalData::GlobalData()
 	m_framesPerSecondLimit = 0;
 	m_chipSetType = 0;
 	m_headless = FALSE;
-	m_windowed = 0;
-	m_xResolution = 800;
-	m_yResolution = 600;
+	m_windowed = 1;//UE5Port
+	m_xResolution = 960;//UE5Port
+	m_yResolution = 540;
 	m_maxShellScreens = 0;
 	m_useCloudMap = FALSE;
 	m_use3WayTerrainBlends = 1;
@@ -976,7 +976,7 @@ GlobalData::GlobalData()
 
 	m_shellMapName.set("Maps\\ShellMap1\\ShellMap1.map");
 	m_shellMapOn =TRUE;
-	m_playIntro = TRUE;
+	m_playIntro = FALSE;//UE5Port
 	m_playSizzle = TRUE;
 	m_afterIntro = FALSE;
 	m_allowExitOutOfMovies = FALSE;
