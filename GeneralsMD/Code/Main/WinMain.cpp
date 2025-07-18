@@ -870,6 +870,7 @@ Int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 		if (!rts::ClientInstance::initialize())
 		{
+		/*
 			HWND ccwindow = FindWindow(rts::ClientInstance::getFirstInstanceName(), NULL);
 			if (ccwindow)
 			{
@@ -882,7 +883,7 @@ Int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			TheVersion = NULL;
 			shutdownMemoryManager();
 			DEBUG_SHUTDOWN();
-			return exitcode;
+			return exitcode;*/
 		}
 		DEBUG_LOG(("Create Generals Mutex okay.\n"));
 
