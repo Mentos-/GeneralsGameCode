@@ -69,7 +69,7 @@
 // PRIVATE DATA ///////////////////////////////////////////////////////////////////////////////////
 static GameWindow *commandWindows[ MAX_COMMANDS_PER_SET ];
 Bool commandWindowsInitialized = FALSE;
-static Color BuildClockColor = GameMakeColor(0,0,0,100);
+static GeneralsColor BuildClockColor = GameMakeColor(0,0,0,100);
 // STATIC DATA STORAGE ////////////////////////////////////////////////////////////////////////////
 ControlBar::ContainEntry ControlBar::m_containData[ MAX_COMMANDS_PER_SET ];
 

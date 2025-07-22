@@ -84,7 +84,7 @@ public:
 	TextureClass *		Peek_Texture(void) const								{ return Texture; }
 	ShaderClass			Get_Shader(void) const									{ return Shader; }
 	float					Get_Width(void) const									{ return Width; }
-	const Vector3 &	Get_Color(void) const 									{ return Color; }
+	const Vector3 &	Get_Color(void) const 									{ return GeneralsColor; }
 	float					Get_Opacity(void) const									{ return Opacity; }
 	float					Get_Noise_Amplitude(void) const						{ return NoiseAmplitude; }
 	float					Get_Merge_Abort_Factor(void) const					{ return MergeAbortFactor; }
@@ -101,7 +101,7 @@ public:
 	void					Set_Texture(TextureClass *texture);
 	void					Set_Shader(ShaderClass shader)						{ Shader = shader; }
 	void					Set_Width(float width)									{ Width = width; }
-	void					Set_Color(const Vector3 &color)						{ Color = color; }
+	void					Set_Color(const Vector3 &color)						{ GeneralsColor = color; }
 	void					Set_Opacity(float opacity)								{ Opacity = opacity; }
 	void					Set_Noise_Amplitude(float amplitude)				{ NoiseAmplitude = amplitude; }
 	void					Set_Merge_Abort_Factor(float factor)				{ MergeAbortFactor = factor; }
@@ -138,7 +138,7 @@ private:
 	TextureClass *					Texture;
 	ShaderClass						Shader;
 	float								Width;
-	Vector3							Color;
+	Vector3							GeneralsColor;
 	float								Opacity;
 	
 	// Subdivision properties

@@ -113,7 +113,7 @@ public:
 
 	/// draw an image fit within the screen coordinates
 	virtual void drawImage( const Image *image, Int startX, Int startY, 
-													Int endX, Int endY, Color color = 0xFFFFFFFF, DrawImageMode mode=DRAW_IMAGE_ALPHA);
+													Int endX, Int endY, GeneralsColor color = 0xFFFFFFFF, DrawImageMode mode=DRAW_IMAGE_ALPHA);
 
 	/// draw a video buffer fit within the screen coordinates
 	virtual void drawVideoBuffer( VideoBuffer *buffer, Int startX, Int startY, 

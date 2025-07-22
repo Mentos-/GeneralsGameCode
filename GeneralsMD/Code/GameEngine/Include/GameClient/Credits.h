@@ -142,9 +142,9 @@ private:
 	Int m_scrollRatePerFrames;
 	Bool m_scrollDown;	// if TRUE text will come from the top to the bottom if False, it will go from the bottom up
 
-	Color			m_titleColor;
-	Color			m_positionColor;
-	Color			m_normalColor;
+	GeneralsColor			m_titleColor;
+	GeneralsColor			m_positionColor;
+	GeneralsColor			m_normalColor;
 	
 	Int m_currentStyle;
 

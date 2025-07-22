@@ -304,10 +304,10 @@ void Xfer::xferRealRange( RealRange *realRange )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-void Xfer::xferColor( Color *color )
+void Xfer::xferColor( GeneralsColor *color )
 {
 
-	xferImplementation( color, sizeof( Color ) );
+	xferImplementation( color, sizeof( GeneralsColor ) );
 
 }  // end xferColor
 

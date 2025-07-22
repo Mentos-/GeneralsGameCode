@@ -2998,8 +2998,8 @@ void Drawable::drawContained( const IRegion2D *healthBarRegion )
 
 	for (Int i = 0; i < numTotal; ++i)
 	{
-		const Color INFANTRY_COLOR = GameMakeColor(0, 255, 0, 255);
-		const Color NON_INFANTRY_COLOR = GameMakeColor(0, 0, 255, 255);
+		const GeneralsColor INFANTRY_COLOR = GameMakeColor(0, 255, 0, 255);
+		const GeneralsColor NON_INFANTRY_COLOR = GameMakeColor(0, 0, 255, 255);
 		if (i < numFull)
 			TheDisplay->drawImage(s_fullContainer, posx, posy, posx + boxWidth, posy + boxHeight, 
 				(i < numInfantry) ? INFANTRY_COLOR : NON_INFANTRY_COLOR);
@@ -3132,7 +3132,7 @@ void Drawable::drawUIText()
 	Player *owner = obj->getControllingPlayer();
 	Int groupNum = owner->getSquadNumberForObject(obj);
 
-	Color color = TheDrawGroupInfo->m_usePlayerColor ? owner->getPlayerColor() : TheDrawGroupInfo->m_colorForText;
+	GeneralsColor color = TheDrawGroupInfo->m_usePlayerColor ? owner->getPlayerColor() : TheDrawGroupInfo->m_colorForText;
 
 	if (groupNum > NO_HOTKEY_SQUAD && groupNum < NUM_HOTKEY_SQUADS ) 
 	{
@@ -3748,8 +3748,8 @@ void Drawable::drawConstructPercent( const IRegion2D *healthBarRegion )
     return;
 
 	// draw the text
-	Color color = GameMakeColor( 255, 255, 255, 255 );
-	Color dropColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor color = GameMakeColor( 255, 255, 255, 255 );
+	GeneralsColor dropColor = GameMakeColor( 0, 0, 0, 255 );
 	screen.x -= (m_constructDisplayString->getWidth() / 2);
 	m_constructDisplayString->draw( screen.x, screen.y, color, dropColor );
 
@@ -3785,8 +3785,8 @@ void Drawable::drawCaption( const IRegion2D *healthBarRegion )
 	}
 
 	// draw the text
-	Color color = TheInGameUI->getDrawableCaptionColor();
-	Color dropColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor color = TheInGameUI->getDrawableCaptionColor();
+	GeneralsColor dropColor = GameMakeColor( 0, 0, 0, 255 );
 	m_captionDisplayString->draw( screen.x, screen.y, color, dropColor );
 
 }  // end drawCaption
@@ -3892,7 +3892,7 @@ void Drawable::drawHealthBar(const IRegion2D* healthBarRegion)
 		// slowly go from green to red, (or from blue to cyan if under construction, or disabled)
 		//
 
-		Color color, outlineColor;
+		GeneralsColor color, outlineColor;
 		if( obj->getStatusBits().test( OBJECT_STATUS_UNDER_CONSTRUCTION ) || (obj->isDisabled() && !obj->isDisabledByType(DISABLED_HELD)) )
 		{
 			color = GameMakeColor( 0, healthRatio * 255.0f, 255, 255 );//blue to cyan
@@ -4102,7 +4102,7 @@ void Drawable::replaceModelConditionFlags( const ModelConditionFlags &flags, Boo
 }
 
 //-------------------------------------------------------------------------------------------------
-void Drawable::setIndicatorColor(Color color)
+void Drawable::setIndicatorColor(GeneralsColor color)
 {
 	for (DrawModule** dm = getDrawModules(); *dm; ++dm)
 	{

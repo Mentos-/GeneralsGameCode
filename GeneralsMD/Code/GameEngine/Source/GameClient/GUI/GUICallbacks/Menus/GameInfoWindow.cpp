@@ -141,11 +141,11 @@ void RefreshGameInfoWindow(GameInfo *gameInfo, UnicodeString gameName)
 	GadgetListBoxReset(listBoxPlayers);
 
 	Int numColors = TheMultiplayerSettings->getNumColors();
-	Color white = GameMakeColor(255,255,255,255);
-//	Color grey =  GameMakeColor(188,188,188,255);
+	GeneralsColor white = GameMakeColor(255,255,255,255);
+//	GeneralsColor grey =  GameMakeColor(188,188,188,255);
 	for (Int i = 0; i < MAX_SLOTS; i ++)
 	{
-		Color playerColor = white;
+		GeneralsColor playerColor = white;
 		Int color = -1;
 		Int addedRow;
 		GameSlot *slot = gameInfo->getSlot(i);

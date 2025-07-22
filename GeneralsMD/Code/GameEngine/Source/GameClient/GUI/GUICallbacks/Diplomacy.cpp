@@ -507,13 +507,13 @@ void PopulateInGameDiplomacyPopup( void )
 					buttonUnMute[rowNum]->winHide(TRUE);
 			}
 
-			Color playerColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
-			Color backColor = GameMakeColor(0, 0, 0, 255);
-			Color aliveColor = GameMakeColor(0, 255, 0, 255);
-			Color deadColor = GameMakeColor(255, 0, 0, 255);
-			Color observerInGameColor = GameMakeColor(255, 255, 255, 255);
-			Color goneColor = GameMakeColor(196, 0, 0, 255);
-			Color observerGoneColor = GameMakeColor(196, 196, 196, 255);
+			GeneralsColor playerColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
+			GeneralsColor backColor = GameMakeColor(0, 0, 0, 255);
+			GeneralsColor aliveColor = GameMakeColor(0, 255, 0, 255);
+			GeneralsColor deadColor = GameMakeColor(255, 0, 0, 255);
+			GeneralsColor observerInGameColor = GameMakeColor(255, 255, 255, 255);
+			GeneralsColor goneColor = GameMakeColor(196, 0, 0, 255);
+			GeneralsColor observerGoneColor = GameMakeColor(196, 196, 196, 255);
 
 			if (staticTextPlayer[rowNum])
 			{

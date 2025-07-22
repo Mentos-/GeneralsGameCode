@@ -160,10 +160,10 @@ void PopulateCustomLadderListBox( GameWindow *win )
 
 	CustomMatchPreferences pref;
 
-	Color specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
-	Color normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
-	Color favoriteColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
-	Color localColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
+	GeneralsColor normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor favoriteColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor localColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
 	Int index;
 	GadgetListBoxReset( win );
 
@@ -264,8 +264,8 @@ void PopulateCustomLadderComboBox( void )
 
 	std::set<const LadderInfo *> usedLadders;
 
-	Color specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
-	Color normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
+	GeneralsColor normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
 	Int index;
 	GadgetComboBoxReset( comboBoxLadderName );
 	index = GadgetComboBoxAddEntry( comboBoxLadderName, TheGameText->fetch("GUI:NoLadder"), normalColor );

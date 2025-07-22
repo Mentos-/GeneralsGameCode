@@ -192,7 +192,7 @@ void PopulateReplayFileListbox(GameWindow *listbox)
 		COLOR_MISSING_MAP_CRC_MISMATCH,
 		COLOR_MAX
 	};
-	Color colors[] = {
+	GeneralsColor colors[] = {
 		GameMakeColor( 255, 255, 255, 255 ),
 		GameMakeColor( 128, 128, 128, 255 ),
 		GameMakeColor( 255, 255, 255, 255 ),
@@ -275,8 +275,8 @@ void PopulateReplayFileListbox(GameWindow *listbox)
 //			}
 
 			// pick a color
-			Color color;
-			Color mapColor;
+			GeneralsColor color;
+			GeneralsColor mapColor;
 
 			const Bool hasMap = mapData != NULL;
 

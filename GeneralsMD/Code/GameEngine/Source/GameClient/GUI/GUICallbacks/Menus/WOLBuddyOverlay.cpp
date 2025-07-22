@@ -415,7 +415,7 @@ void updateBuddyInfo( void )
 		// insert name into box
 		UnicodeString formatStr;
 		formatStr.translate(info.m_name.str());//, info.m_status, info.m_statusString.str(), info.m_locationString.str());
-		Color nameColor = (TheGameSpyInfo->isSavedIgnored(profileID)) ?
+		GeneralsColor nameColor = (TheGameSpyInfo->isSavedIgnored(profileID)) ?
 			GameSpyColor[GSCOLOR_PLAYER_IGNORED] : GameSpyColor[GSCOLOR_PLAYER_BUDDY];
 		int index = GadgetListBoxAddEntryText(buddyControls.listboxBuddies, formatStr, nameColor, -1, -1);
 

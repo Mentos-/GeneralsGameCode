@@ -125,7 +125,7 @@ inline DrawModule::~DrawModule() { }
 class DebrisDrawInterface
 {
 public:
-	virtual void setModelName(AsciiString name, Color color, ShadowType t) = 0;
+	virtual void setModelName(AsciiString name, GeneralsColor color, ShadowType t) = 0;
 	virtual void setAnimNames(AsciiString initial, AsciiString flying, AsciiString final, const FXList* finalFX) = 0;
 };
 
@@ -185,7 +185,7 @@ public:
 
 	virtual void setHidden(Bool h) = 0;
 	virtual void replaceModelConditionState(const ModelConditionFlags& a) = 0;
-	virtual void replaceIndicatorColor(Color color) = 0;
+	virtual void replaceIndicatorColor(GeneralsColor color) = 0;
 	virtual Bool handleWeaponFireFX(WeaponSlotType wslot, Int specificBarrelToUse, const FXList* fxl, Real weaponSpeed, const Coord3D* victimPos, Real damageRadius) = 0;
 	virtual Int getBarrelCount(WeaponSlotType wslot) const = 0;
 

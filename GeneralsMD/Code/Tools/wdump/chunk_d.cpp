@@ -1833,7 +1833,7 @@ void ChunkTableClass::List_W3D_CHUNK_EMITTER_COLOR_KEYFRAME(ChunkItem * Item,CLi
 	W3dEmitterColorKeyframeStruct * data = (W3dEmitterColorKeyframeStruct *)(Item->Data);
 	int counter = 0;
 	AddItem(List,counter,"Time",data->Time);
-	AddItem(List,counter,"Color",&(data->Color));
+	AddItem(List,counter,"Color",&(data->GeneralsColor));
 }
 
 void ChunkTableClass::List_W3D_CHUNK_EMITTER_OPACITY_KEYFRAME(ChunkItem * Item,CListCtrl * List)
@@ -2044,7 +2044,7 @@ void ChunkTableClass::List_W3D_CHUNK_BOX(ChunkItem * Item,CListCtrl * List)
 	}
 	
 	AddItem(List,counter,"Name",box->Name);
-	AddItem(List,counter,"Color",&(box->Color));
+	AddItem(List,counter,"Color",&(box->GeneralsColor));
 	AddItem(List,counter,"Center",&(box->Center));
 	AddItem(List,counter,"Extent",&(box->Extent));
 }

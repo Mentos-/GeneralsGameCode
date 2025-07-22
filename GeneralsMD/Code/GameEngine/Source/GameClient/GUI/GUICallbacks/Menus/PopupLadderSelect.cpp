@@ -508,8 +508,8 @@ static void updateLadderDetails( Int selID, GameWindow *staticTextLadderName, Ga
 		return;
 
 	UnicodeString line;
-	Color color = GameMakeColor( 255, 255, 255, 255 );
-	Color captionColor = GameMakeColor( 0, 255, 255, 255 );
+	GeneralsColor color = GameMakeColor( 255, 255, 255, 255 );
+	GeneralsColor captionColor = GameMakeColor( 0, 255, 255, 255 );
 
 	// name
 	line.format(TheGameText->fetch("GUI:LadderNameAndSize"), info->name.str(), info->playersPerTeam, info->playersPerTeam);

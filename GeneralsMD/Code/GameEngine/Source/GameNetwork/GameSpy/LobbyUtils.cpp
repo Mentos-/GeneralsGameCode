@@ -531,7 +531,7 @@ struct GameSortStruct
 static Int insertGame( GameWindow *win, GameSpyStagingRoom *game, Bool showMap )
 {
 	game->cleanUpSlotPointers();
-	Color gameColor = GameSpyColor[GSCOLOR_GAME];
+	GeneralsColor gameColor = GameSpyColor[GSCOLOR_GAME];
 	if (game->getNumNonObserverPlayers() == game->getMaxPlayers() || game->getNumPlayers() == MAX_SLOTS)
 	{
 		gameColor = GameSpyColor[GSCOLOR_GAME_FULL];

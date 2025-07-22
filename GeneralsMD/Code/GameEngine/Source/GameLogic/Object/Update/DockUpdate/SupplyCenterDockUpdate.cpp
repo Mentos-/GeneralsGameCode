@@ -155,7 +155,7 @@ Bool SupplyCenterDockUpdate::action( Object* docker, Object *drone )
 		pos.x = dockerPos->x;
 		pos.y = dockerPos->y;
 		pos.z = TheTerrainLogic->getGroundHeight(pos.x, pos.y);//dockerPos->z + docker->getGeometryInfo().getHeight();
-		Color color = ownerPlayer->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
+		GeneralsColor color = ownerPlayer->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
 		
 		TheInGameUI->addFloatingText(moneys, &pos, color);
 	}

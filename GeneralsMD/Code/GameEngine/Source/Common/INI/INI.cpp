@@ -1093,7 +1093,7 @@ void INI::parseColorInt( INI* ini, void * /*instance*/, void *store, const void*
 	// assign the color components to the "Color" pointer at 'store', keep
 	// the numbers as between 0 and 255
 	//
-	Color *theColor = (Color *)store;
+	GeneralsColor *theColor = (GeneralsColor *)store;
 	*theColor = GameMakeColor(colors[0], colors[1], colors[2], colors[3]);
 
 }  // end parseColorInt

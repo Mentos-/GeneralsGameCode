@@ -427,7 +427,7 @@ void ControlBar::populatePurchaseScience( Player* player )
 	// get the side select buttons
 	GameWindow* win = m_contextParent[ CP_PURCHASE_SCIENCE ];
 
-	Color color = GameMakeColor(255, 255, 255, 255);
+	GeneralsColor color = GameMakeColor(255, 255, 255, 255);
 
 	/// @todo srj -- evil hack testing code. do not imitate.
 	ScienceVec purchasable, potential;
@@ -2909,14 +2909,14 @@ void ControlBar::updateRightHUDImage( const Image *image )
 
 }
 
-void ControlBar::updateBuildUpClockColor( Color color)
+void ControlBar::updateBuildUpClockColor( GeneralsColor color)
 {
 	m_buildUpClockColor = color;
 }
 
 
 
-void ControlBar::updateCommanBarBorderColors(Color build, Color action, Color upgrade, Color system )
+void ControlBar::updateCommanBarBorderColors(GeneralsColor build, GeneralsColor action, GeneralsColor upgrade, GeneralsColor system )
 {
 	m_commandButtonBorderBuildColor = build;
 	m_commandButtonBorderActionColor = action;

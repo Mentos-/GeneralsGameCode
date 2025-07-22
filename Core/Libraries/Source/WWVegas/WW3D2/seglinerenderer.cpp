@@ -77,7 +77,7 @@ SegLineRendererClass::SegLineRendererClass(void) :
 		Texture(NULL),
 		Shader(ShaderClass::_PresetAdditiveSpriteShader),
 		Width(0.0f),
-		Color(Vector3(1,1,1)),
+		GeneralsColor(Vector3(1,1,1)),
 		Opacity(1.0f),
 		SubdivisionLevel(0),
 		NoiseAmplitude(0.0f),
@@ -97,7 +97,7 @@ SegLineRendererClass::SegLineRendererClass(const SegLineRendererClass & that) :
 		Texture(NULL),
 		Shader(ShaderClass::_PresetAdditiveSpriteShader),
 		Width(0.0f),
-		Color(Vector3(1,1,1)),
+		GeneralsColor(Vector3(1,1,1)),
 		Opacity(1.0f),
 		SubdivisionLevel(0),
 		NoiseAmplitude(0.0f),
@@ -119,7 +119,7 @@ SegLineRendererClass & SegLineRendererClass::operator = (const SegLineRendererCl
 		REF_PTR_SET(Texture,that.Texture);
 		Shader = that.Shader;
 		Width = that.Width;
-		Color = that.Color;
+		GeneralsColor = that.GeneralsColor;
 		Opacity = that.Opacity;
 		SubdivisionLevel = that.SubdivisionLevel;
 		NoiseAmplitude = that.NoiseAmplitude;
@@ -1104,7 +1104,7 @@ void SegLineRendererClass::Render
 		
 		// If color is not white or opacity not 100%, enable gradient in shader and in renderer - otherwise disable.		
 		unsigned int rgba;
-		rgba=DX8Wrapper::Convert_Color(Color,Opacity);
+		rgba=DX8Wrapper::Convert_Color(GeneralsColor,Opacity);
 		bool rgba_all=(rgba==0xFFFFFFFF);
 
 		// Enable sorting if sorting has not been disabled and line is translucent and alpha testing is not enabled.
@@ -1241,7 +1241,7 @@ void SegLineRendererClass::subdivision_util(unsigned int point_cnt, const Vector
 			stack[0].StartDiffuse = base_diffuse[pidx];
 			stack[0].EndDiffuse = base_diffuse[pidx+1];
 		} else {
-			stack[0].StartDiffuse.Set(Color.X, Color.Y, Color.Z, Opacity);
+			stack[0].StartDiffuse.Set(GeneralsColor.X, GeneralsColor.Y, GeneralsColor.Z, Opacity);
 			stack[0].EndDiffuse = stack[0].StartDiffuse;
 		}
 
@@ -1290,7 +1290,7 @@ void SegLineRendererClass::subdivision_util(unsigned int point_cnt, const Vector
 	if (base_diffuse) {
 		subdiv_diffuse[sub_pidx] = base_diffuse[point_cnt - 1];
 	} else {
-		subdiv_diffuse[sub_pidx].Set(Color.X, Color.Y, Color.Z, Opacity);
+		subdiv_diffuse[sub_pidx].Set(GeneralsColor.X, GeneralsColor.Y, GeneralsColor.Z, Opacity);
 	}
 
 	sub_pidx = sub_pidx + 1;

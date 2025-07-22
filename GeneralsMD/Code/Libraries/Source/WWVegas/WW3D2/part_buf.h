@@ -399,7 +399,7 @@ class ParticleBufferClass : public RenderObjClass
 		// points are active (it is only used if all are not active)..
 		ShareBufferClass<Vector3> *	Position[2];	// Only [0] used unless pingpong enabled
 		ShareBufferClass<Vector4> *	Diffuse;			// passed into point group
-		ShareBufferClass<Vector3> *	Color;			
+		ShareBufferClass<Vector3> *	GeneralsColor;			
 		ShareBufferClass<float> *		Alpha;
 		ShareBufferClass<float> *		Size;
 		ShareBufferClass<uint8> *		Frame;

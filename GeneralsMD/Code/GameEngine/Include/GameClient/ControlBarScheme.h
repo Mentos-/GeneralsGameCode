@@ -145,14 +145,14 @@ public:
 	AsciiString m_side;												///< contain what faction type this command bar was made for (used when selecting command bar by template	
 	Image *m_buttonQueueImage;								///< We'll probably want each one to have it's own image.
 	Image *m_rightHUDImage;										///< We'll probably want each one to have it's own right HUD image.
-	Color m_buildUpClockColor;								///< we can setup the color for the buildup clock if we want
+	GeneralsColor m_buildUpClockColor;								///< we can setup the color for the buildup clock if we want
 	
-	Color m_borderBuildColor;									///< we can setup the color for the button border colors
-	Color m_borderActionColor;								///< we can setup the color for the button border colors
-	Color m_borderUpgradeColor;								///< we can setup the color for the button border colors
-	Color m_borderSystemColor;								///< we can setup the color for the button border colors
+	GeneralsColor m_borderBuildColor;									///< we can setup the color for the button border colors
+	GeneralsColor m_borderActionColor;								///< we can setup the color for the button border colors
+	GeneralsColor m_borderUpgradeColor;								///< we can setup the color for the button border colors
+	GeneralsColor m_borderSystemColor;								///< we can setup the color for the button border colors
 
-	Color m_commandBarBorderColor;
+	GeneralsColor m_commandBarBorderColor;
 
 	Image *m_optionsButtonEnable;
 	Image *m_optionsButtonHightlited;

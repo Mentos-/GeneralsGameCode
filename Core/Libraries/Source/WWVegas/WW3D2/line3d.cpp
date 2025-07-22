@@ -129,9 +129,9 @@ Line3DClass::Line3DClass (const Vector3 & start, const Vector3 & end,
 	vert[7].Y = halfw;
 	vert[7].Z = halfw;
 	
-	Color.X=r;
-	Color.Y=g;
-	Color.Z=b;
+	GeneralsColor.X=r;
+	GeneralsColor.Y=g;
+	GeneralsColor.Z=b;
 	Set_Opacity(opacity);
 
 	// Set box transform so that the origin is at the start point and it
@@ -161,7 +161,7 @@ Line3DClass::Line3DClass(const Line3DClass & src) :
 	Length(src.Length),
    Width(src.Width),
 	Shader(src.Shader),
-	Color(src.Color)
+	GeneralsColor(src.GeneralsColor)
 {
 		for (int i=0; i<8; i++) vert[i]=src.vert[i];
 }
@@ -192,7 +192,7 @@ Line3DClass & Line3DClass::operator = (const Line3DClass & that)
 		Length = that.Length;
       Width = that.Width;		
 		Shader=that.Shader;
-		Color=that.Color;
+		GeneralsColor=that.GeneralsColor;
 		for (int i=0; i<8; i++)
 			vert[i]=that.vert[i];
 	}
@@ -281,7 +281,7 @@ void Line3DClass::Render(RenderInfoClass & rinfo)
 		const FVFInfoClass &fi=vb.FVF_Info();
 		unsigned char *vb=(unsigned char*)Lock.Get_Formatted_Vertex_Array();
 		int i;
-		unsigned int color=DX8Wrapper::Convert_Color(Color);
+		unsigned int color=DX8Wrapper::Convert_Color(GeneralsColor);
 
 		for (i=0; i<8; i++)
 		{			
@@ -475,7 +475,7 @@ void Line3DClass::Reset(const Vector3 & new_start, const Vector3 & new_end, floa
  *========================================================================*/
 void Line3DClass::Re_Color(float r, float g, float b)
 {
-	Color=Vector4(r,g,b,Color.W);
+	GeneralsColor=Vector4(r,g,b,GeneralsColor.W);
 }
 
 
@@ -501,7 +501,7 @@ void Line3DClass::Set_Opacity(float opacity)
 	{	Shader=ShaderClass::_PresetOpaqueSolidShader;
 		Set_Sort_Level(SORT_LEVEL_NONE);
 	}
-	Color.W=opacity;
+	GeneralsColor.W=opacity;
 }
 
 /*

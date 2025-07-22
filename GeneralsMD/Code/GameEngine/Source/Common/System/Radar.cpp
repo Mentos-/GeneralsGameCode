@@ -999,7 +999,7 @@ struct RadarColorLookup
 };
 static RadarColorLookup radarColorLookupTable[] = 
 {
-	/*      Radar Event													Color 1									 Color 2       */
+	/*      Radar Event													Color 1									 GeneralsColor 2       */
 	{ RADAR_EVENT_CONSTRUCTION,					{ 128, 128, 255, 255 },  {  128, 255, 255, 255 } },
 	{ RADAR_EVENT_UPGRADE,							{ 128,   0,  64, 255 },  {  255, 185, 220, 255 } },
 	{ RADAR_EVENT_UNDER_ATTACK,					{ 255,   0,   0, 255 },  {  255, 128, 128, 255 } },
@@ -1069,7 +1069,7 @@ void Radar::createPlayerEvent( Player *player, const Coord3D *world,
 		return;
 
 	// figure out the two colors we should use
-	Color c;
+	GeneralsColor c;
 	UnsignedByte r, g, b, a;
 	RGBAColorInt color[ 2 ];
 

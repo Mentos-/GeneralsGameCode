@@ -278,7 +278,7 @@ public:
 	// WARNING: does not validate index
 	Vector3 & Get_Normal(int index) { return Model->Get_Non_Const_Vertex_Normal_Array()[index]; }
 
-	void Color(float r, float g, float b, float a, int color_array_index = 0)
+	void GeneralsColor(float r, float g, float b, float a, int color_array_index = 0)
 	{
 //		Vector4 * color = Model->Get_Color_Array(color_array_index);
 		unsigned * color = Model->Get_Color_Array(color_array_index);
@@ -290,8 +290,8 @@ public:
 //		color[VertCount].Z = b;
 //		color[VertCount].W = a;
 	}
-	void Color(const Vector4 &v, int color_array_index = 0) { Color(v.X, v.Y, v.Z, v.W, color_array_index); }
-	void Color(unsigned v, int color_array_index=0)
+	void GeneralsColor(const Vector4 &v, int color_array_index = 0) { GeneralsColor(v.X, v.Y, v.Z, v.W, color_array_index); }
+	void GeneralsColor(unsigned v, int color_array_index=0)
 	{
 		unsigned * color = Model->Get_Color_Array(color_array_index);
 		assert(color);

@@ -266,7 +266,7 @@ SuperweaponInfo::SuperweaponInfo(
 	const AsciiString& superweaponNormalFont, 
 	Int superweaponNormalPointSize, 
 	Bool superweaponNormalBold,
-	Color c, 
+	GeneralsColor c, 
 	const SpecialPowerTemplate* spt
 ) :
 	m_id(id),
@@ -323,7 +323,7 @@ void SuperweaponInfo::setText(const UnicodeString& name, const UnicodeString& ti
 }
 
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::drawName(Int x, Int y, Color color, Color dropColor)
+void SuperweaponInfo::drawName(Int x, Int y, GeneralsColor color, GeneralsColor dropColor)
 {
 	if (color == 0)
 		color = m_color;
@@ -331,7 +331,7 @@ void SuperweaponInfo::drawName(Int x, Int y, Color color, Color dropColor)
 }
 
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::drawTime(Int x, Int y, Color color, Color dropColor)
+void SuperweaponInfo::drawTime(Int x, Int y, GeneralsColor color, GeneralsColor dropColor)
 {
 	if (color == 0)
 		color = m_color;
@@ -2100,8 +2100,8 @@ void InGameUI::messageColor( const RGBColor *rgbColor, UnicodeString format, ...
 void InGameUI::addMessageText( const UnicodeString& formattedMessage, const RGBColor *rgbColor )
 {
 	Int i;
-	Color color1 = m_messageColor1;
-	Color color2 = m_messageColor2;
+	GeneralsColor color1 = m_messageColor1;
+	GeneralsColor color2 = m_messageColor2;
 
 	if (rgbColor)
 	{
@@ -3469,7 +3469,7 @@ void InGameUI::postDraw( void )
 	if( m_messagesOn )
 	{
 		Int i, x, y;
-		Color dropColor;
+		GeneralsColor dropColor;
 		UnsignedByte r, g, b, a;
 
 		x = m_messagePosition.x;
@@ -3502,7 +3502,7 @@ void InGameUI::postDraw( void )
 		ICoord2D pos;
 		pos.x = m_militarySubtitle->position.x;
 		pos.y = m_militarySubtitle->position.y;
-		Color dropColor;
+		GeneralsColor dropColor;
 		UnsignedByte r, g, b, a;
 		GameGetColorComponents( m_militarySubtitle->color, &r, &g, &b, &a );
 		dropColor = GameMakeColor( 0, 0, 0, a );
@@ -3541,7 +3541,7 @@ void InGameUI::postDraw( void )
 
 		for (Int i=0; i<MAX_PLAYER_COUNT; ++i)
 		{
-			Color bgColor = GameMakeColor( 0, 0, 0, 255 );
+			GeneralsColor bgColor = GameMakeColor( 0, 0, 0, 255 );
 			for (SuperweaponMap::iterator mapIt = m_superweapons[i].begin(); mapIt != m_superweapons[i].end(); ++mapIt)
 			{
 				AsciiString templateName = mapIt->first;
@@ -3742,7 +3742,7 @@ void InGameUI::postDraw( void )
 		Bool reverseXDir = (m_namedTimerPosition.x >= 0.5f);
 		Int startX = (Int)(m_namedTimerPosition.x * TheDisplay->getWidth());
 		Int startY = (Int)(m_namedTimerPosition.y * TheDisplay->getHeight());
-		Color bgColor = GameMakeColor( 0, 0, 0, 255 );
+		GeneralsColor bgColor = GameMakeColor( 0, 0, 0, 255 );
 		for (NamedTimerMapIt mapIt = m_namedTimers.begin(); mapIt != m_namedTimers.end(); ++mapIt)
 		{
 			AsciiString timerName = mapIt->first;
@@ -3831,8 +3831,8 @@ void InGameUI::postDraw( void )
 			static const Int w = 2;
 			static const Int h = 2;
 			static const Int r = 4; // ratio
-			static const Color mainColor = GameMakeColor(0, 255, 0, 255);
-			static const Color dropColor = GameMakeColor(0, 0, 0, 255);
+			static const GeneralsColor mainColor = GameMakeColor(0, 255, 0, 255);
+			static const GeneralsColor dropColor = GameMakeColor(0, 0, 0, 255);
 			TheDisplay->drawFillRect( anchor->x-w*r-1, anchor->y-h-1, w*2*r+3, h*2+3, dropColor );
 			TheDisplay->drawFillRect( anchor->x-w-1, anchor->y-h*r-1, w*2+3, h*2*r+3, dropColor );
 			TheDisplay->drawFillRect( anchor->x-w*r, anchor->y-h, w*2*r+1, h*2+1, mainColor );
@@ -4991,7 +4991,7 @@ void InGameUI::buildRegion( const ICoord2D *anchor, const ICoord2D *dest, IRegio
 //-------------------------------------------------------------------------------------------------
 /** Add a new floating text to our list */
 //-------------------------------------------------------------------------------------------------
-void InGameUI::addFloatingText(const UnicodeString& text,const Coord3D *pos, Color color)
+void InGameUI::addFloatingText(const UnicodeString& text,const Coord3D *pos, GeneralsColor color)
 {
 	if( TheGameLogic->getDrawIconUI() )
 	{
@@ -5024,7 +5024,7 @@ inline Bool isClose(const Coord3D& a, const Coord3D& b)
 			isClose(a.y, b.y) && 
 			isClose(a.z, b.z);
 }
-void InGameUI::DEBUG_addFloatingText(const AsciiString& text, const Coord3D * pos, Color color)
+void InGameUI::DEBUG_addFloatingText(const AsciiString& text, const Coord3D * pos, GeneralsColor color)
 {
 	const Int POINTSIZE = 8;
 	const Int LEADING = 0;
@@ -5139,7 +5139,7 @@ void InGameUI::drawFloatingText( void )
 			&& ThePartitionManager->getShroudStatusForPlayer(playerNdx, pCX, pCY) == CELLSHROUD_CLEAR )
 		{
 			pos.y -= ftd->m_frameCount * m_floatingTextMoveUpSpeed;
-			Color dropColor;
+			GeneralsColor dropColor;
 			UnsignedByte r, g, b, a;
 			Int width;
 
@@ -5181,7 +5181,7 @@ void InGameUI::popupMessage( const AsciiString& message, Int x, Int y, Int width
 //-------------------------------------------------------------------------------------------------
 /** initialize, and popup a message box to the user */
 //-------------------------------------------------------------------------------------------------
-void InGameUI::popupMessage( const AsciiString& identifier, Int x, Int y, Int width, Color textColor, Bool pause, Bool pauseMusic)
+void InGameUI::popupMessage( const AsciiString& identifier, Int x, Int y, Int width, GeneralsColor textColor, Bool pause, Bool pauseMusic)
 {
 	if(m_popupMessageData)
 		clearPopupMessageData();

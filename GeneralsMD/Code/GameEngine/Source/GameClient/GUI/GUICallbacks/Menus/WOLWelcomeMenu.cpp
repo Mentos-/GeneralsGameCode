@@ -277,7 +277,7 @@ static void updateNumPlayersOnline(void)
 				aLine = " ";
 			}
 
-			Color c = GameSpyColor[GSCOLOR_MOTD];
+			GeneralsColor c = GameSpyColor[GSCOLOR_MOTD];
 			if (aLine.startsWith("\\\\"))
 			{
 				aLine = aLine.str()+1;

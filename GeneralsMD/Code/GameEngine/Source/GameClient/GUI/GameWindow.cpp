@@ -924,7 +924,7 @@ void GameWindow::winSetFont( GameFont *font )
 // GameWindow::winSetEnabledTextColors ========================================
 /** Set the text colors for the enabled state */
 //=============================================================================
-void GameWindow::winSetEnabledTextColors( Color color, Color borderColor )
+void GameWindow::winSetEnabledTextColors( GeneralsColor color, GeneralsColor borderColor )
 {
 	m_instData.m_enabledText.color = color;
 	m_instData.m_enabledText.borderColor = borderColor;
@@ -938,7 +938,7 @@ void GameWindow::winSetEnabledTextColors( Color color, Color borderColor )
 // GameWindow::winSetDisabledTextColors =======================================
 /** Set the text colors for the disabled state */
 //=============================================================================
-void GameWindow::winSetDisabledTextColors( Color color, Color borderColor )
+void GameWindow::winSetDisabledTextColors( GeneralsColor color, GeneralsColor borderColor )
 {
 
 	m_instData.m_disabledText.color = color;
@@ -952,7 +952,7 @@ void GameWindow::winSetDisabledTextColors( Color color, Color borderColor )
 // GameWindow::winSetHiliteTextColors =========================================
 /** Set the text colors for the Hilite state */
 //=============================================================================
-void GameWindow::winSetHiliteTextColors( Color color, Color borderColor )
+void GameWindow::winSetHiliteTextColors( GeneralsColor color, GeneralsColor borderColor )
 {
 
 	m_instData.m_hiliteText.color = color;
@@ -966,7 +966,7 @@ void GameWindow::winSetHiliteTextColors( Color color, Color borderColor )
 // GameWindow::winSetIMECompositeTextColors =========================================
 /** Set the text colors for the IME Composite state */
 //=============================================================================
-void GameWindow::winSetIMECompositeTextColors( Color color, Color borderColor )
+void GameWindow::winSetIMECompositeTextColors( GeneralsColor color, GeneralsColor borderColor )
 {
 
 	m_instData.m_imeCompositeText.color = color;
@@ -979,7 +979,7 @@ void GameWindow::winSetIMECompositeTextColors( Color color, Color borderColor )
 // GameWindow::winGetEnabledTextColor =========================================
 /** Get the enabled text color */
 //=============================================================================
-Color GameWindow::winGetEnabledTextColor( void )
+GeneralsColor GameWindow::winGetEnabledTextColor( void )
 {
 
 	return m_instData.m_enabledText.color;
@@ -989,7 +989,7 @@ Color GameWindow::winGetEnabledTextColor( void )
 // GameWindow::winGetEnabledTextBorderColor ===================================
 /** Get the enabled text color */
 //=============================================================================
-Color GameWindow::winGetEnabledTextBorderColor( void )
+GeneralsColor GameWindow::winGetEnabledTextBorderColor( void )
 {
 
 	return m_instData.m_enabledText.borderColor;
@@ -999,7 +999,7 @@ Color GameWindow::winGetEnabledTextBorderColor( void )
 // GameWindow::winGetDisabledTextColor ========================================
 /** Get the disabled text color */
 //=============================================================================
-Color GameWindow::winGetDisabledTextColor( void )
+GeneralsColor GameWindow::winGetDisabledTextColor( void )
 {
 
 	return m_instData.m_disabledText.color;
@@ -1009,7 +1009,7 @@ Color GameWindow::winGetDisabledTextColor( void )
 // GameWindow::winGetDisabledTextBorderColor ==================================
 /** Get the disabled text color */
 //=============================================================================
-Color GameWindow::winGetDisabledTextBorderColor( void )
+GeneralsColor GameWindow::winGetDisabledTextBorderColor( void )
 {
 
 	return m_instData.m_disabledText.borderColor;
@@ -1019,7 +1019,7 @@ Color GameWindow::winGetDisabledTextBorderColor( void )
 // GameWindow::winGetIMECompositeTextColor ==========================================
 /** Get the IME composite text color */
 //=============================================================================
-Color GameWindow::winGetIMECompositeTextColor( void )
+GeneralsColor GameWindow::winGetIMECompositeTextColor( void )
 {
 
 	return m_instData.m_imeCompositeText.color;
@@ -1029,7 +1029,7 @@ Color GameWindow::winGetIMECompositeTextColor( void )
 // GameWindow::winGetIMECompositeBorderColor ==========================================
 /** Get the IME composite border color */
 //=============================================================================
-Color GameWindow::winGetIMECompositeBorderColor( void )
+GeneralsColor GameWindow::winGetIMECompositeBorderColor( void )
 {
 
 	return m_instData.m_imeCompositeText.borderColor;
@@ -1039,7 +1039,7 @@ Color GameWindow::winGetIMECompositeBorderColor( void )
 // GameWindow::winGetHiliteTextColor ==========================================
 /** Get the hilite text color */
 //=============================================================================
-Color GameWindow::winGetHiliteTextColor( void )
+GeneralsColor GameWindow::winGetHiliteTextColor( void )
 {
 
 	return m_instData.m_hiliteText.color;
@@ -1049,7 +1049,7 @@ Color GameWindow::winGetHiliteTextColor( void )
 // GameWindow::winGetHiliteTextBorderColor ====================================
 /** Get the hilite text color */
 //=============================================================================
-Color GameWindow::winGetHiliteTextBorderColor( void )
+GeneralsColor GameWindow::winGetHiliteTextBorderColor( void )
 {
 
 	return m_instData.m_hiliteText.borderColor;
@@ -1626,7 +1626,7 @@ Int GameWindow::winSetEnabledImage( Int index, const Image *image )
 // GameWindow::winSetEnabledColor =============================================
 /** set color for enabled state at index */
 //=============================================================================
-Int GameWindow::winSetEnabledColor( Int index, Color color )
+Int GameWindow::winSetEnabledColor( Int index, GeneralsColor color )
 {
 
 	// sanity
@@ -1647,7 +1647,7 @@ Int GameWindow::winSetEnabledColor( Int index, Color color )
 // GameWindow::winSetEnabledBorderColor =======================================
 /** set border color for state at this index */
 //=============================================================================
-Int GameWindow::winSetEnabledBorderColor( Int index, Color color )
+Int GameWindow::winSetEnabledBorderColor( Int index, GeneralsColor color )
 {
 
 	// sanity
@@ -1689,7 +1689,7 @@ Int GameWindow::winSetDisabledImage( Int index, const Image *image )
 // GameWindow::winSetDisabledColor ============================================
 /** set color for disabled state at index */
 //=============================================================================
-Int GameWindow::winSetDisabledColor( Int index, Color color )
+Int GameWindow::winSetDisabledColor( Int index, GeneralsColor color )
 {
 
 	// sanity
@@ -1710,7 +1710,7 @@ Int GameWindow::winSetDisabledColor( Int index, Color color )
 // GameWindow::winSetDisabledBorderColor ======================================
 /** set border color for state at this index */
 //=============================================================================
-Int GameWindow::winSetDisabledBorderColor( Int index, Color color )
+Int GameWindow::winSetDisabledBorderColor( Int index, GeneralsColor color )
 {
 
 	// sanity
@@ -1752,7 +1752,7 @@ Int GameWindow::winSetHiliteImage( Int index, const Image *image )
 // GameWindow::winSetHiliteColor ==============================================
 /** set color for hilite state at index */
 //=============================================================================
-Int GameWindow::winSetHiliteColor( Int index, Color color )
+Int GameWindow::winSetHiliteColor( Int index, GeneralsColor color )
 {
 
 	// sanity
@@ -1773,7 +1773,7 @@ Int GameWindow::winSetHiliteColor( Int index, Color color )
 // GameWindow::winSetHiliteBorderColor ========================================
 /** set border color for state at this index */
 //=============================================================================
-Int GameWindow::winSetHiliteBorderColor( Int index, Color color )
+Int GameWindow::winSetHiliteBorderColor( Int index, GeneralsColor color )
 {
 
 	// sanity

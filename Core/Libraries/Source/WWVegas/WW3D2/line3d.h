@@ -117,7 +117,7 @@ class Line3DClass : public W3DMPO, public RenderObjClass
 		// vertices
 		Vector3						vert[8];
 		// color
-		Vector4						Color;
+		Vector4						GeneralsColor;
 		char														SortLevel;
 };
 

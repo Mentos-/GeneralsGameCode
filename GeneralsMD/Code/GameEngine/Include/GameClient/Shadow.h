@@ -95,7 +95,7 @@ public:
 		Bool isInvisibleEnabled(void) {return m_isInvisibleEnabled;}
 		virtual void release(void)=0;	///<release this shadow from suitable manager.
 		void setOpacity(Int value); ///<adjust opacity of decal/shadow
-		void setColor(Color value);///<adjust ARGB color of decal/shadow
+		void setColor(GeneralsColor value);///<adjust ARGB color of decal/shadow
 		void setAngle(Real angle);		///<adjust orientation around z-axis
 		void setPosition(Real x, Real y, Real z);
 
@@ -172,7 +172,7 @@ inline void Shadow::setOpacity(Int value)
 	}
 }
 
-inline void Shadow::setColor(Color value)
+inline void Shadow::setColor(GeneralsColor value)
 { 
 	m_color = value & 0x00ffffff;	//filter out alpha
 

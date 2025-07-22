@@ -75,7 +75,7 @@ class DebugDisplayInterface
 
 	public:
 
-		enum Color
+		enum GeneralsColor
 		{
 			WHITE,
 			BLACK,
@@ -94,7 +94,7 @@ class DebugDisplayInterface
 		virtual Int		getCursorYPos( void ) = 0;					///< Get current Y position of cursor
 		virtual Int		getWidth( void ) = 0;								///< Get character width of display
 		virtual Int		getHeight( void ) = 0;							///< Get character height of display
-		virtual void	setTextColor( Color color ) = 0;		///< Set text color
+		virtual void	setTextColor( GeneralsColor color ) = 0;		///< Set text color
 		virtual void	setRightMargin( Int rightPos ) = 0;	///< Set right margin position
 		virtual void	setLeftMargin( Int leftPos ) = 0;		///< Set left margin position
 		virtual void	reset( void ) = 0;									///< Reset back to default settings
@@ -123,14 +123,14 @@ class DebugDisplay : public DebugDisplayInterface
 		virtual Int		getCursorYPos( void );					///< Get current Y position of cursor
 		virtual Int		getWidth( void );								///< Get character width of display
 		virtual Int		getHeight( void );							///< Get character height of display
-		virtual void	setTextColor( Color color );		///< set text color
+		virtual void	setTextColor( GeneralsColor color );		///< set text color
 		virtual void	setRightMargin( Int rightPos );	///< set right margin position
 		virtual void	setLeftMargin( Int leftPos );		///< set left margin position
 		virtual void	reset( void );									///< Reset back to default settings
 
 	protected:
 
-		Color m_textColor;	///< Color to render text in
+		GeneralsColor m_textColor;	///< GeneralsColor to render text in
 		Int		m_xPos;				///< Current X position of cursor
 		Int		m_yPos;				///< Current Y position of cursor
 		Int		m_width;			///< Character width of display

@@ -52,8 +52,8 @@ public:
 	inline AsciiString getTooltipName(void) const { return m_tooltipName; };
 	inline RGBColor getRGBValue(void) const { return m_rgbValue; };
 	inline RGBColor getRGBNightValue(void) const { return m_rgbValueNight; };
-	inline Color getColor(void) const { return m_color; }
-	inline Color getNightColor(void) const { return m_colorNight; }
+	inline GeneralsColor getColor(void) const { return m_color; }
+	inline GeneralsColor getNightColor(void) const { return m_colorNight; }
 	void setColor( RGBColor rgb );
 	void setNightColor( RGBColor rgb );
 
@@ -62,9 +62,9 @@ public:
 private:
 	AsciiString m_tooltipName;	///< tooltip name for color combo box (AsciiString to pass to TheGameText->fetch())
 	RGBColor m_rgbValue;						///< RGB color value
-	Color m_color;
+	GeneralsColor m_color;
 	RGBColor m_rgbValueNight;						///< RGB color value
-	Color m_colorNight;
+	GeneralsColor m_colorNight;
 };
 
 typedef std::map<Int, MultiplayerColorDefinition> MultiplayerColorList;
@@ -91,7 +91,7 @@ public:
 	static const FieldParse m_multiplayerSettingsFieldParseTable[];		///< the parse table for INI definition
 	const FieldParse *getFieldParse( void ) const { return m_multiplayerSettingsFieldParseTable; }
 
-	// Color management --------------------
+	// GeneralsColor management --------------------
 	MultiplayerColorDefinition * findMultiplayerColorDefinitionByName(AsciiString name);
 	MultiplayerColorDefinition * newMultiplayerColorDefinition(AsciiString name);
 

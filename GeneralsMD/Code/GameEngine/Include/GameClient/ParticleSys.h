@@ -343,9 +343,9 @@ public:
 	RandomKeyframe m_alphaKey[ MAX_KEYFRAMES ];
 	RGBColorKeyframe m_colorKey[ MAX_KEYFRAMES ];	///< color of particle
 
-	typedef Int Color;
+	typedef Int GeneralsColor;
 
-	void tintAllColors( Color tintColor );
+	void tintAllColors( GeneralsColor tintColor );
 	
 	GameClientRandomVariable m_colorScale;								///< color coefficient
 

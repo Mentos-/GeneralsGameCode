@@ -1473,7 +1473,7 @@ void OptionsMenuInit( WindowLayout *layout, void *userData )
 
 	WinAdvancedDisplay->winHide(TRUE);
 
-	Color color =  GameMakeColor(255,255,255,255);
+	GeneralsColor color =  GameMakeColor(255,255,255,255);
 
   enum AliasingMode CPP_11(: Int)
   {

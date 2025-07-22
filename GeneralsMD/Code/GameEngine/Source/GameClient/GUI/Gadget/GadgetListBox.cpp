@@ -90,7 +90,7 @@ typedef struct _AddMessageStruct
 typedef struct _TextAndColor
 {
 	UnicodeString string;			// Holds a unicode String
-	Color color;							// holds a text's color
+	GeneralsColor color;							// holds a text's color
 } TextAndColor;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -342,7 +342,7 @@ static void computeTotalHeight( GameWindow *window )
 /** Add Images to position and column. Row and Column are both based from starting
 		Position 0 */
 //=============================================================================
-static Int addImageEntry( const Image *image, Color color, Int row, Int column, GameWindow *window, Bool overwrite, Int width, Int height )
+static Int addImageEntry( const Image *image, GeneralsColor color, Int row, Int column, GameWindow *window, Bool overwrite, Int width, Int height )
 {
 //	WinInstanceData *instData = window->winGetInstanceData();
 	ListboxData *list = (ListboxData *)window->winGetUserData();
@@ -2068,18 +2068,18 @@ WindowMsgHandledType GadgetListBoxSystem( GameWindow *window, UnsignedInt msg,
 	* buttons */
 //=============================================================================
 void GadgetListBoxSetColors( GameWindow *listbox,
-														 Color enabledColor, 
-														 Color enabledBorderColor,
-														 Color enabledSelectedItemColor, 
-														 Color enabledSelectedItemBorderColor,
-														 Color disabledColor, 
-														 Color disabledBorderColor,
-														 Color disabledSelectedItemColor, 
-														 Color disabledSelectedItemBorderColor,
-														 Color hiliteColor, 
-														 Color hiliteBorderColor,
-														 Color hiliteSelectedItemColor, 
-														 Color hiliteSelectedItemBorderColor )
+														 GeneralsColor enabledColor, 
+														 GeneralsColor enabledBorderColor,
+														 GeneralsColor enabledSelectedItemColor, 
+														 GeneralsColor enabledSelectedItemBorderColor,
+														 GeneralsColor disabledColor, 
+														 GeneralsColor disabledBorderColor,
+														 GeneralsColor disabledSelectedItemColor, 
+														 GeneralsColor disabledSelectedItemBorderColor,
+														 GeneralsColor hiliteColor, 
+														 GeneralsColor hiliteBorderColor,
+														 GeneralsColor hiliteSelectedItemColor, 
+														 GeneralsColor hiliteSelectedItemBorderColor )
 {
 	ListboxData *listboxData = (ListboxData *)listbox->winGetUserData();
 
@@ -2171,14 +2171,14 @@ void GadgetListBoxSetColors( GameWindow *listbox,
 //=============================================================================
 UnicodeString GadgetListBoxGetText( GameWindow *listbox, Int row, Int column)
 {
-	Color color;
+	GeneralsColor color;
 	return GadgetListBoxGetTextAndColor( listbox,&color,row,column );
 }  // end GadgetListBoxGetText
 
 // GadgetListBoxGetText =======================================================
 /** Get the text for a list box entry */
 //=============================================================================
-UnicodeString GadgetListBoxGetTextAndColor( GameWindow *listbox, Color *color, Int row, Int column)
+UnicodeString GadgetListBoxGetTextAndColor( GameWindow *listbox, GeneralsColor *color, Int row, Int column)
 {
 	*color = 0;
 	// sanity
@@ -2208,7 +2208,7 @@ UnicodeString GadgetListBoxGetTextAndColor( GameWindow *listbox, Color *color, I
 //=============================================================================
 Int GadgetListBoxAddEntryText( GameWindow *listbox,
 														UnicodeString text,
-														Color color, Int row, Int column, Bool overwrite )
+														GeneralsColor color, Int row, Int column, Bool overwrite )
 {
 	if (!listbox)
 		return -1;
@@ -2250,7 +2250,7 @@ Int GadgetListBoxAddEntryText( GameWindow *listbox,
 Int GadgetListBoxAddEntryImage( GameWindow *listbox, const Image *image,
 															 Int row, Int column,
 															 Int hight, Int width,
-															 Bool overwrite, Color color )
+															 Bool overwrite, GeneralsColor color )
 {
 	Int index;
 	AddMessageStruct addInfo;
@@ -2268,7 +2268,7 @@ Int GadgetListBoxAddEntryImage( GameWindow *listbox, const Image *image,
 
 Int GadgetListBoxAddEntryImage( GameWindow *listbox, const Image *image,
 															 Int row, Int column,
-															 Bool overwrite, Color color )
+															 Bool overwrite, GeneralsColor color )
 {
 	return GadgetListBoxAddEntryImage(listbox, image, row, column,  -1, -1, overwrite, color);
 }

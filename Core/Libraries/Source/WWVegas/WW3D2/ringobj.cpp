@@ -173,7 +173,7 @@ RingRenderObjClass::RingRenderObjClass(void)
 		AnimDuration (0.0F),
 		RingMaterial (NULL),
 		RingTexture (NULL),
-		Color (0.75F,0.75F,0.75F),
+		GeneralsColor (0.75F,0.75F,0.75F),
 		InnerScale (1, 1),
 		OuterScale (1, 1),
 		Alpha (1.0F),
@@ -216,7 +216,7 @@ RingRenderObjClass::RingRenderObjClass(const W3dRingStruct & def)
 		AnimDuration (0.0F),
 		RingMaterial (NULL),
 		RingTexture (NULL),
-		Color (0.75F,0.75F,0.75F),
+		GeneralsColor (0.75F,0.75F,0.75F),
 		InnerScale (1, 1),
 		OuterScale (1, 1),
 		Alpha (1.0F),
@@ -267,7 +267,7 @@ RingRenderObjClass::RingRenderObjClass(const RingRenderObjClass & src)
 		AnimDuration (0.0F),
 		RingMaterial (NULL),
 		RingTexture (NULL),
-		Color (0.75F,0.75F,0.75F),
+		GeneralsColor (0.75F,0.75F,0.75F),
 		InnerScale (1, 1),
 		OuterScale (1, 1),
 		Alpha (1.0F),
@@ -326,7 +326,7 @@ RingRenderObjClass & RingRenderObjClass::operator = (const RingRenderObjClass & 
 	if (this != &that) {
 		RenderObjClass::operator = (that);
 		Set_Name(that.Get_Name());
-		Color					= that.Color;
+		GeneralsColor					= that.GeneralsColor;
 		Alpha					= that.Alpha;
 		InnerScale			= that.InnerScale;
 		OuterScale			= that.OuterScale;
@@ -551,9 +551,9 @@ void RingRenderObjClass::render_ring(RenderInfoClass & rinfo,const Vector3 & cen
 		//
 		unsigned color;
 		if (RingShader.Get_Dst_Blend_Func () == ShaderClass::DSTBLEND_ONE) {
-			color = DX8Wrapper::Convert_Color(Alpha * Color,1.0f);
+			color = DX8Wrapper::Convert_Color(Alpha * GeneralsColor,1.0f);
 		} else {
-			color = DX8Wrapper::Convert_Color(Color,Alpha);
+			color = DX8Wrapper::Convert_Color(GeneralsColor,Alpha);
 		}	
 
 		for (int i=0; i<ring.Vertex_ct; i++)
@@ -756,7 +756,7 @@ Vector3 RingRenderObjClass::Get_Default_Color(void) const
 	if (ColorChannel.Get_Key_Count () > 0) {
 		value = ColorChannel.Get_Key (0).Get_Value ();
 	} else {
-		value = Color;
+		value = GeneralsColor;
 	}
 
 	return value;
@@ -1163,7 +1163,7 @@ void RingRenderObjClass::animate()
 			}
 
 			if (ColorChannel.Get_Key_Count () > 0) {
-				Color	= ColorChannel.Evaluate (anim_time);
+				GeneralsColor	= ColorChannel.Evaluate (anim_time);
 			}
 			
 			if (AlphaChannel.Get_Key_Count () > 0) {
@@ -1366,7 +1366,7 @@ RenderObjClass * RingPrototypeClass::Create(void)
 		ring->RingShader.Enable_Fog ("RingPrototypeClass");
 		ring->RingShader.Set_Cull_Mode(ShaderClass::CULL_MODE_DISABLE);
 	}
-	W3dUtilityClass::Convert_Vector (Definition.DefaultColor, &ring->Color);
+	W3dUtilityClass::Convert_Vector (Definition.DefaultColor, &ring->GeneralsColor);
 	ring->InnerScale = Definition.DefaultInnerScale;
 	ring->OuterScale = Definition.DefaultOuterScale;
 	ring->Set_Animation_Duration (Definition.AnimDuration);

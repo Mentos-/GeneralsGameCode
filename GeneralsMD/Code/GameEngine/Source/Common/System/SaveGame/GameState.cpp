@@ -1174,7 +1174,7 @@ void GameState::populateSaveGameListbox( GameWindow *listbox, SaveLoadLayoutType
 	if( layoutType != SLLT_LOAD_ONLY )
 	{
 		UnicodeString newGameText = TheGameText->fetch( "GUI:NewSaveGame" );
-		Color newGameColor = GameMakeColor( 200, 200, 255, 255 );
+		GeneralsColor newGameColor = GameMakeColor( 200, 200, 255, 255 );
 
 		index = GadgetListBoxAddEntryText( listbox, newGameText, newGameColor, -1 );
 		GadgetListBoxSetItemData( listbox, NULL, index );
@@ -1227,7 +1227,7 @@ void GameState::populateSaveGameListbox( GameWindow *listbox, SaveLoadLayoutType
 		}  // end if
 
 		// pick color for text (we alternate it each game)
-		Color color;
+		GeneralsColor color;
 		if( saveGameInfo->saveFileType == SAVE_FILE_TYPE_MISSION )
 			color = GameMakeColor( 200, 255, 200, 255 );
 		else if( count & 0x1 )

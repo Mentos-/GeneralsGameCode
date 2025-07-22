@@ -233,8 +233,8 @@ void ControlBar::populateObserverList( void )
 				buttonPlayer[currentButton]->winSetStatus( WIN_STATUS_USE_OVERLAY_STATES );
 
 				const GameSlot *slot = TheGameInfo->getConstSlot(currentButton);
-				Color playerColor = p->getPlayerColor();
-				Color backColor = GameMakeColor(0, 0, 0, 255);
+				GeneralsColor playerColor = p->getPlayerColor();
+				GeneralsColor backColor = GameMakeColor(0, 0, 0, 255);
 				staticTextPlayer[currentButton]->winSetEnabledTextColors( playerColor, backColor );
 				staticTextPlayer[currentButton]->winHide(FALSE);
 				AsciiString teamStr;
@@ -274,8 +274,8 @@ void ControlBar::populateObserverList( void )
 				buttonPlayer[currentButton]->winHide(FALSE);
 				buttonPlayer[currentButton]->winSetStatus( WIN_STATUS_USE_OVERLAY_STATES );
 
-				Color playerColor = p->getPlayerColor();
-				Color backColor = GameMakeColor(0, 0, 0, 255);
+				GeneralsColor playerColor = p->getPlayerColor();
+				GeneralsColor backColor = GameMakeColor(0, 0, 0, 255);
 				staticTextPlayer[currentButton]->winSetEnabledTextColors( playerColor, backColor );
 				staticTextPlayer[currentButton]->winHide(FALSE);
 				GadgetStaticTextSetText(staticTextPlayer[currentButton], p->getPlayerDisplayName());
@@ -334,7 +334,7 @@ void ControlBar::populateObserverInfoWindow ( void )
 	uString.format(L"%d",m_observerLookAtPlayer->getScoreKeeper()->getTotalUnitsLost());
 	GadgetStaticTextSetText(staticTextNumberOfUnitsLost, uString);
 	GadgetStaticTextSetText(staticTextPlayerName, m_observerLookAtPlayer->getPlayerDisplayName());
-	Color color = m_observerLookAtPlayer->getPlayerColor();
+	GeneralsColor color = m_observerLookAtPlayer->getPlayerColor();
 	staticTextPlayerName->winSetEnabledTextColors(color, GameMakeColor(0,0,0,255));
 	winFlag->winSetEnabledImage(0, m_observerLookAtPlayer->getPlayerTemplate()->getFlagWaterMarkImage());
 	winGeneralPortrait->winHide(FALSE);

@@ -612,7 +612,7 @@ PushButtonData * getNewPushButtonData( void )
 // GadgetButtonSetBorder ======================================================
 /** Set to draw the special borders in the game */
 //=============================================================================
-void GadgetButtonSetBorder( GameWindow *g, Color color, Bool drawBorder = TRUE )
+void GadgetButtonSetBorder( GameWindow *g, GeneralsColor color, Bool drawBorder = TRUE )
 {
 	if( g == NULL )
 		return;
@@ -630,7 +630,7 @@ void GadgetButtonSetBorder( GameWindow *g, Color color, Bool drawBorder = TRUE )
 // GadgetButtonDrawClock ======================================================
 /** Set to draw a rectClock on the button */
 //=============================================================================
-void GadgetButtonDrawClock( GameWindow *g, Int percent, Color color )
+void GadgetButtonDrawClock( GameWindow *g, Int percent, GeneralsColor color )
 {
 
 	if( g == NULL )
@@ -651,7 +651,7 @@ void GadgetButtonDrawClock( GameWindow *g, Int percent, Color color )
 // GadgetButtonDrawInverseClock ======================================================
 /** Set to draw an inversed rectClock on the button */
 //=============================================================================
-void GadgetButtonDrawInverseClock( GameWindow *g, Int percent, Color color )
+void GadgetButtonDrawInverseClock( GameWindow *g, Int percent, GeneralsColor color )
 {
 
 	if( g == NULL )

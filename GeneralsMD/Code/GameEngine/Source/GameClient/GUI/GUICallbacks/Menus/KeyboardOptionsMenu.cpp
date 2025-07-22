@@ -119,7 +119,7 @@ void populateCategoryBox()
 {
 	Int i;
 	Int index;
-	Color color =  GameMakeColor(255,255,255,255);
+	GeneralsColor color =  GameMakeColor(255,255,255,255);
 	AsciiString temp;
 	UnicodeString str;
 	GadgetComboBoxReset(comboBoxCategoryList);
@@ -151,7 +151,7 @@ void fillCommandListBox( MappableKeyCategories cat )
 		return;
 
 	GadgetListBoxReset(listBoxCommandList);
-	Color color =  GameMakeColor(255,255,255,255);
+	GeneralsColor color =  GameMakeColor(255,255,255,255);
 
 	for(const MetaMapRec *rec = TheMetaMap->getFirstMetaMapRec(); rec; rec = rec->m_next)
 	{

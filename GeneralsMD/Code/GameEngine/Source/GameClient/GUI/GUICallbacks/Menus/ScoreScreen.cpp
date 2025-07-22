@@ -190,7 +190,7 @@ struct ScoreGather
 	Int m_totalBuildingsLost;					///< The total number of our buildings lost
 	const Image *m_sideImage;
 };
-void populateSideInfo( UnicodeString side,ScoreGather *sg, Int pos, Color color);
+void populateSideInfo( UnicodeString side,ScoreGather *sg, Int pos, GeneralsColor color);
 //-----------------------------------------------------------------------------
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
@@ -1420,7 +1420,7 @@ void populatePlayerInfo( Player *player, Int pos)
 {
 	if(!player || pos < 0 || pos >= MAX_SLOTS)
 		return;
-	Color color = player->getPlayerColor();
+	GeneralsColor color = player->getPlayerColor();
 	ScoreKeeper *scoreKpr = player->getScoreKeeper();
 	if(!scoreKpr)
 	{
@@ -2202,7 +2202,7 @@ void grabSinglePlayerInfo( void )
 		sg.m_totalUnitsLost = 0;
 		sg.m_sideImage = NULL;
 		Bool populate = FALSE;
-		Color color;
+		GeneralsColor color;
 		for(Int i = 0; i < MAX_PLAYER_COUNT; ++i)
 		{
 			player = ThePlayerList->getNthPlayer(i);
@@ -2350,7 +2350,7 @@ void setObserverWindows( Player *player, Int i )
 	AsciiString winName;
 	GameWindow *win;
 	
-	Color color = 0xffffffff;
+	GeneralsColor color = 0xffffffff;
 	
 	// set the player name
 	winName.format("ScoreScreen.wnd:StaticTextPlayer%d", i);
@@ -2482,7 +2482,7 @@ winName.format("ScoreScreen.wnd:StaticTextScore%d", i);
 /** Populate the various windows with the information about the game based on each player's score
 		keeper. */
 //-------------------------------------------------------------------------------------------------
-void populateSideInfo( UnicodeString side,ScoreGather *sg, Int pos, Color color)
+void populateSideInfo( UnicodeString side,ScoreGather *sg, Int pos, GeneralsColor color)
 {
 	if(pos < 0 || pos > MAX_SLOTS)
 		return;

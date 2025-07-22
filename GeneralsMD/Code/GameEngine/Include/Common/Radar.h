@@ -97,8 +97,8 @@ public:
 	// destructor prototype defined by memory pool glue
 
 	// color management
-	void setColor( Color c ) { m_color = c; }
-	inline Color getColor( void ) const { return m_color; }
+	void setColor( GeneralsColor c ) { m_color = c; }
+	inline GeneralsColor getColor( void ) const { return m_color; }
 
 	inline void friend_setObject( Object *obj ) { m_object = obj; }
 	inline Object *friend_getObject( void ) { return m_object; }
@@ -119,7 +119,7 @@ protected:
 
 	Object *m_object;				///< the object
 	RadarObject *m_next;		///< next radar object
-	Color m_color;					///< color to draw for this object on the radar
+	GeneralsColor m_color;					///< color to draw for this object on the radar
 
 };
 

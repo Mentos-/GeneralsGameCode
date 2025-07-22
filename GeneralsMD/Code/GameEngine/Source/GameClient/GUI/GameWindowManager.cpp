@@ -2554,7 +2554,7 @@ GameWindow *GameWindowManager::gogoGadgetComboBox( GameWindow *parent,
 	GadgetComboBoxSetMaxDisplay( comboBox, comboBoxData->maxDisplay );
 
 	//Initialize the control's text colors
-	Color color, border;
+	GeneralsColor color, border;
 
 	color = comboBox->winGetEnabledTextColor();
 	border = comboBox->winGetEnabledTextBorderColor();
@@ -2869,37 +2869,37 @@ void GameWindowManager::assignDefaultGadgetLook( GameWindow *gadget,
 																								 Bool assignVisual )
 {
 	UnsignedByte alpha = 255;
-	static Color red				= TheWindowManager->winMakeColor( 255,   0,   0, alpha );
-	static Color darkRed		= TheWindowManager->winMakeColor( 128,   0,   0, alpha );
-	static Color lightRed		= TheWindowManager->winMakeColor( 255, 128, 128, alpha );
-	static Color green			= TheWindowManager->winMakeColor(   0, 255,   0, alpha );
-	static Color darkGreen	= TheWindowManager->winMakeColor(   0, 128,   0, alpha );
-	static Color lightGreen	= TheWindowManager->winMakeColor( 128, 255, 128, alpha );
-	static Color blue				= TheWindowManager->winMakeColor(   0,   0, 255, alpha );
-	static Color darkBlue		= TheWindowManager->winMakeColor(   0,   0, 128, alpha );
-	static Color lightBlue	= TheWindowManager->winMakeColor( 128, 128, 255, alpha );
-	static Color purple			= TheWindowManager->winMakeColor( 255,   0, 255, alpha );
-	static Color darkPurple	= TheWindowManager->winMakeColor( 128,   0, 128, alpha );
-	static Color lightPurple= TheWindowManager->winMakeColor( 255, 128, 255, alpha );
-	static Color yellow			= TheWindowManager->winMakeColor( 255, 255,   0, alpha );
-	static Color darkYellow	= TheWindowManager->winMakeColor( 128, 128,   0, alpha );
-	static Color lightYellow= TheWindowManager->winMakeColor( 255, 255, 128, alpha );
-	static Color cyan				= TheWindowManager->winMakeColor(   0, 255, 255, alpha );
-	static Color darkCyan		= TheWindowManager->winMakeColor(  64, 128, 128, alpha );
-	static Color lightCyan	= TheWindowManager->winMakeColor( 128, 255, 255, alpha );
-	static Color gray				= TheWindowManager->winMakeColor( 128, 128, 128, alpha );
-	static Color darkGray		= TheWindowManager->winMakeColor(  64,  64,  64, alpha );
-	static Color lightGray	= TheWindowManager->winMakeColor( 192, 192, 192, alpha );
-	static Color black			= TheWindowManager->winMakeColor(   0,   0,   0, alpha );
-	static Color white			= TheWindowManager->winMakeColor( 254, 254, 254, alpha );
-	static Color enabledText					= white;
-	static Color enabledTextBorder		= darkGray;
-	static Color disabledText					= darkGray;
-	static Color disabledTextBorder		= black;
-	static Color hiliteText						= lightBlue;
-	static Color hiliteTextBorder			= blue;
-	static Color imeCompositeText				= green;
-	static Color imeCompositeTextBorder	= blue;
+	static GeneralsColor red				= TheWindowManager->winMakeColor( 255,   0,   0, alpha );
+	static GeneralsColor darkRed		= TheWindowManager->winMakeColor( 128,   0,   0, alpha );
+	static GeneralsColor lightRed		= TheWindowManager->winMakeColor( 255, 128, 128, alpha );
+	static GeneralsColor green			= TheWindowManager->winMakeColor(   0, 255,   0, alpha );
+	static GeneralsColor darkGreen	= TheWindowManager->winMakeColor(   0, 128,   0, alpha );
+	static GeneralsColor lightGreen	= TheWindowManager->winMakeColor( 128, 255, 128, alpha );
+	static GeneralsColor blue				= TheWindowManager->winMakeColor(   0,   0, 255, alpha );
+	static GeneralsColor darkBlue		= TheWindowManager->winMakeColor(   0,   0, 128, alpha );
+	static GeneralsColor lightBlue	= TheWindowManager->winMakeColor( 128, 128, 255, alpha );
+	static GeneralsColor purple			= TheWindowManager->winMakeColor( 255,   0, 255, alpha );
+	static GeneralsColor darkPurple	= TheWindowManager->winMakeColor( 128,   0, 128, alpha );
+	static GeneralsColor lightPurple= TheWindowManager->winMakeColor( 255, 128, 255, alpha );
+	static GeneralsColor yellow			= TheWindowManager->winMakeColor( 255, 255,   0, alpha );
+	static GeneralsColor darkYellow	= TheWindowManager->winMakeColor( 128, 128,   0, alpha );
+	static GeneralsColor lightYellow= TheWindowManager->winMakeColor( 255, 255, 128, alpha );
+	static GeneralsColor cyan				= TheWindowManager->winMakeColor(   0, 255, 255, alpha );
+	static GeneralsColor darkCyan		= TheWindowManager->winMakeColor(  64, 128, 128, alpha );
+	static GeneralsColor lightCyan	= TheWindowManager->winMakeColor( 128, 255, 255, alpha );
+	static GeneralsColor gray				= TheWindowManager->winMakeColor( 128, 128, 128, alpha );
+	static GeneralsColor darkGray		= TheWindowManager->winMakeColor(  64,  64,  64, alpha );
+	static GeneralsColor lightGray	= TheWindowManager->winMakeColor( 192, 192, 192, alpha );
+	static GeneralsColor black			= TheWindowManager->winMakeColor(   0,   0,   0, alpha );
+	static GeneralsColor white			= TheWindowManager->winMakeColor( 254, 254, 254, alpha );
+	static GeneralsColor enabledText					= white;
+	static GeneralsColor enabledTextBorder		= darkGray;
+	static GeneralsColor disabledText					= darkGray;
+	static GeneralsColor disabledTextBorder		= black;
+	static GeneralsColor hiliteText						= lightBlue;
+	static GeneralsColor hiliteTextBorder			= blue;
+	static GeneralsColor imeCompositeText				= green;
+	static GeneralsColor imeCompositeTextBorder	= blue;
 	WinInstanceData *instData;
 	
 	// sanity

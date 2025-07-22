@@ -406,9 +406,9 @@ void PopulateQMLadderListBox( GameWindow *win )
 	AsciiString userPrefFilename;
 	Int localProfile = TheGameSpyInfo->getLocalProfileID();
 
-	Color specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
-	Color normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
-	Color favoriteColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
+	GeneralsColor normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor favoriteColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
 	Int index;
 	GadgetListBoxReset( win );
 
@@ -501,8 +501,8 @@ void PopulateQMLadderComboBox( void )
 	QuickMatchPreferences pref;
 	Int localProfile = TheGameSpyInfo->getLocalProfileID();
 
-	Color specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
-	Color normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+	GeneralsColor specialColor = GameSpyColor[GSCOLOR_MAP_SELECTED];
+	GeneralsColor normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
 	Int index;
 	GadgetComboBoxReset( comboBoxLadder );
 	index = GadgetComboBoxAddEntry( comboBoxLadder, TheGameText->fetch("GUI:NoLadder"), normalColor );
@@ -782,7 +782,7 @@ void WOLQuickMatchMenuInit( WindowLayout *layout, void *userData )
 
 		isPopulatingLadderBox = TRUE;
 
-		Color normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
+		GeneralsColor normalColor = GameSpyColor[GSCOLOR_MAP_UNSELECTED];
 		Int index;
 		GadgetComboBoxReset( comboBoxDisabledLadder );
 		index = GadgetComboBoxAddEntry( comboBoxDisabledLadder, TheGameText->fetch("GUI:NoLadder"), normalColor );
@@ -850,7 +850,7 @@ void WOLQuickMatchMenuInit( WindowLayout *layout, void *userData )
 	maxPoints= pref.getMaxPoints();
 	minPoints = pref.getMinPoints();
 
-	Color c = GameSpyColor[GSCOLOR_DEFAULT];
+	GeneralsColor c = GameSpyColor[GSCOLOR_DEFAULT];
 	GadgetComboBoxReset( comboBoxNumPlayers );
 	Int i;
 	for (i=1; i<5; ++i)

@@ -107,7 +107,7 @@ protected:
 	void									vis_render_box(SpecialRenderInfoClass & rinfo,const Vector3 & center,const Vector3 & extent);
 
 	char									Name[2*W3D_NAME_LEN];
-	Vector3								Color;
+	Vector3								GeneralsColor;
 	Vector3								ObjSpaceCenter;
 	Vector3								ObjSpaceExtent;
 	float									Opacity;

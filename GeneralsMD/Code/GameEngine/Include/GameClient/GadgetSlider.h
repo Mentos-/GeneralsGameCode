@@ -115,16 +115,16 @@ inline void GadgetSliderSetEnabledImageRight( GameWindow *g, const Image *right 
 inline void GadgetSliderSetEnabledImageBottom( GameWindow *g, const Image *right )	{ g->winSetEnabledImage( 1, right ); }
 inline void GadgetSliderSetEnabledImageCenter( GameWindow *g, const Image *center )	{ g->winSetEnabledImage( 2, center ); }
 inline void GadgetSliderSetEnabledImageSmallCenter( GameWindow *g, const Image *smallCenter ) { g->winSetEnabledImage( 3, smallCenter ); }
-inline void GadgetSliderSetEnabledColor( GameWindow *g, Color color )					{ g->winSetEnabledColor( 0, color ); }
-inline void GadgetSliderSetEnabledBorderColor( GameWindow *g, Color color )		{ g->winSetEnabledBorderColor( 0, color ); }
+inline void GadgetSliderSetEnabledColor( GameWindow *g, GeneralsColor color )					{ g->winSetEnabledColor( 0, color ); }
+inline void GadgetSliderSetEnabledBorderColor( GameWindow *g, GeneralsColor color )		{ g->winSetEnabledBorderColor( 0, color ); }
 inline const Image *GadgetSliderGetEnabledImageLeft( GameWindow *g )				{ return g->winGetEnabledImage( 0 ); }
 inline const Image *GadgetSliderGetEnabledImageTop( GameWindow *g )					{ return g->winGetEnabledImage( 0 ); }
 inline const Image *GadgetSliderGetEnabledImageRight( GameWindow *g )				{ return g->winGetEnabledImage( 1 ); }
 inline const Image *GadgetSliderGetEnabledImageBottom( GameWindow *g )			{ return g->winGetEnabledImage( 1 ); }
 inline const Image *GadgetSliderGetEnabledImageCenter( GameWindow *g )			{ return g->winGetEnabledImage( 2 ); }
 inline const Image *GadgetSliderGetEnabledImageSmallCenter( GameWindow *g ) { return g->winGetEnabledImage( 3 ); }
-inline Color	GadgetSliderGetEnabledColor( GameWindow *g )						{ return g->winGetEnabledColor( 0 ); }
-inline Color	GadgetSliderGetEnabledBorderColor( GameWindow *g )			{ return g->winGetEnabledBorderColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetEnabledColor( GameWindow *g )						{ return g->winGetEnabledColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetEnabledBorderColor( GameWindow *g )			{ return g->winGetEnabledBorderColor( 0 ); }
 
 // sliders are drawn from pieces, a left/top, right/bottom, repeating center, and small repeating center
 inline void GadgetSliderSetDisabledImages( GameWindow *g, const Image *left, const Image *right, const Image *center, const Image *smallCenter )
@@ -140,16 +140,16 @@ inline void GadgetSliderSetDisabledImageRight( GameWindow *g, const Image *right
 inline void GadgetSliderSetDisabledImageBottom( GameWindow *g, const Image *right )		{ g->winSetDisabledImage( 1, right ); }
 inline void GadgetSliderSetDisabledImageCenter( GameWindow *g, const Image *center )	{ g->winSetDisabledImage( 2, center ); }
 inline void GadgetSliderSetDisabledImageSmallCenter( GameWindow *g, const Image *smallCenter ) { g->winSetDisabledImage( 3, smallCenter ); }
-inline void GadgetSliderSetDisabledColor( GameWindow *g, Color color )					{ g->winSetDisabledColor( 0, color ); }
-inline void GadgetSliderSetDisabledBorderColor( GameWindow *g, Color color )		{ g->winSetDisabledBorderColor( 0, color ); }
+inline void GadgetSliderSetDisabledColor( GameWindow *g, GeneralsColor color )					{ g->winSetDisabledColor( 0, color ); }
+inline void GadgetSliderSetDisabledBorderColor( GameWindow *g, GeneralsColor color )		{ g->winSetDisabledBorderColor( 0, color ); }
 inline const Image *GadgetSliderGetDisabledImageLeft( GameWindow *g )				{ return g->winGetDisabledImage( 0 ); }
 inline const Image *GadgetSliderGetDisabledImageTop( GameWindow *g )				{ return g->winGetDisabledImage( 0 ); }
 inline const Image *GadgetSliderGetDisabledImageRight( GameWindow *g )			{ return g->winGetDisabledImage( 1 ); }
 inline const Image *GadgetSliderGetDisabledImageBottom( GameWindow *g )			{ return g->winGetDisabledImage( 1 ); }
 inline const Image *GadgetSliderGetDisabledImageCenter( GameWindow *g )			{ return g->winGetDisabledImage( 2 ); }
 inline const Image *GadgetSliderGetDisabledImageSmallCenter( GameWindow *g ){ return g->winGetDisabledImage( 3 ); }
-inline Color	GadgetSliderGetDisabledColor( GameWindow *g )						{ return g->winGetDisabledColor( 0 ); }
-inline Color	GadgetSliderGetDisabledBorderColor( GameWindow *g )			{ return g->winGetDisabledBorderColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetDisabledColor( GameWindow *g )						{ return g->winGetDisabledColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetDisabledBorderColor( GameWindow *g )			{ return g->winGetDisabledBorderColor( 0 ); }
 
 // sliders are drawn from pieces, a left/top, right/bottom, repeating center, and small repeating center
 inline void GadgetSliderSetHiliteImages( GameWindow *g, const Image *left, const Image *right, const Image *center, const Image *smallCenter )
@@ -165,16 +165,16 @@ inline void GadgetSliderSetHiliteImageRight( GameWindow *g, const Image *right )
 inline void GadgetSliderSetHiliteImageBottom( GameWindow *g, const Image *right )		{ g->winSetHiliteImage( 1, right ); }
 inline void GadgetSliderSetHiliteImageCenter( GameWindow *g, const Image *center )	{ g->winSetHiliteImage( 2, center ); }
 inline void GadgetSliderSetHiliteImageSmallCenter( GameWindow *g, const Image *smallCenter ) { g->winSetHiliteImage( 3, smallCenter ); }
-inline void GadgetSliderSetHiliteColor( GameWindow *g, Color color )					{ g->winSetHiliteColor( 0, color ); }
-inline void GadgetSliderSetHiliteBorderColor( GameWindow *g, Color color )		{ g->winSetHiliteBorderColor( 0, color ); }
+inline void GadgetSliderSetHiliteColor( GameWindow *g, GeneralsColor color )					{ g->winSetHiliteColor( 0, color ); }
+inline void GadgetSliderSetHiliteBorderColor( GameWindow *g, GeneralsColor color )		{ g->winSetHiliteBorderColor( 0, color ); }
 inline const Image *GadgetSliderGetHiliteImageLeft( GameWindow *g )				{ return g->winGetHiliteImage( 0 ); }
 inline const Image *GadgetSliderGetHiliteImageTop( GameWindow *g )				{ return g->winGetHiliteImage( 0 ); }
 inline const Image *GadgetSliderGetHiliteImageRight( GameWindow *g )			{ return g->winGetHiliteImage( 1 ); }
 inline const Image *GadgetSliderGetHiliteImageBottom( GameWindow *g )			{ return g->winGetHiliteImage( 1 ); }
 inline const Image *GadgetSliderGetHiliteImageCenter( GameWindow *g )			{ return g->winGetHiliteImage( 2 ); }
 inline const Image *GadgetSliderGetHiliteImageSmallCenter( GameWindow *g ){ return g->winGetHiliteImage( 3 ); }
-inline Color	GadgetSliderGetHiliteColor( GameWindow *g )						{ return g->winGetHiliteColor( 0 ); }
-inline Color	GadgetSliderGetHiliteBorderColor( GameWindow *g )			{ return g->winGetHiliteBorderColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetHiliteColor( GameWindow *g )						{ return g->winGetHiliteColor( 0 ); }
+inline GeneralsColor	GadgetSliderGetHiliteBorderColor( GameWindow *g )			{ return g->winGetHiliteBorderColor( 0 ); }
 
 ///////////////////////////////////////////////////////////////////////////////
 // Functions to set the images and colors for the slider thumb
@@ -187,13 +187,13 @@ inline void GadgetSliderSetEnabledThumbImage( GameWindow *g, const Image *image 
 																							if( thumb )
 																								GadgetButtonSetEnabledImage( thumb, image );
 																						}
-inline void GadgetSliderSetEnabledThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetEnabledThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetEnabledColor( thumb, color );
 																						}
-inline void GadgetSliderSetEnabledThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetEnabledThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -205,13 +205,13 @@ inline void GadgetSliderSetEnabledSelectedThumbImage( GameWindow *g, const Image
 																							if( thumb )
 																								GadgetButtonSetEnabledSelectedImage( thumb, image );
 																						}
-inline void GadgetSliderSetEnabledSelectedThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetEnabledSelectedThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetEnabledSelectedColor( thumb, color );
 																						}
-inline void GadgetSliderSetEnabledSelectedThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetEnabledSelectedThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -225,7 +225,7 @@ inline const Image *GadgetSliderGetEnabledThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetEnabledThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetEnabledThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -233,7 +233,7 @@ inline Color GadgetSliderGetEnabledThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetEnabledThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetEnabledThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -249,7 +249,7 @@ inline const Image *GadgetSliderGetEnabledSelectedThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetEnabledSelectedThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetEnabledSelectedThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -257,7 +257,7 @@ inline Color GadgetSliderGetEnabledSelectedThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetEnabledSelectedThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetEnabledSelectedThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -274,13 +274,13 @@ inline void GadgetSliderSetDisabledThumbImage( GameWindow *g, const Image *image
 																							if( thumb )
 																								GadgetButtonSetDisabledImage( thumb, image );
 																						}
-inline void GadgetSliderSetDisabledThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetDisabledThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetDisabledColor( thumb, color );
 																						}
-inline void GadgetSliderSetDisabledThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetDisabledThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -292,13 +292,13 @@ inline void GadgetSliderSetDisabledSelectedThumbImage( GameWindow *g, const Imag
 																							if( thumb )
 																								GadgetButtonSetDisabledSelectedImage( thumb, image );
 																						}
-inline void GadgetSliderSetDisabledSelectedThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetDisabledSelectedThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetDisabledSelectedColor( thumb, color );
 																						}
-inline void GadgetSliderSetDisabledSelectedThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetDisabledSelectedThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -312,7 +312,7 @@ inline const Image *GadgetSliderGetDisabledThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetDisabledThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetDisabledThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -320,7 +320,7 @@ inline Color GadgetSliderGetDisabledThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetDisabledThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetDisabledThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -336,7 +336,7 @@ inline const Image *GadgetSliderGetDisabledSelectedThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetDisabledSelectedThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetDisabledSelectedThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -344,7 +344,7 @@ inline Color GadgetSliderGetDisabledSelectedThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetDisabledSelectedThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetDisabledSelectedThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -360,13 +360,13 @@ inline void GadgetSliderSetHiliteThumbImage( GameWindow *g, const Image *image )
 																							if( thumb )
 																								GadgetButtonSetHiliteImage( thumb, image );
 																						}
-inline void GadgetSliderSetHiliteThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetHiliteThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetHiliteColor( thumb, color );
 																						}
-inline void GadgetSliderSetHiliteThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetHiliteThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -378,13 +378,13 @@ inline void GadgetSliderSetHiliteSelectedThumbImage( GameWindow *g, const Image 
 																							if( thumb )
 																								GadgetButtonSetHiliteSelectedImage( thumb, image );
 																						}
-inline void GadgetSliderSetHiliteSelectedThumbColor( GameWindow *g, Color color )
+inline void GadgetSliderSetHiliteSelectedThumbColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
 																								GadgetButtonSetHiliteSelectedColor( thumb, color );
 																						}
-inline void GadgetSliderSetHiliteSelectedThumbBorderColor( GameWindow *g, Color color )
+inline void GadgetSliderSetHiliteSelectedThumbBorderColor( GameWindow *g, GeneralsColor color )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -398,7 +398,7 @@ inline const Image *GadgetSliderGetHiliteThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetHiliteThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetHiliteThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -406,7 +406,7 @@ inline Color GadgetSliderGetHiliteThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetHiliteThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetHiliteThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -422,7 +422,7 @@ inline const Image *GadgetSliderGetHiliteSelectedThumbImage( GameWindow *g )
 																							else
 																								return NULL;
 																						}
-inline Color GadgetSliderGetHiliteSelectedThumbColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetHiliteSelectedThumbColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )
@@ -430,7 +430,7 @@ inline Color GadgetSliderGetHiliteSelectedThumbColor( GameWindow *g )
 																							else
 																								return WIN_COLOR_UNDEFINED;
 																						}
-inline Color GadgetSliderGetHiliteSelectedThumbBorderColor( GameWindow *g )
+inline GeneralsColor GadgetSliderGetHiliteSelectedThumbBorderColor( GameWindow *g )
 																						{
 																							GameWindow *thumb = g->winGetChild();
 																							if( thumb )

@@ -168,7 +168,7 @@ Int		DebugDisplay::getHeight( void )
 // DebugDisplay::setTextColor
 //============================================================================
 
-void	DebugDisplay::setTextColor( Color color )
+void	DebugDisplay::setTextColor( GeneralsColor color )
 {
 	m_textColor = color;
 }	

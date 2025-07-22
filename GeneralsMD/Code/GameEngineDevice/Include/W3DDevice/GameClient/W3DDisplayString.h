@@ -78,14 +78,14 @@ public:
 	// ~W3DDisplayString( void );  // destructor defined by memory pool
 
 	void notifyTextChanged( void );							///< called when text contents change
-	void draw( Int x, Int y, Color color, Color dropColor );  ///< render text
-	void draw( Int x, Int y, Color color, Color dropColor, Int xDrop, Int yDrop );  ///< render text with the drop shadow being at the offsets passed in
+	void draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor );  ///< render text
+	void draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor, Int xDrop, Int yDrop );  ///< render text with the drop shadow being at the offsets passed in
 	void getSize( Int *width, Int *height );		///< get render size
 	Int	getWidth( Int charPos = -1);
 	void setWordWrap( Int wordWrap );						///< set the word wrap width
 	void setWordWrapCentered( Bool isCentered ); ///< If this is set to true, the text on a new line is centered
 	void setFont( GameFont *font );							///< set a font for display
-	void setUseHotkey( Bool useHotkey, Color hotKeyColor = 0xffffffff );
+	void setUseHotkey( Bool useHotkey, GeneralsColor hotKeyColor = 0xffffffff );
 	void setClipRegion( IRegion2D *region );		///< clip text in this region
 
 protected:
@@ -103,9 +103,9 @@ protected:
 	UnicodeString m_hotkey;		///< holds the current hotkey marker.
 	Bool m_useHotKey;
 	ICoord2D m_hotKeyPos;
-	Color m_hotKeyColor;
+	GeneralsColor m_hotKeyColor;
 	ICoord2D m_textPos;  ///< current text pos set in text renderer
-	Color m_currTextColor,  ///< current color used in text renderer
+	GeneralsColor m_currTextColor,  ///< current color used in text renderer
 				m_currDropColor;  ///< current color used for shadow in text
 	ICoord2D m_size;				///< (width,height) size of rendered text
 	IRegion2D m_clipRegion; ///< the clipping region for text

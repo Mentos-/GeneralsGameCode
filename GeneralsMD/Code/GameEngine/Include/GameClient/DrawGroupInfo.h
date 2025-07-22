@@ -37,8 +37,8 @@ struct DrawGroupInfo
 	Bool m_fontIsBold;
 
 	Bool m_usePlayerColor;
-	Color m_colorForText;
-	Color m_colorForTextDropShadow;
+	GeneralsColor m_colorForText;
+	GeneralsColor m_colorForTextDropShadow;
 
 	Int m_dropShadowOffsetX;
 	Int m_dropShadowOffsetY;

@@ -889,7 +889,7 @@ ParticleEmitterDefClass::Read_Color_Keyframe
 
 		// Pass the oclor back to the caller
 		if (value != NULL) {
-			(*value) = RGBA_TO_VECTOR3 (key_frame.Color);
+			(*value) = RGBA_TO_VECTOR3 (key_frame.GeneralsColor);
 		}
 
 		// Success!
@@ -1397,7 +1397,7 @@ ParticleEmitterDefClass::Save_Color_Keyframes (ChunkSaveClass &chunk_save)
 
 	W3dEmitterColorKeyframeStruct info = { 0 };
 	info.Time = 0;
-	VECTOR3_TO_RGBA (m_ColorKeyframes.Start, info.Color);
+	VECTOR3_TO_RGBA (m_ColorKeyframes.Start, info.GeneralsColor);
 
 	//
 	// Write the starting color keyframe to the chunk
@@ -1411,7 +1411,7 @@ ParticleEmitterDefClass::Save_Color_Keyframes (ChunkSaveClass &chunk_save)
 		bool success = true;
 		for (int index = 0; (index < count) && success; index ++) {			
 			info.Time = m_ColorKeyframes.KeyTimes[index];
-			VECTOR3_TO_RGBA (m_ColorKeyframes.Values[index], info.Color);
+			VECTOR3_TO_RGBA (m_ColorKeyframes.Values[index], info.GeneralsColor);
 			success = (chunk_save.Write (&info, sizeof (info)) == sizeof (info));
 		}
 

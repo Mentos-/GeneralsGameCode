@@ -158,7 +158,7 @@ enum GameSpyColors CPP_11(: Int) {
 	GSCOLOR_MAX
 };
 
-extern Color GameSpyColor[GSCOLOR_MAX];
+extern GeneralsColor GameSpyColor[GSCOLOR_MAX];
 
 enum GameSpyBuddyStatus CPP_11(: Int) {
 	BUDDY_OFFLINE,
@@ -235,7 +235,7 @@ public:
 	// chat
 	virtual void registerTextWindow( GameWindow *win ) = 0;
 	virtual void unregisterTextWindow( GameWindow *win ) = 0;
-	virtual Int addText( UnicodeString message, Color c, GameWindow *win ) = 0;
+	virtual Int addText( UnicodeString message, GeneralsColor c, GameWindow *win ) = 0;
 	virtual void addChat( PlayerInfo p, UnicodeString msg, Bool isPublic, Bool isAction, GameWindow *win ) = 0;
 	virtual void addChat( AsciiString nick, Int profileID, UnicodeString msg, Bool isPublic, Bool isAction, GameWindow *win ) = 0;
 	virtual Bool sendChat( UnicodeString message, Bool isAction, GameWindow *playerListbox ) = 0;

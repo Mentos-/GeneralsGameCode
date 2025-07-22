@@ -1215,7 +1215,7 @@ void ShatterSystem::Process_Clip_Pools
 							mycolor=DX8Wrapper::Convert_Color(mc);
 						}
 
-						new_mesh->Color(mycolor);
+						new_mesh->GeneralsColor(mycolor);
 
 						/*
 						** If there were UV coordinates in the original mesh for either stage,

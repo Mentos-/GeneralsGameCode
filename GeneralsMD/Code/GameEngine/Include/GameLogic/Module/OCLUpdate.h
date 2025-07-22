@@ -90,7 +90,7 @@ protected:
 	UnsignedInt			m_nextCreationFrame;
 	UnsignedInt			m_timerStartedFrame;
 	Bool						m_isFactionNeutral;
-	Color						m_currentPlayerColor;
+	GeneralsColor						m_currentPlayerColor;
 
 	Bool shouldCreate();
 	void setNextCreationFrame();

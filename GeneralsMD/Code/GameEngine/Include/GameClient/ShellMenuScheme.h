@@ -74,7 +74,7 @@ public:
 	ICoord2D m_startPos;
 	ICoord2D m_endPos;
 	Int m_width;
-	Color m_color;
+	GeneralsColor m_color;
 
 };
 

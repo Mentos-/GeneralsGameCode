@@ -1372,7 +1372,7 @@ void MultiPlayerLoadScreen::init( GameInfo *game )
 		if (!slot || !slot->isOccupied())
 			continue;		
 
-		Color houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
+		GeneralsColor houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
 
 		// format the progress bar to house colors
 		AsciiString imageName;
@@ -1661,7 +1661,7 @@ GameSlot *lSlot = game->getSlot(game->getLocalSlotNum());
 		if (!slot || !slot->isOccupied())
 			continue;
 
-		Color houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
+		GeneralsColor houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
 
 		// format the progress bar to house colors
 		AsciiString imageName;
@@ -1937,7 +1937,7 @@ void MapTransferLoadScreen::init( GameInfo *game )
 		GameSlot *slot = game->getSlot(i);
 		if (!slot || !slot->isHuman())
 			continue;
-		Color houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
+		GeneralsColor houseColor = TheMultiplayerSettings->getColor(slot->getApparentColor())->getColor();
 		GadgetProgressBarSetEnabledBarColor(m_progressBars[netSlot], houseColor );
 
 		UnicodeString name = slot->getName();

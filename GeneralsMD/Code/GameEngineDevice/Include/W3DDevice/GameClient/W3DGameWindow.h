@@ -80,7 +80,7 @@ public:
 
 	void getTextSize( Int *width, Int *height );  ///< get size of text
 	void setTextLoc( Int x, Int y );  ///< set text screen coord loc
-	void drawText( Color color );  ///< draw text in the text renderer
+	void drawText(GeneralsColor color );  ///< draw text in the text renderer
 		
 protected:
 
@@ -89,7 +89,7 @@ protected:
 
 	Render2DSentenceClass m_textRenderer;  ///< for drawing text
 	ICoord2D m_textPos;  ///< current text pos set in text renderer
-	Color m_currTextColor;  ///< current color used in text renderer
+	GeneralsColor m_currTextColor;  ///< current color used in text renderer
 	Bool m_needPolyDraw;  ///< TRUE need to redo the text polys
 	Bool m_newTextPos;  ///< TRUE when our window has moved and we need a new text pos
 

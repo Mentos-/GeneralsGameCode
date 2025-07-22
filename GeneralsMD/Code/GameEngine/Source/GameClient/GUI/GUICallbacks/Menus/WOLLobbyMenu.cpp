@@ -430,7 +430,7 @@ const Image* LookupSmallRankImage(Int side, Int rankPoints)
 	return img;
 }
 
-static Int insertPlayerInListbox(const PlayerInfo& info, Color color)
+static Int insertPlayerInListbox(const PlayerInfo& info, GeneralsColor color)
 {
 	UnicodeString uStr;
 	uStr.translate(info.m_name);

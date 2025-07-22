@@ -1057,7 +1057,7 @@ void Mouse::drawCursorText( void )
 		return;
 
 	// get the colors to draw the text in an acceptable format
-	Color color, dropColor;
+	GeneralsColor color, dropColor;
 	color = GameMakeColor( m_cursorTextColor.red, 
 												 m_cursorTextColor.green, 
 												 m_cursorTextColor.blue, 

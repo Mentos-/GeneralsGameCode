@@ -544,7 +544,7 @@ private:
 	IRegion2D m_upgrade3Clip;
 	IRegion2D m_upgrade4Clip;
 
-	Color m_currColor;
+	GeneralsColor m_currColor;
 	ICoord2D m_line1End;
 	ICoord2D m_line2End;
 
@@ -727,7 +727,7 @@ public:
 	void preloadAssets( TimeOfDay timeOfDay );		///< preload the assets
 
 	/// We want to be able to have the control bar scheme set the color of the build up clock
-	void updateBuildUpClockColor( Color color);
+	void updateBuildUpClockColor( GeneralsColor color);
 
 	WindowVideoManager *m_videoManager;						///< Video manager to take care of all animations on screen.
 	AnimateWindowManager *m_animateWindowManager; ///< The animate window manager
@@ -751,8 +751,8 @@ public:
 
 	const Image *getStarImage( void );
 
-	Color getBorderColor( void ){return m_commandBarBorderColor;}
-	void updateBorderColor( Color color) {m_commandBarBorderColor = color;	}
+	GeneralsColor getBorderColor( void ){return m_commandBarBorderColor;}
+	void updateBorderColor( GeneralsColor color) {m_commandBarBorderColor = color;	}
 
 	/// set the command data into the button
 	void setControlCommand( GameWindow *button, const CommandButton *commandButton );
@@ -962,7 +962,7 @@ protected:
 	GameWindow *m_animateDownWindow;
 	UnsignedInt m_animTime;
 
-	Color m_buildUpClockColor;
+	GeneralsColor m_buildUpClockColor;
 
 	Bool m_isObserverCommandBar;												///< If this is true, the command bar behaves greatly differnt
 	Player *m_observerLookAtPlayer;											///< The current player we're looking at, Null if we're not looking at anyone.
@@ -980,16 +980,16 @@ private:
 
 
 	// Command Bar button border bars stuff
-	Color m_commandButtonBorderBuildColor;
-	Color m_commandButtonBorderActionColor;
-	Color m_commandButtonBorderUpgradeColor;
-	Color m_commandButtonBorderSystemColor;
+	GeneralsColor m_commandButtonBorderBuildColor;
+	GeneralsColor m_commandButtonBorderActionColor;
+	GeneralsColor m_commandButtonBorderUpgradeColor;
+	GeneralsColor m_commandButtonBorderSystemColor;
 	
-	Color m_commandBarBorderColor;
+	GeneralsColor m_commandBarBorderColor;
 
 	void setCommandBarBorder( GameWindow *button, CommandButtonMappedBorderType type);
 public:
-	void updateCommanBarBorderColors(Color build, Color action, Color upgrade, Color system );
+	void updateCommanBarBorderColors(GeneralsColor build, GeneralsColor action, GeneralsColor upgrade, GeneralsColor system );
 
 private:
 

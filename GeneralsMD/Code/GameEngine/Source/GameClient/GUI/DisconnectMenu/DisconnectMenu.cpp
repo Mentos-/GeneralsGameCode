@@ -82,7 +82,7 @@ const char *DisconnectMenu::m_packetRouterTimeoutControlName = "DisconnectScreen
 const char *DisconnectMenu::m_packetRouterTimeoutLabelControlName = "DisconnectScreen.wnd:StaticPacketRouterTimeoutLabel";
 const char *DisconnectMenu::m_textDisplayControlName = "DisconnectScreen.wnd:ListboxTextDisplay";
 
-static const Color chatNormalColor =  GameMakeColor(255,0,0,255);
+static const GeneralsColor chatNormalColor =  GameMakeColor(255,0,0,255);
 
 DisconnectMenu *TheDisconnectMenu = NULL;
 

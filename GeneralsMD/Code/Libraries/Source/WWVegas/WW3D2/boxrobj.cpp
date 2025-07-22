@@ -182,7 +182,7 @@ static ShaderClass					_BoxShader;
 BoxRenderObjClass::BoxRenderObjClass(void)
 {
 	memset(Name,0,sizeof(Name));
-	Color.Set(1,1,1);
+	GeneralsColor.Set(1,1,1);
 	Opacity = 0.25f;
 	ObjSpaceCenter.Set(0,0,0);
 	ObjSpaceExtent.Set(1,1,1);
@@ -204,7 +204,7 @@ BoxRenderObjClass::BoxRenderObjClass(void)
 BoxRenderObjClass::BoxRenderObjClass(const W3dBoxStruct & def)
 {
 	Set_Name(def.Name);
-	W3dUtilityClass::Convert_Color(def.Color,&Color);
+	W3dUtilityClass::Convert_Color(def.GeneralsColor,&GeneralsColor);
 	W3dUtilityClass::Convert_Vector(def.Center,&ObjSpaceCenter);
 	W3dUtilityClass::Convert_Vector(def.Extent,&ObjSpaceExtent);
 	int col_bits = (def.Attributes & W3D_BOX_ATTRIBUTE_COLLISION_TYPE_MASK) >> W3D_BOX_ATTRIBUTE_COLLISION_TYPE_SHIFT;
@@ -248,7 +248,7 @@ BoxRenderObjClass & BoxRenderObjClass::operator = (const BoxRenderObjClass & tha
 	if (this != &that) {
 		RenderObjClass::operator = (that);
 		Set_Name(that.Get_Name());
-		Color.Set(that.Color);
+		GeneralsColor.Set(that.GeneralsColor);
 		ObjSpaceCenter.Set(that.ObjSpaceCenter);
 		ObjSpaceExtent.Set(that.ObjSpaceExtent);
 	}
@@ -326,7 +326,7 @@ void BoxRenderObjClass::Set_Name(const char * name)
  *=============================================================================================*/
 void BoxRenderObjClass::Set_Color(const Vector3 & color)
 {
-	Color = color;
+	GeneralsColor = color;
 }
 
 
@@ -458,7 +458,7 @@ void BoxRenderObjClass::render_box(RenderInfoClass & rinfo,const Vector3 & cente
 		/*
 		** Dump the box vertices into the sorting dynamic vertex buffer. 
 		*/
-		DWORD color = DX8Wrapper::Convert_Color(Color,Opacity);
+		DWORD color = DX8Wrapper::Convert_Color(GeneralsColor,Opacity);
 		
 		int buffer_type = BUFFER_TYPE_DYNAMIC_DX8;
 

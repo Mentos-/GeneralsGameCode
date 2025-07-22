@@ -63,7 +63,7 @@ StreakRendererClass::StreakRendererClass(void) :
 		Texture(NULL),
 		Shader(ShaderClass::_PresetAdditiveSpriteShader),
 		Width(0.0f),
-		Color(Vector3(1,1,1)),
+		GeneralsColor(Vector3(1,1,1)),
 		Opacity(1.0f),
 		SubdivisionLevel(0),
 		NoiseAmplitude(0.0f),
@@ -83,7 +83,7 @@ StreakRendererClass::StreakRendererClass(const StreakRendererClass & that) :
 		Texture(NULL),
 		Shader(ShaderClass::_PresetAdditiveSpriteShader),
 		Width(0.0f),
-		Color(Vector3(1,1,1)),
+		GeneralsColor(Vector3(1,1,1)),
 		Opacity(1.0f),
 		SubdivisionLevel(0),
 		NoiseAmplitude(0.0f),
@@ -105,7 +105,7 @@ StreakRendererClass & StreakRendererClass::operator = (const StreakRendererClass
 		REF_PTR_SET(Texture,that.Texture);
 		Shader = that.Shader;
 		Width = that.Width;
-		Color = that.Color;
+		GeneralsColor = that.GeneralsColor;
 		Opacity = that.Opacity;
 		SubdivisionLevel = that.SubdivisionLevel;
 		NoiseAmplitude = that.NoiseAmplitude;

@@ -442,7 +442,7 @@ WindowMsgHandledType GadgetComboBoxSystem( GameWindow *window, UnsignedInt msg,
 
 					//Grab the text that was selected
 					UnicodeString tempUString;
-					Color color;
+					GeneralsColor color;
 					tempUString = GadgetListBoxGetTextAndColor( comboData->listBox, &color, mData2, 0 );
 									
 					GadgetTextEntrySetTextColor(comboData->editBox, color);
@@ -711,18 +711,18 @@ WindowMsgHandledType GadgetComboBoxSystem( GameWindow *window, UnsignedInt msg,
 	* buttons */
 //=============================================================================
 void GadgetComboBoxSetColors( GameWindow *comboBox,
-														 Color enabledColor, 
-														 Color enabledBorderColor,
-														 Color enabledSelectedItemColor, 
-														 Color enabledSelectedItemBorderColor,
-														 Color disabledColor, 
-														 Color disabledBorderColor,
-														 Color disabledSelectedItemColor, 
-														 Color disabledSelectedItemBorderColor,
-														 Color hiliteColor, 
-														 Color hiliteBorderColor,
-														 Color hiliteSelectedItemColor, 
-														 Color hiliteSelectedItemBorderColor )
+														 GeneralsColor enabledColor, 
+														 GeneralsColor enabledBorderColor,
+														 GeneralsColor enabledSelectedItemColor, 
+														 GeneralsColor enabledSelectedItemBorderColor,
+														 GeneralsColor disabledColor, 
+														 GeneralsColor disabledBorderColor,
+														 GeneralsColor disabledSelectedItemColor, 
+														 GeneralsColor disabledSelectedItemBorderColor,
+														 GeneralsColor hiliteColor, 
+														 GeneralsColor hiliteBorderColor,
+														 GeneralsColor hiliteSelectedItemColor, 
+														 GeneralsColor hiliteSelectedItemBorderColor )
 {
 //	ComboBoxData *comboBoxData = (ComboBoxData *)comboBox->winGetUserData();
 	// enabled
@@ -920,7 +920,7 @@ void GadgetComboBoxSetText( GameWindow *comboBox, UnicodeString text )
 // GadgetComboBoxAddEntry =======================================================
 /** Convenience wrapper function for adding an entry */
 //=============================================================================
-Int GadgetComboBoxAddEntry( GameWindow *comboBox, UnicodeString text, Color color )
+Int GadgetComboBoxAddEntry( GameWindow *comboBox, UnicodeString text, GeneralsColor color )
 {
 	// sanity
 	if( comboBox == NULL )
@@ -983,7 +983,7 @@ void GadgetComboBoxSetFont( GameWindow *comboBox, GameFont *font )
 // GadgetComboBoxSetEnabledTextColors =========================================
 /** Set the Enabled Text Colors for the Sub Gadgets*/
 //=============================================================================
-void GadgetComboBoxSetEnabledTextColors(GameWindow *comboBox, Color color, Color borderColor )
+void GadgetComboBoxSetEnabledTextColors(GameWindow *comboBox, GeneralsColor color, GeneralsColor borderColor )
 {
 	// sanity
 	if( comboBox == NULL )
@@ -998,7 +998,7 @@ void GadgetComboBoxSetEnabledTextColors(GameWindow *comboBox, Color color, Color
 // GadgetComboBoxSetDisabledTextColors ========================================
 /** Set the Disabled Text Colors for the Sub Gadgets */
 //=============================================================================
-void GadgetComboBoxSetDisabledTextColors(GameWindow *comboBox, Color color, Color borderColor )
+void GadgetComboBoxSetDisabledTextColors(GameWindow *comboBox, GeneralsColor color, GeneralsColor borderColor )
 {
 	ComboBoxData *comboBoxData = (ComboBoxData *)comboBox->winGetUserData();
 	// sanity
@@ -1013,7 +1013,7 @@ void GadgetComboBoxSetDisabledTextColors(GameWindow *comboBox, Color color, Colo
 // GadgetComboBoxSetHiliteTextColors ==========================================
 /** Set the Hilite Text Colors for the Sub Gadgets */
 //=============================================================================
-void GadgetComboBoxSetHiliteTextColors( GameWindow *comboBox,Color color, Color borderColor )
+void GadgetComboBoxSetHiliteTextColors( GameWindow *comboBox,GeneralsColor color, GeneralsColor borderColor )
 {
 	// sanity
 	if( comboBox == NULL )
@@ -1029,7 +1029,7 @@ void GadgetComboBoxSetHiliteTextColors( GameWindow *comboBox,Color color, Color 
 // GadgetComboBoxSetIMECompositeTextColors ====================================
 /** Set the IME Composite Text Colors Text Colors for the Sub Gadgets */
 //=============================================================================
-void GadgetComboBoxSetIMECompositeTextColors(GameWindow *comboBox, Color color, Color borderColor )
+void GadgetComboBoxSetIMECompositeTextColors(GameWindow *comboBox, GeneralsColor color, GeneralsColor borderColor )
 {
 	// sanity
 	if( comboBox == NULL )

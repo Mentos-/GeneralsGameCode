@@ -75,7 +75,7 @@
 	* that box specified */
 //=============================================================================
 void GameWindowManager::winDrawImage( const Image *image, Int startX, Int startY, 
-																			Int endX, Int endY, Color color )
+																			Int endX, Int endY, GeneralsColor color )
 {
 
 	TheDisplay->drawImage( image, startX, startY, endX, endY, color );
@@ -85,7 +85,7 @@ void GameWindowManager::winDrawImage( const Image *image, Int startX, Int startY
 // GameWindowManager::winFillRect =============================================
 /** draw filled rect, coords are absolute screen coords */
 //=============================================================================
-void GameWindowManager::winFillRect( Color color, Real width, 
+void GameWindowManager::winFillRect( GeneralsColor color, Real width, 
 																		 Int startX, Int startY, 
 																		 Int endX, Int endY )
 {
@@ -99,7 +99,7 @@ void GameWindowManager::winFillRect( Color color, Real width,
 // GameWindowManager::winOpenRect =============================================
 /** draw rect outline, coords are absolute screen coords */
 //=============================================================================
-void GameWindowManager::winOpenRect( Color color, Real width, 
+void GameWindowManager::winOpenRect( GeneralsColor color, Real width, 
 																		 Int startX, Int startY, 
 																		 Int endX, Int endY )
 {
@@ -113,7 +113,7 @@ void GameWindowManager::winOpenRect( Color color, Real width,
 // GameWindowManager::winDrawLine =============================================
 /** draw line, coords are absolute screen coords */
 //=============================================================================
-void GameWindowManager::winDrawLine( Color color, Real width, 
+void GameWindowManager::winDrawLine( GeneralsColor color, Real width, 
 																		 Int startX, Int startY, 
 																		 Int endX, Int endY )
 {
@@ -142,7 +142,7 @@ const Image *GameWindowManager::winFindImage( const char *name )
 /** Given RGBA, make a color, you can change color representation for your
 	* individual project needs */
 //=============================================================================
-Color GameWindowManager::winMakeColor( UnsignedByte red, 
+GeneralsColor GameWindowManager::winMakeColor( UnsignedByte red, 
 																			 UnsignedByte green, 
 																			 UnsignedByte blue, 
 																			 UnsignedByte alpha ) 
@@ -155,7 +155,7 @@ Color GameWindowManager::winMakeColor( UnsignedByte red,
 // GameWindowManager::winFormatText ===========================================
 /** draw text to the screen */
 //=============================================================================
-void GameWindowManager::winFormatText( GameFont *font, UnicodeString text, Color color,
+void GameWindowManager::winFormatText( GameFont *font, UnicodeString text, GeneralsColor color,
 																			 Int x, Int y, Int width, Int height )
 {
 

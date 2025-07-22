@@ -94,12 +94,12 @@ void IMECandidateTextAreaDraw( GameWindow *window, WinInstanceData *instData )
 {
 	// set up for rendering
 	ICoord2D origin, size, start, end;
-	Color		textColor, 
+	GeneralsColor		textColor, 
 					textBorder, 
 					textSelectColor, 
 					textSelectBorder;
 	IRegion2D textRegion;
-	Color black = GameMakeColor( 0, 0, 0, 255);
+	GeneralsColor black = GameMakeColor( 0, 0, 0, 255);
 
 	// get window position and size
 	window->winGetScreenPosition( &origin.x, &origin.y );
@@ -235,7 +235,7 @@ void IMECandidateMainDraw( GameWindow *window, WinInstanceData *instData )
 {
 	// set up for rendering
 	ICoord2D origin, size, start, end;
-	Color		backColor, 
+	GeneralsColor		backColor, 
 					backBorder;
 	Real borderWidth = 1.0f;
 

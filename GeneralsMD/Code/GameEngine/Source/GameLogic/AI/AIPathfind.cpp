@@ -2803,7 +2803,7 @@ void PathfindZoneManager::calculateZones( PathfindCell **map, PathfindLayer laye
 	{
 		extern void addIcon(const Coord3D *pos, Real width, Int numFramesDuration, RGBColor color);
 		RGBColor color;
-		memset(&color, 0, sizeof(Color));
+		memset(&color, 0, sizeof(GeneralsColor));
 		addIcon(NULL, 0, 0, color);
 		for( j=0; j<globalBounds.hi.y; j++ )	{
 			for( i=0; i<globalBounds.hi.x; i++ )	{
@@ -2948,7 +2948,7 @@ void PathfindZoneManager::updateZonesForModify(PathfindCell **map, PathfindLayer
 	{
 		extern void addIcon(const Coord3D *pos, Real width, Int numFramesDuration, RGBColor color);
 		RGBColor color;
-		memset(&color, 0, sizeof(Color));
+		memset(&color, 0, sizeof(GeneralsColor));
 		addIcon(NULL, 0, 0, color);
 		Int i, j;
 		for( j=0; j<globalBounds.hi.y; j++ )	{

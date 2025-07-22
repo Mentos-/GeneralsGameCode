@@ -1620,7 +1620,7 @@ void Object::setBuilder( const Object *obj )
 }
 
 //=============================================================================
-void Object::setCustomIndicatorColor(Color c) 
+void Object::setCustomIndicatorColor(GeneralsColor c)
 { 
 	if (m_indicatorColor != c)
 	{
@@ -1639,7 +1639,7 @@ void Object::removeCustomIndicatorColor()
 //=============================================================================
 // Object::getIndicatorColor
 //=============================================================================
-Color Object::getIndicatorColor() const
+GeneralsColor Object::getIndicatorColor() const
 {
 	if (m_indicatorColor == 0)
 	{
@@ -1663,7 +1663,7 @@ Color Object::getIndicatorColor() const
 //=============================================================================
 // Object::getNightIndicatorColor - used to make blue/purple easier to see on night models.
 //=============================================================================
-Color Object::getNightIndicatorColor() const
+GeneralsColor Object::getNightIndicatorColor() const
 {
 	if (m_indicatorColor == 0)
 	{

@@ -59,17 +59,17 @@ extern GameWindow *listboxChatWindowScoreScreen;
 
 
 //Colors used for the chat dialogs
-extern const Color playerColor;
-extern const Color gameColor;
-extern const Color gameInProgressColor;
-extern const Color chatNormalColor;
-extern const Color chatActionColor;
-extern const Color chatLocalNormalColor;
-extern const Color chatLocalActionColor;
-extern const Color chatSystemColor;
-extern const Color chatSystemColor;
-extern const Color acceptTrueColor;
-extern const Color acceptFalseColor;
+extern const GeneralsColor playerColor;
+extern const GeneralsColor gameColor;
+extern const GeneralsColor gameInProgressColor;
+extern const GeneralsColor chatNormalColor;
+extern const GeneralsColor chatActionColor;
+extern const GeneralsColor chatLocalNormalColor;
+extern const GeneralsColor chatLocalActionColor;
+extern const GeneralsColor chatSystemColor;
+extern const GeneralsColor chatSystemColor;
+extern const GeneralsColor acceptTrueColor;
+extern const GeneralsColor acceptFalseColor;
 
 
 void lanUpdateSlotList( void );

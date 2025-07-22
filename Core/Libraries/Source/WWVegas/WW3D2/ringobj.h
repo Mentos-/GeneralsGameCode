@@ -170,12 +170,12 @@ public:
 	void								Set_Texture_Tiling (int count)		{ TextureTileCount = count; }
 
 	// Current state access
-	void								Set_Color(const Vector3 & color)			{ Color = color; }
+	void								Set_Color(const Vector3 & color)			{ GeneralsColor = color; }
 	void								Set_Alpha(float alpha)						{ Alpha = alpha; }
 	void								Set_Inner_Scale(const Vector2 & scale) { InnerScale = scale; }
 	void								Set_Outer_Scale(const Vector2 & scale) { OuterScale = scale; }
 
-	const Vector3 &				Get_Color(void) const			{ return Color; }
+	const Vector3 &				Get_Color(void) const			{ return GeneralsColor; }
 	float								Get_Alpha(void) const			{ return Alpha; }
 	const Vector2 &				Get_Inner_Scale(void) const	{ return InnerScale; }
 	const Vector2 &				Get_Outer_Scale(void) const	{ return OuterScale; }
@@ -263,7 +263,7 @@ protected:
 	int								TextureTileCount;
 
 	// Current State
-	Vector3					 		Color;
+	Vector3					 		GeneralsColor;
 	float								Alpha;
 	Vector2							InnerScale;
 	Vector2							OuterScale;

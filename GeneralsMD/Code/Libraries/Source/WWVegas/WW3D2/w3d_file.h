@@ -1320,7 +1320,7 @@ struct W3dDeformData
 {
 	uint32					VertexIndex;
 	W3dVectorStruct		Position;
-	W3dRGBAStruct			Color;
+	W3dRGBAStruct			GeneralsColor;
 	uint32					reserved[2];
 };
 
@@ -1891,7 +1891,7 @@ struct W3dEmitterPropertyStruct
 struct W3dEmitterColorKeyframeStruct
 {
 	float32				Time;
-	W3dRGBAStruct		Color;
+	W3dRGBAStruct		GeneralsColor;
 };
 
 struct W3dEmitterOpacityKeyframeStruct
@@ -2136,7 +2136,7 @@ struct W3dBoxStruct
 	uint32				Version;						// file format version
 	uint32				Attributes;					// box attributes (above #define's)
 	char					Name[2*W3D_NAME_LEN];	// name is in the form <containername>.<boxname>
-	W3dRGBStruct		Color;						// color to use when drawing the box
+	W3dRGBStruct		GeneralsColor;						// color to use when drawing the box
 	W3dVectorStruct	Center;						// center of the box
 	W3dVectorStruct	Extent;						// extent of the box
 };

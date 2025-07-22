@@ -824,7 +824,7 @@ Int populateMapListboxNoReset( GameWindow *listbox, Bool useSystemMaps, Bool isM
 		h = w;
 	}
 
-	Color color = GameMakeColor( 255, 255, 255, 255 );
+	GeneralsColor color = GameMakeColor( 255, 255, 255, 255 );
 	UnicodeString mapDisplayName;
 
 	Int selectionIndex = 0; // always select *something*

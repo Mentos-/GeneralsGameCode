@@ -88,7 +88,7 @@ void PopulateRemoteIPComboBox()
 	GadgetComboBoxReset(comboboxRemoteIP);
 
 	Int numRemoteIPs = userprefs.getNumRemoteIPs();
-	Color white = GameMakeColor(255,255,255,255);
+	GeneralsColor white = GameMakeColor(255,255,255,255);
 
 	for (Int i = 0; i < numRemoteIPs; ++i)
 	{

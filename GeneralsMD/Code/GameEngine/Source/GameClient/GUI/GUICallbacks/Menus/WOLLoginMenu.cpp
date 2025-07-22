@@ -1459,7 +1459,7 @@ WindowMsgHandledType WOLLoginMenuSystem( GameWindow *window, UnsignedInt msg,
 							Int size = theFile->size();
 
 							char *fileBuf = new char[size];
-							Color tosColor = GameMakeColor(255, 255, 255, 255);
+							GeneralsColor tosColor = GameMakeColor(255, 255, 255, 255);
 
 							Int bytesRead = theFile->read(fileBuf, size);
 							if (bytesRead == size && size > 2)

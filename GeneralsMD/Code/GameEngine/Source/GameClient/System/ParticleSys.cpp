@@ -761,7 +761,7 @@ ParticleSystemInfo::ParticleSystemInfo()
 }
 
 
-void ParticleSystemInfo::tintAllColors( Color tintColor )
+void ParticleSystemInfo::tintAllColors( GeneralsColor tintColor )
 {
 	RGBColor rgb;
 	rgb.setFromInt(tintColor);

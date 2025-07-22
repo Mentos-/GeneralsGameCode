@@ -263,7 +263,7 @@ protected:
 	void doDisplayCinematicText(const AsciiString& displayText, const AsciiString& fontType, Int timeInSeconds);
 	void doCameoFlash(const AsciiString& cameoFlash, Int timeInSeconds);
 	void doNamedFlash(const AsciiString& unitName, Int timeInSeconds, const RGBColor *color);
-	void doNamedCustomColor(const AsciiString& unitName, Color c);
+	void doNamedCustomColor(const AsciiString& unitName, GeneralsColor c);
 	void doTeamFlash(const AsciiString& teamName, Int timeInSeconds, const RGBColor *color);
 	void doMoviePlayFullScreen(const AsciiString& movieName);
 	void doMoviePlayRadar(const AsciiString& movieName);

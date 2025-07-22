@@ -1133,7 +1133,7 @@ void InitSkirmishGameGadgets( void )
 		  GadgetComboBoxReset(comboBoxPlayer[i]);
 		  //GadgetComboBoxGetEditBox(comboBoxPlayer[i])->winSetTooltipFunc(playerTooltip);
     }    
-		Color white = GameMakeColor( 255, 255, 255, 255 );
+		GeneralsColor white = GameMakeColor( 255, 255, 255, 255 );
 
 		if( i == 0 )
 		{

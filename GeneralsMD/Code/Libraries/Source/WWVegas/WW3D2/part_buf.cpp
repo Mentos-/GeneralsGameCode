@@ -171,7 +171,7 @@ ParticleBufferClass::ParticleBufferClass
 	LineGroup(NULL),
 	Diffuse(NULL),
 	TailDiffuse(NULL),
-	Color(NULL),
+	GeneralsColor(NULL),
 	Alpha(NULL),
 	Size(NULL),
 	Orientation(NULL),
@@ -405,7 +405,7 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 	LineGroup(NULL),
 	Diffuse(NULL),
 	TailDiffuse(NULL),
-	Color(NULL),
+	GeneralsColor(NULL),
 	Alpha(NULL),
 	Size(NULL),
 	Orientation(NULL),
@@ -435,9 +435,9 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 	*/
 
 	NumRandomColorEntriesMinus1 = src.NumRandomColorEntriesMinus1;
-	if (src.Color) {
+	if (src.GeneralsColor) {
 		// Create color array
-		Color = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::Color") );
+		GeneralsColor = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::Color") );
 
 		// Copy color keyframes
 		ColorKeyFrameTimes = W3DNEWARRAY unsigned int [NumColorKeyFrames];
@@ -764,7 +764,7 @@ ParticleBufferClass::~ParticleBufferClass(void)
 	REF_PTR_RELEASE(Position[1]);
 	REF_PTR_RELEASE(Diffuse);
 	REF_PTR_RELEASE(TailDiffuse);
-	REF_PTR_RELEASE(Color);
+	REF_PTR_RELEASE(GeneralsColor);
 	REF_PTR_RELEASE(Alpha);
 	REF_PTR_RELEASE(Size);
 	REF_PTR_RELEASE(Orientation);
@@ -897,22 +897,22 @@ void ParticleBufferClass::Generate_APT(ShareBufferClass <unsigned int> **apt,uns
 void ParticleBufferClass::Combine_Color_And_Alpha()
 {
 	// Temporary array copying to combine diffuse and alpha to one array.
-	if (Color || Alpha) {
+	if (GeneralsColor || Alpha) {
 		unsigned cnt=MaxNum;
 		if (!Diffuse) {
 			Diffuse = NEW_REF( ShareBufferClass<Vector4> , (MaxNum, "ParticleBufferClass::Diffuse") );
 		}
-		if (Color && Alpha) {
+		if (GeneralsColor && Alpha) {
 			VectorProcessorClass::Copy(
 				Diffuse->Get_Array(),
-				Color->Get_Array(),
+				GeneralsColor->Get_Array(),
 				Alpha->Get_Array(),
 				cnt);
 		}
-		else if (Color) {
+		else if (GeneralsColor) {
 			VectorProcessorClass::Copy(
 				Diffuse->Get_Array(),
-				Color->Get_Array(),
+				GeneralsColor->Get_Array(),
 				1.0f,
 				cnt);
 		}
@@ -947,7 +947,7 @@ void ParticleBufferClass::Render_Particles(RenderInfoClass & rinfo)
 	Generate_APT(&apt,active_point_count);	
 
 	// Set color, alpha, size defaults if array not present:
-	if (!Color) {
+	if (!GeneralsColor) {
 		PointGroup->Set_Point_Color(ColorKeyFrameValues[0]);
 	}
 	if (!Alpha) {
@@ -1098,7 +1098,7 @@ void ParticleBufferClass::Render_Line_Group(RenderInfoClass & rinfo)
 	Generate_APT(&apt,active_point_count);	
 
 	// Set color, alpha, size defaults if array not present:
-	if (!Color) {
+	if (!GeneralsColor) {
 		LineGroup->Set_Line_Color(ColorKeyFrameValues[0]);
 	}
 	if (!Alpha) {
@@ -1439,9 +1439,9 @@ void ParticleBufferClass::Reset_Colors(ParticlePropertyStruct<Vector3> &new_prop
 
 		// Release Color, ColorKeyFrameTimes and ColorKeyFrameDeltas if present. Reuse
 		// ColorKeyFrameValues if the right size, otherwise release and reallocate.
-		if (Color) {
-			Color->Release_Ref();
-			Color = NULL;
+		if (GeneralsColor) {
+			GeneralsColor->Release_Ref();
+			GeneralsColor = NULL;
 		}
 		if (ColorKeyFrameTimes) {
 			delete [] ColorKeyFrameTimes;
@@ -1467,8 +1467,8 @@ void ParticleBufferClass::Reset_Colors(ParticlePropertyStruct<Vector3> &new_prop
 	} else {
 
 		// Create the color array if not present
-		if (!Color) {
-			Color = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::Color") );
+		if (!GeneralsColor) {
+			GeneralsColor = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::Color") );
 		}
 
 		// Check times of color keyframes (each keytime must be larger than the
@@ -2533,7 +2533,7 @@ void ParticleBufferClass::Update_Visual_Particle_State(void)
 	// Linegroup modes have a visual state that always have to be updated though
 	bool is_linegroup=( (RenderMode==W3D_EMITTER_RENDER_MODE_LINEGRP_TETRA) ||
 							  (RenderMode==W3D_EMITTER_RENDER_MODE_LINEGRP_PRISM));
-	if (!Color && !Alpha && !Size && !Orientation && !Frame && !UCoord && !is_linegroup) return;
+	if (!GeneralsColor && !Alpha && !Size && !Orientation && !Frame && !UCoord && !is_linegroup) return;
 
 	// In the general case, a range in a circular buffer can be composed of up
 	// to two subranges. Find the Start - End subranges.
@@ -2559,7 +2559,7 @@ void ParticleBufferClass::Update_Visual_Particle_State(void)
 	unsigned int bkey = NumBlurTimeKeyFrames -1;
 
 	unsigned int part;
-	Vector3 *color = Color ? Color->Get_Array(): NULL;
+	Vector3 *color = GeneralsColor ? GeneralsColor->Get_Array(): NULL;
 	float *alpha = Alpha ? Alpha->Get_Array(): NULL;
 	float *size = Size ? Size->Get_Array(): NULL;
 	uint8 *orientation = Orientation ? Orientation->Get_Array(): NULL;

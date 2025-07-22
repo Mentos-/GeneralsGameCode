@@ -57,16 +57,16 @@ extern Bool LANbuttonPushed;
 #endif
 
 //Colors used for the chat dialogs
-const Color playerColor =  GameMakeColor(255,255,255,255);
-const Color gameColor =  GameMakeColor(255,255,255,255);
-const Color gameInProgressColor =  GameMakeColor(128,128,128,255);
-const Color chatNormalColor =  GameMakeColor(50,215,230,255);
-const Color chatActionColor =  GameMakeColor(255,0,255,255);
-const Color chatLocalNormalColor =  GameMakeColor(255,128,0,255);
-const Color chatLocalActionColor =  GameMakeColor(128,255,255,255);
-const Color chatSystemColor =  GameMakeColor(255,255,255,255);
-const Color acceptTrueColor =  GameMakeColor(0,255,0,255);
-const Color acceptFalseColor =  GameMakeColor(255,0,0,255);
+const GeneralsColor playerColor =  GameMakeColor(255,255,255,255);
+const GeneralsColor gameColor =  GameMakeColor(255,255,255,255);
+const GeneralsColor gameInProgressColor =  GameMakeColor(128,128,128,255);
+const GeneralsColor chatNormalColor =  GameMakeColor(50,215,230,255);
+const GeneralsColor chatActionColor =  GameMakeColor(255,0,255,255);
+const GeneralsColor chatLocalNormalColor =  GameMakeColor(255,128,0,255);
+const GeneralsColor chatLocalActionColor =  GameMakeColor(128,255,255,255);
+const GeneralsColor chatSystemColor =  GameMakeColor(255,255,255,255);
+const GeneralsColor acceptTrueColor =  GameMakeColor(0,255,0,255);
+const GeneralsColor acceptFalseColor =  GameMakeColor(255,0,0,255);
 
 
 UnicodeString LANAPIInterface::getErrorStringFromReturnType( ReturnType ret )
@@ -713,7 +713,7 @@ void LANAPI::OnChat( UnicodeString player, UnsignedInt ip, UnicodeString message
 			// Do the language filtering.
 			TheLanguageFilter->filterLine(message);
 
-			Color chatColor = GameMakeColor(255, 255, 255, 255);
+			GeneralsColor chatColor = GameMakeColor(255, 255, 255, 255);
 			if (m_currentGame)
 			{
 				Int slotNum = m_currentGame->getSlotNum(player);

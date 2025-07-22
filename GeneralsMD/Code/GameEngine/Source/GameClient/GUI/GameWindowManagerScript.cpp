@@ -130,12 +130,12 @@ static AsciiString theTooltipString;
 static AsciiString theDrawString;
 
 // default visual properties
-static Color defEnabledColor		= 0;
-static Color defDisabledColor		= 0;
-static Color defBackgroundColor	= 0;
-static Color defHiliteColor			= 0;
-static Color defSelectedColor		= 0;
-static Color defTextColor				= 0;
+static GeneralsColor defEnabledColor		= 0;
+static GeneralsColor defDisabledColor		= 0;
+static GeneralsColor defBackgroundColor	= 0;
+static GeneralsColor defHiliteColor			= 0;
+static GeneralsColor defSelectedColor		= 0;
+static GeneralsColor defTextColor				= 0;
 static GameFont  *defFont				= NULL;
 
 //
@@ -408,7 +408,7 @@ static void pushWindow( GameWindow *window )
 /** Parse a color entry and store it in the value pointed to by the 
 	* 'color' parm. */
 //=============================================================================
-static Bool parseColor( Color *color, char *buffer )
+static Bool parseColor( GeneralsColor *color, char *buffer )
 {
   char *c;
   Byte red, green, blue;
@@ -432,7 +432,7 @@ static Bool parseColor( Color *color, char *buffer )
 /** Parse a default color entry and store it in the value pointed to by 
 	* the 'color' parm. */
 //=============================================================================
-static Bool parseDefaultColor( Color *color, File *inFile, char *buffer )
+static Bool parseDefaultColor( GeneralsColor *color, File *inFile, char *buffer )
 {
 	// eat '=' 
 //	fscanf( inFile, "%*s" );

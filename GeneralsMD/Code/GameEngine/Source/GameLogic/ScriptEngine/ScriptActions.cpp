@@ -2706,7 +2706,7 @@ void ScriptActions::doCameoFlash(const AsciiString& name, Int timeInSeconds)
 //-------------------------------------------------------------------------------------------------
 /** doNamedCustomColor */
 //-------------------------------------------------------------------------------------------------
-void ScriptActions::doNamedCustomColor(const AsciiString& unitName, Color c)
+void ScriptActions::doNamedCustomColor(const AsciiString& unitName, GeneralsColor c)
 {
 	//sanity
 	Object *obj = TheScriptEngine->getUnitNamed( unitName );
@@ -2747,7 +2747,7 @@ void ScriptActions::doNamedFlash(const AsciiString& unitName, Int timeInSeconds,
 		Int frames = LOGICFRAMES_PER_SECOND * timeInSeconds;
 		// every time the framecount % 20 == 0, drawable::update will call doNamedFlash
 		Int count = frames / DRAWABLE_FRAMES_PER_FLASH;
-		Color flashy = (color == NULL) ? obj->getIndicatorColor() : color->getAsInt();
+		GeneralsColor flashy = (color == NULL) ? obj->getIndicatorColor() : color->getAsInt();
 		drawable->setFlashColor( flashy );
 		drawable->setFlashCount( count );
 		return;
@@ -2779,7 +2779,7 @@ void ScriptActions::doTeamFlash(const AsciiString& teamName, Int timeInSeconds, 
 		Int frames = LOGICFRAMES_PER_SECOND * timeInSeconds;
 
 		Int count = frames / DRAWABLE_FRAMES_PER_FLASH;
-		Color flashy = (color == NULL) ? obj->getIndicatorColor() : color->getAsInt();
+		GeneralsColor flashy = (color == NULL) ? obj->getIndicatorColor() : color->getAsInt();
 		draw->setFlashColor( flashy );
 		draw->setFlashCount( count );
 	}
