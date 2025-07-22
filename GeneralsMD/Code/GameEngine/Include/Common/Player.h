@@ -249,8 +249,8 @@ public:
 	inline ResourceGatheringManager *getResourceGatheringManager(){ return m_resourceGatheringManager; }
 	inline TunnelTracker* getTunnelSystem(){ return m_tunnelSystem; }
 
-	inline Color getPlayerColor() const { return m_color; }
-	inline Color getPlayerNightColor() const { return m_nightColor;}
+	inline GeneralsColor getPlayerColor() const { return m_color; }
+	inline GeneralsColor getPlayerNightColor() const { return m_nightColor;}
 	/// return the type of controller
 	inline PlayerType getPlayerType() const { return m_playerType; }
 	void setPlayerType(PlayerType t, Bool skirmish);
@@ -760,8 +760,8 @@ private:
 	Energy											m_energy;											///< current energy production & consumption
 	MissionStats								m_stats;											///< stats about the current mission (units destroyed, etc)
 	BuildListInfo*							m_pBuildList;									///< linked list of buildings for PLAYER_COMPUTER.
-	Color												m_color;											///< color for our units
-	Color												m_nightColor;	///<tweaked version of regular color to make it easier to see on night maps.
+	GeneralsColor												m_color;											///< color for our units
+	GeneralsColor												m_nightColor;	///<tweaked version of regular color to make it easier to see on night maps.
 	ProductionChangeMap					m_productionCostChanges;			///< Map to keep track of Faction specific discounts or penalties on prices of units
 	ProductionChangeMap					m_productionTimeChanges;			///< Map to keep track of Faction specific discounts or penalties on build times of units
 	ProductionVeterancyMap			m_productionVeterancyLevels;	///< Map to keep track of starting level of produced units

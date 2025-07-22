@@ -79,7 +79,7 @@
 void W3DGadgetComboBoxDraw( GameWindow *window, WinInstanceData *instData )
 {
 	Int width, height, fontHeight, x, y;
-	Color background, border, titleColor, titleBorder;
+	GeneralsColor background, border, titleColor, titleBorder;
 //	ComboBoxData *combo = (ComboBoxData *)window->winGetUserData();
 	ICoord2D size;
 	DisplayString *title = instData->getTextDisplayString();
@@ -156,7 +156,7 @@ void W3DGadgetComboBoxImageDraw( GameWindow *window, WinInstanceData *instData )
 	const Image *image;
 //	ComboBoxData *combo = (ComboBoxData *)window->winGetUserData();
 	ICoord2D size;
-	Color titleColor, titleBorder;
+	GeneralsColor titleColor, titleBorder;
 	DisplayString *title = instData->getTextDisplayString();
 
 	// get window position and size

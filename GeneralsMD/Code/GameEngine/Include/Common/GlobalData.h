@@ -424,10 +424,10 @@ public:
 
 #ifdef ALLOW_SURRENDER
 	Real m_prisonBountyMultiplier;		///< the cost of the unit is multiplied by this and given to the player when prisoners are returned to the a prison with KINDOF_COLLECTS_PRISON_BOUNTY
-	Color m_prisonBountyTextColor;		///< color of the text that displays the money acquired at the prison
+	GeneralsColor m_prisonBountyTextColor;		///< color of the text that displays the money acquired at the prison
 #endif
 
-	Color m_hotKeyTextColor;					///< standard color for all hotkeys.
+	GeneralsColor m_hotKeyTextColor;					///< standard color for all hotkeys.
 
   //THis is put on ice until later - M Lorenzen
   //	Int m_cheaterHasBeenSpiedIfMyLowestBitIsTrue; ///< says it all.. this lives near other "colors" cause it is masquerading as one

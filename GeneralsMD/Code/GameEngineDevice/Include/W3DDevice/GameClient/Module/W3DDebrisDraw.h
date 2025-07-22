@@ -67,7 +67,7 @@ public:
 	virtual void reactToTransformChange(const Matrix3D* oldMtx, const Coord3D* oldPos, Real oldAngle);
 	virtual void reactToGeometryChange() { }
 
-	virtual void setModelName(AsciiString name, Color color, ShadowType t);
+	virtual void setModelName(AsciiString name, GeneralsColor color, ShadowType t);
 	virtual void setAnimNames(AsciiString initial, AsciiString flying, AsciiString final, const FXList* finalFX);
 
 	virtual DebrisDrawInterface* getDebrisDrawInterface() { return this; }
@@ -85,7 +85,7 @@ private:
 	};
 
 	AsciiString								m_modelName;
-	Color											m_modelColor;
+	GeneralsColor											m_modelColor;
 	AsciiString								m_animInitial;
 	AsciiString								m_animFlying;
 	AsciiString								m_animFinal;

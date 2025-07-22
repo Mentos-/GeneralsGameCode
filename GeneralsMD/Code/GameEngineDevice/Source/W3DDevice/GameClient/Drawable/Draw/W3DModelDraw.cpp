@@ -3214,7 +3214,7 @@ void W3DModelDraw::setSelectable(Bool selectable)
 }
 
 //-------------------------------------------------------------------------------------------------
-void W3DModelDraw::replaceIndicatorColor(Color color)
+void W3DModelDraw::replaceIndicatorColor(GeneralsColor color)
 {
 	if (!getW3DModelDrawModuleData()->m_okToChangeModelColor)
 		return;

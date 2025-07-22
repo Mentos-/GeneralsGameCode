@@ -366,8 +366,8 @@ struct ImageAndColorInfo
 	const char *stateName;  ///< string state name that this affects
 	char* stateNameBuffer; ///< optional buffer for state name string
 	const Image *image;  ///< the image for this entry
-	Color color;  ///< color for this entry
-	Color borderColor;   ///< border color for this entry
+	GeneralsColor color;  ///< color for this entry
+	GeneralsColor borderColor;   ///< border color for this entry
 
 };
 
@@ -399,13 +399,13 @@ extern void LoadImageListComboBox( HWND comboBox );
 extern void LoadHeaderTemplateListComboBox( HWND comboBox, AsciiString selected );
 extern const Image *ComboBoxSelectionToImage( HWND comboBox );
 extern RGBColorInt *GetControlColor( UnsignedInt controlID );
-extern void SetControlColor( UnsignedInt controlID, Color color );
+extern void SetControlColor( UnsignedInt controlID, GeneralsColor color );
 extern void PositionWindowOnScreen( HWND window, Int x, Int y );
 extern Bool SaveCommonDialogProperties( HWND dialog, GameWindow *window );
 extern void LoadStateCombo( UnsignedInt style, HWND comboBox );
 extern void LoadTextStateCombo( HWND comboBox,
-																Color enabled, Color enabledBorder,
-																Color disabled, Color disabledBorder,
+																GeneralsColor enabled, GeneralsColor enabledBorder,
+																GeneralsColor disabled, Color disabledBorder,
 																Color hilite, Color hiliteBorder );
 extern void InitCallbackCombos( HWND dialog, GameWindow *window );
 extern void SaveCallbacks( GameWindow *window, HWND dialog );

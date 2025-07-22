@@ -177,7 +177,7 @@ private:
 // not saved
 	DisplayString *             m_nameDisplayString;						///< display string used to render the message
 	DisplayString *             m_timeDisplayString;						///< display string used to render the message
-	Color												m_color;
+	GeneralsColor												m_color;
 	const SpecialPowerTemplate*	m_powerTemplate;
 
 public:
@@ -192,15 +192,15 @@ public:
 		const AsciiString& superweaponNormalFont, 
 		Int superweaponNormalPointSize, 
 		Bool superweaponNormalBold,
-		Color c, 
+		GeneralsColor c, 
 		const SpecialPowerTemplate* spt
 	);
 
 	const SpecialPowerTemplate*	getSpecialPowerTemplate() const { return m_powerTemplate; }
 	void setFont(const AsciiString& superweaponNormalFont, Int superweaponNormalPointSize, Bool superweaponNormalBold);
 	void setText(const UnicodeString& name, const UnicodeString& time);
-	void drawName(Int x, Int y, Color color, Color dropColor);
-	void drawTime(Int x, Int y, Color color, Color dropColor);
+	void drawName(Int x, Int y, GeneralsColor color, GeneralsColor dropColor);
+	void drawTime(Int x, Int y, GeneralsColor color, GeneralsColor dropColor);
 	Real getHeight() const;
 
 // saved & public
@@ -230,7 +230,7 @@ public:
 	Int							x;
 	Int							y;
 	Int							width;
-	Color						textColor;
+	GeneralsColor						textColor;
 	Bool						pause;
 	Bool						pauseMusic;
 	WindowLayout*	layout;
@@ -246,7 +246,7 @@ public:
 	UnicodeString		timerText;								///< timer text
 	DisplayString*	displayString;						///< display string used to render the message
 	UnsignedInt			timestamp;									///< seconds shown in display string
-	Color						color;
+	GeneralsColor						color;
 	Bool						isCountdown;
 };
 EMPTY_DTOR(NamedTimerInfo)
@@ -267,7 +267,7 @@ public:
 	FloatingTextData(void);
 	//~FloatingTextData(void);
 
-	Color						m_color;														///< It's current color
+	GeneralsColor						m_color;														///< It's current color
 	UnicodeString		m_text;											///< the text we're displaying
 	DisplayString*	m_dString;									///< The display string
 	Coord3D					m_pos3D;													///< the 3d position in game coords
@@ -370,7 +370,7 @@ public:  // ********************************************************************
 
 	// interface for the popup messages
 	virtual void popupMessage( const AsciiString& message, Int x, Int y, Int width, Bool pause, Bool pauseMusic);
-	virtual void popupMessage( const AsciiString& message, Int x, Int y, Int width, Color textColor, Bool pause, Bool pauseMusic);
+	virtual void popupMessage( const AsciiString& message, Int x, Int y, Int width, GeneralsColor textColor, Bool pause, Bool pauseMusic);
 	PopupMessageData *getPopupMessageData( void ) { return m_popupMessageData; }
 	void clearPopupMessageData( void );
 
@@ -382,7 +382,7 @@ public:  // ********************************************************************
 	virtual void toggleMessages( void ) { m_messagesOn = 1 - m_messagesOn; }	///< toggle messages on/off
 	virtual Bool isMessagesOn( void ) { return m_messagesOn; }	///< are the display messages on
 	void freeMessageResources( void );				///< free resources for the ui messages
-	Color getMessageColor(Bool altColor) { return (altColor)?m_messageColor2:m_messageColor1; }
+	GeneralsColor getMessageColor(Bool altColor) { return (altColor)?m_messageColor2:m_messageColor1; }
 	
 	// interface for military style messages
 	virtual void militarySubtitle( const AsciiString& label, Int duration );			// time in milliseconds
@@ -516,13 +516,13 @@ public:  // ********************************************************************
 	virtual void setDisplayedMaxWarning( Bool selected ) { m_displayedMaxWarning = selected; }
 
 	// Floating Test Methods
-	virtual void addFloatingText(const UnicodeString& text,const Coord3D * pos, Color color);
+	virtual void addFloatingText(const UnicodeString& text,const Coord3D * pos, GeneralsColor color);
 
 	// Drawable caption stuff
 	AsciiString	getDrawableCaptionFontName( void )	{ return m_drawableCaptionFont; }
 	Int					getDrawableCaptionPointSize( void )	{ return m_drawableCaptionPointSize; }
 	Bool				isDrawableCaptionBold( void )				{ return m_drawableCaptionBold; }
-	Color				getDrawableCaptionColor( void )			{ return m_drawableCaptionColor; }
+	GeneralsColor				getDrawableCaptionColor( void )			{ return m_drawableCaptionColor; }
 
 	inline Bool shouldMoveRMBScrollAnchor( void ) { return m_moveRMBScrollAnchor; }
 
@@ -594,7 +594,7 @@ public:
 													Real zRisePerSecond );
 
 #if defined(RTS_DEBUG) || defined(RTS_INTERNAL)
-	virtual void DEBUG_addFloatingText(const AsciiString& text,const Coord3D * pos, Color color);
+	virtual void DEBUG_addFloatingText(const AsciiString& text,const Coord3D * pos, GeneralsColor color);
 #endif
 
 protected:
@@ -641,7 +641,7 @@ protected:
 		UnicodeString fullText;									///< the whole text message
 		DisplayString *displayString;						///< display string used to render the message
 		UnsignedInt timestamp;									///< logic frame message was created on
-		Color color;														///< color to render this in
+		GeneralsColor color;														///< color to render this in
 	};
 	enum { MAX_UI_MESSAGES = 6 };
 
@@ -657,7 +657,7 @@ protected:
 		UnsignedInt blockBeginFrame;							///< The frame at which the block started it's current state
 		ICoord2D blockPos;												///< where the upper left of the block should begin
 		UnsignedInt incrementOnFrame;							///< if we're currently on a frame greater then this, increment our position
-		Color color;															///< what color should we display the military subtitles
+		GeneralsColor color;															///< what color should we display the military subtitles
 	};
 
 	typedef std::list<Object *> ObjectList;
@@ -759,31 +759,31 @@ protected:
 	Bool												m_superweaponReadyBold;
 
 	Int													m_superweaponLastFlashFrame;										///< for flashing the text when the weapon is ready
-	Color												m_superweaponFlashColor;
+	GeneralsColor												m_superweaponFlashColor;
 	Bool												m_superweaponUsedFlashColor;
 
 	NamedTimerMap								m_namedTimers;
 	Coord2D											m_namedTimerPosition;
 	Real												m_namedTimerFlashDuration;
 	Int													m_namedTimerLastFlashFrame;
-	Color												m_namedTimerFlashColor;
+	GeneralsColor												m_namedTimerFlashColor;
 	Bool												m_namedTimerUsedFlashColor;
 	Bool												m_showNamedTimers;
 
 	AsciiString									m_namedTimerNormalFont;
 	Int													m_namedTimerNormalPointSize;
 	Bool												m_namedTimerNormalBold;
-	Color												m_namedTimerNormalColor;
+	GeneralsColor												m_namedTimerNormalColor;
 	AsciiString									m_namedTimerReadyFont;
 	Int													m_namedTimerReadyPointSize;
 	Bool												m_namedTimerReadyBold;
-	Color												m_namedTimerReadyColor;
+	GeneralsColor												m_namedTimerReadyColor;
 
 	// Drawable caption data
 	AsciiString									m_drawableCaptionFont;
 	Int													m_drawableCaptionPointSize;
 	Bool												m_drawableCaptionBold;
-	Color												m_drawableCaptionColor;
+	GeneralsColor												m_drawableCaptionColor;
 
 	UnsignedInt									m_tooltipsDisabledUntil;
 
@@ -798,8 +798,8 @@ protected:
 	Bool												m_isQuitMenuVisible;
 	Bool												m_messagesOn;
 
-	Color												m_messageColor1;
-	Color												m_messageColor2;
+	GeneralsColor												m_messageColor1;
+	GeneralsColor												m_messageColor2;
 	ICoord2D										m_messagePosition;
 	AsciiString									m_messageFont;
 	Int													m_messagePointSize;
@@ -831,7 +831,7 @@ protected:
 	Real												m_floatingTextMoveVanishRate;					///< INI value of our move vanish rate
 
 	PopupMessageData *					m_popupMessageData;
-	Color												m_popupMessageColor;
+	GeneralsColor												m_popupMessageColor;
 	
  	Bool												m_waypointMode;			///< are we in waypoint plotting mode?
 	Bool												m_forceAttackMode;		///< are we in force attack mode?

@@ -134,7 +134,7 @@ void AutoDepositUpdate::awardInitialCaptureBonus( Player *player )
 		Coord3D pos;
 		pos.set( getObject()->getPosition() );
 		pos.z += 10.0f; //add a little z to make it show up above the unit.
-		Color color = player->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
+		GeneralsColor color = player->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
 		TheInGameUI->addFloatingText( moneyString, &pos, color );
 	}
 
@@ -206,7 +206,7 @@ UpdateSleepTime AutoDepositUpdate::update( void )
         }
       
       
-        Color color = getObject()->getControllingPlayer()->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
+        GeneralsColor color = getObject()->getControllingPlayer()->getPlayerColor() | GameMakeColor( 0, 0, 0, 230 );
 			  TheInGameUI->addFloatingText( moneyString, &pos, color );
       }
 		}		

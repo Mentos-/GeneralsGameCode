@@ -1545,29 +1545,29 @@ void LayoutScheme::init( void )
 
 	// assign a default set of colors
 	UnsignedByte alpha = 255;
-	Color red					= GameMakeColor( 255,   0,   0, alpha );
-	Color darkRed			= GameMakeColor( 128,   0,   0, alpha );
-	Color lightRed		= GameMakeColor( 255, 128, 128, alpha );
-	Color green				= GameMakeColor(   0, 255,   0, alpha );
-	Color darkGreen		= GameMakeColor(   0, 128,   0, alpha );
-	Color lightGreen	= GameMakeColor( 128, 255, 128, alpha );
-	Color blue				= GameMakeColor(   0,   0, 255, alpha );
-	Color darkBlue		= GameMakeColor(   0,   0, 128, alpha );
-	Color lightBlue		= GameMakeColor( 128, 128, 255, alpha );
+	GeneralsColor red					= GameMakeColor( 255,   0,   0, alpha );
+	GeneralsColor darkRed			= GameMakeColor( 128,   0,   0, alpha );
+	GeneralsColor lightRed		= GameMakeColor( 255, 128, 128, alpha );
+	GeneralsColor green				= GameMakeColor(   0, 255,   0, alpha );
+	GeneralsColor darkGreen		= GameMakeColor(   0, 128,   0, alpha );
+	GeneralsColor lightGreen	= GameMakeColor( 128, 255, 128, alpha );
+	GeneralsColor blue				= GameMakeColor(   0,   0, 255, alpha );
+	GeneralsColor darkBlue		= GameMakeColor(   0,   0, 128, alpha );
+	GeneralsColor lightBlue		= GameMakeColor( 128, 128, 255, alpha );
 //	Color purple			= GameMakeColor( 255,   0, 255, alpha );
 //	Color darkPurple	= GameMakeColor( 128,   0, 128, alpha );
 //	Color lightPurple	= GameMakeColor( 255, 128, 255, alpha );
-	Color yellow			= GameMakeColor( 255, 255,   0, alpha );
+	GeneralsColor yellow			= GameMakeColor( 255, 255,   0, alpha );
 //	Color darkYellow	= GameMakeColor( 128, 128,   0, alpha );
 //	Color lightYellow	= GameMakeColor( 255, 255, 128, alpha );
 //	Color cyan				= GameMakeColor(   0, 255, 255, alpha );
 //	Color darkCyan		= GameMakeColor(  64, 128, 128, alpha );
 //	Color lightCyan		= GameMakeColor( 128, 255, 255, alpha );
-	Color gray				= GameMakeColor( 128, 128, 128, alpha );
-	Color darkGray		= GameMakeColor(  64,  64,  64, alpha );
-	Color lightGray		= GameMakeColor( 192, 192, 192, alpha );
-	Color black				= GameMakeColor(   0,   0,   0, alpha );
-	Color white				= GameMakeColor( 254, 254, 254, alpha );
+	GeneralsColor gray				= GameMakeColor( 128, 128, 128, alpha );
+	GeneralsColor darkGray		= GameMakeColor(  64,  64,  64, alpha );
+	GeneralsColor lightGray		= GameMakeColor( 192, 192, 192, alpha );
+	GeneralsColor black				= GameMakeColor(   0,   0,   0, alpha );
+	GeneralsColor white				= GameMakeColor( 254, 254, 254, alpha );
 	const Image *image;
 
 	// push button
@@ -2222,7 +2222,7 @@ ImageAndColorInfo *LayoutScheme::getImageAndColor( StateIdentifier id )
 /** Store the image and colors of the specific state in our own data array */
 //=============================================================================
 void LayoutScheme::storeImageAndColor( StateIdentifier id, const Image *image,
-																			 Color color, Color borderColor )
+																			 GeneralsColor color, GeneralsColor borderColor )
 {
 
 	// sanity

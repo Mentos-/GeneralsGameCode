@@ -82,20 +82,20 @@ static void addScrollbar( GameWindow *listbox )
 	// get the colors for the listbox and reset them to recolor the
 	// newly created scrollbar parts
 	//
-	Color enabled = GadgetListBoxGetEnabledColor( listbox );
-	Color enabledBorder = GadgetListBoxGetEnabledBorderColor( listbox );
-	Color enabledSelectedItem = GadgetListBoxGetEnabledSelectedItemColor( listbox );
-	Color enabledSelectedItemBorder = GadgetListBoxGetEnabledSelectedItemBorderColor( listbox );
+	GeneralsColor enabled = GadgetListBoxGetEnabledColor( listbox );
+	GeneralsColor enabledBorder = GadgetListBoxGetEnabledBorderColor( listbox );
+	GeneralsColor enabledSelectedItem = GadgetListBoxGetEnabledSelectedItemColor( listbox );
+	GeneralsColor enabledSelectedItemBorder = GadgetListBoxGetEnabledSelectedItemBorderColor( listbox );
 
-	Color disabled = GadgetListBoxGetDisabledColor( listbox );
-	Color disabledBorder = GadgetListBoxGetDisabledBorderColor( listbox );
-	Color disabledSelectedItem = GadgetListBoxGetDisabledSelectedItemColor( listbox );
-	Color disabledSelectedItemBorder = GadgetListBoxGetDisabledSelectedItemBorderColor( listbox );
+	GeneralsColor disabled = GadgetListBoxGetDisabledColor( listbox );
+	GeneralsColor disabledBorder = GadgetListBoxGetDisabledBorderColor( listbox );
+	GeneralsColor disabledSelectedItem = GadgetListBoxGetDisabledSelectedItemColor( listbox );
+	GeneralsColor disabledSelectedItemBorder = GadgetListBoxGetDisabledSelectedItemBorderColor( listbox );
 
-	Color hilite = GadgetListBoxGetHiliteColor( listbox );
-	Color hiliteBorder = GadgetListBoxGetHiliteBorderColor( listbox );
-	Color hiliteSelectedItem = GadgetListBoxGetHiliteSelectedItemColor( listbox );
-	Color hiliteSelectedItemBorder = GadgetListBoxGetHiliteSelectedItemBorderColor( listbox );
+	GeneralsColor hilite = GadgetListBoxGetHiliteColor( listbox );
+	GeneralsColor hiliteBorder = GadgetListBoxGetHiliteBorderColor( listbox );
+	GeneralsColor hiliteSelectedItem = GadgetListBoxGetHiliteSelectedItemColor( listbox );
+	GeneralsColor hiliteSelectedItemBorder = GadgetListBoxGetHiliteSelectedItemBorderColor( listbox );
 
 	GadgetListBoxSetColors( listbox,
 													enabled,
@@ -713,7 +713,7 @@ HWND InitListboxPropertiesDialog( GameWindow *window )
 	// store in the image and color table the values for this putton
 	//
 	const Image *image;
-	Color color, borderColor;
+	GeneralsColor color, borderColor;
 
 	// --------------------------------------------------------------------------
 	image = GadgetListBoxGetEnabledImage( window );

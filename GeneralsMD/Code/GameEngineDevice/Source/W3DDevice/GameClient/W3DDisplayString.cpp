@@ -157,11 +157,11 @@ void W3DDisplayString::notifyTextChanged( void )
 	* position, or content.  If they have, we need to rebuild the sentence
 	* texture for rendering */
 //=============================================================================
-void W3DDisplayString::draw( Int x, Int y, Color color, Color dropColor )
+void W3DDisplayString::draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor )
 {
 	draw(x,y, color, dropColor, 1, 1);
 }
-void W3DDisplayString::draw( Int x, Int y, Color color, Color dropColor, Int xDrop, Int yDrop )
+void W3DDisplayString::draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor, Int xDrop, Int yDrop )
 {
 	Bool needNewPolys = FALSE;
 
@@ -382,7 +382,7 @@ void W3DDisplayString::setWordWrap( Int wordWrap )
 		notifyTextChanged();
 }// void setWordWrap( Int wordWrap )
 
-void W3DDisplayString::setUseHotkey( Bool useHotkey, Color hotKeyColor )
+void W3DDisplayString::setUseHotkey( Bool useHotkey, GeneralsColor hotKeyColor )
 {
 	m_useHotKey = useHotkey;
 	m_hotKeyColor = hotKeyColor;

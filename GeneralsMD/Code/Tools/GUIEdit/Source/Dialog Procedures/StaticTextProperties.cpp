@@ -217,7 +217,7 @@ HWND InitStaticTextPropertiesDialog( GameWindow *window )
 	// store in the image and color table the values for this putton
 	//
 	const Image *image;
-	Color color, borderColor;
+	GeneralsColor color, borderColor;
 
 	// --------------------------------------------------------------------------
 	image = GadgetStaticTextGetEnabledImage( window );

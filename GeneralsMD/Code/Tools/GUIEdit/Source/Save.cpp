@@ -444,7 +444,7 @@ static Bool saveTextColor( GameWindow *window, FILE *fp, Int dataIndent )
 {
 	Int i, max = 3;  // 3 states, enabled, hilite and disabled
 	UnsignedByte r, g, b, a, br, bg, bb, ba;
-	Color color, border;
+	GeneralsColor color, border;
 
 	for( i = 0; i < max; i++ )
 	{

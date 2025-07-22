@@ -335,7 +335,7 @@ void W3DGameWinDefaultDraw( GameWindow *window, WinInstanceData *instData )
 	}  // end if
 	else
 	{
-		Color color, borderColor;
+		GeneralsColor color, borderColor;
 
 		// get colors
 		if( BitIsSet( window->winGetStatus(), WIN_STATUS_ENABLED ) == FALSE )
@@ -618,7 +618,7 @@ void W3DGameWindow::setTextLoc( Int x, Int y )
 // W3DGameWindow::drawText ====================================================
 /** Draw the text in our 2d sentence renderer */
 //=============================================================================
-void W3DGameWindow::drawText( Color color )
+void W3DGameWindow::drawText( GeneralsColor color )
 {
 	Bool needDraw = FALSE;
 

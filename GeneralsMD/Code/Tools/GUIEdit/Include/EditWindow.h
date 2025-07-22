@@ -121,7 +121,7 @@ public:
 
 	/// draw an image fit within the screen coordinates
 	void drawImage( const Image *image, Int startX, Int startY, 
-									Int endX, Int endY, Color color = 0xFFFFFFFF );
+									Int endX, Int endY, GeneralsColor color = 0xFFFFFFFF );
 
 	/// image clipping support
 	void setClipRegion( IRegion2D *region ) {m_clipRegion = *region; m_isClippedEnabled = TRUE;}
@@ -137,8 +137,8 @@ protected:
 																		WPARAM wParam, LPARAM lParam );
 
 	void drawGrid( void );  ///< draw the grid
-	void drawSeeThruOutlines( GameWindow *windowList, Color c );
-	void drawHiddenOutlines( GameWindow *windowList, Color c );
+	void drawSeeThruOutlines( GameWindow *windowList, GeneralsColor c );
+	void drawHiddenOutlines( GameWindow *windowList, GeneralsColor c );
 	void drawUIFeedback( void );  ///< draw UI visual feedback
 
 	/// if mouse is close to selected window allow resize

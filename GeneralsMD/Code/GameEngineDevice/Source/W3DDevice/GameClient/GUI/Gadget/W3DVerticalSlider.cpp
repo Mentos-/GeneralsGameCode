@@ -75,7 +75,7 @@
 void W3DGadgetVerticalSliderDraw( GameWindow *window, 
 																	WinInstanceData *instData )
 {
-	Color backBorder, backColor;
+	GeneralsColor backBorder, backColor;
 	ICoord2D origin, size, start, end;
 
 	// get screen position and size

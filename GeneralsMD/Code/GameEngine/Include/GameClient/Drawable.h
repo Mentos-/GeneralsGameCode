@@ -301,7 +301,7 @@ public:
 	DrawableID getID( void ) const;																			///< return this drawable's unique ID
 
 	void friend_bindToObject( Object *obj ); ///< bind this drawable to an object ID. for use ONLY by GameLogic!
-	void setIndicatorColor(Color color);
+	void setIndicatorColor(GeneralsColor color);
 	
 	void setTintStatus( TintStatus statusBits ) { BitSet( m_tintStatus, statusBits ); };
 	void clearTintStatus( TintStatus statusBits ) { BitClear( m_tintStatus, statusBits ); };
@@ -549,7 +549,7 @@ public:
 	// flash drawable methods ---------------------------------------------------------
   Int getFlashCount( void ) { return m_flashCount; }
 	void setFlashCount( Int count ) { m_flashCount = count; }
-	void setFlashColor( Color color ) { m_flashColor = color; }
+	void setFlashColor( GeneralsColor color ) { m_flashColor = color; }
   void saturateRGB(RGBColor& color, Real factor);// not strictly for flash color, but it is the only practical use for this
 	//---------------------------------------------------------------------------------
 
@@ -692,7 +692,7 @@ private:
 	StealthLookType m_stealthLook;
 
 	Int m_flashCount;           ///< number of times to flash the drawable
-	Color m_flashColor;					///< color to flash the drawable
+	GeneralsColor m_flashColor;					///< color to flash the drawable
 
 	Matrix3D m_instance;				///< The instance matrix that holds the initial/default position & orientation
 	Real m_instanceScale;				///< the uniform scale factor applied to the instance matrix before it is sent to W3D. 

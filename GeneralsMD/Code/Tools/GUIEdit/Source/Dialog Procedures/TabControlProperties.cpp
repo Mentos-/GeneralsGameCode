@@ -410,7 +410,7 @@ HWND InitTabControlPropertiesDialog( GameWindow *tabControl )
 	//
 
 	const Image *image;
-	Color color, borderColor;
+	GeneralsColor color, borderColor;
 
 	image = GadgetTabControlGetEnabledImageTabZero( tabControl );
 	color = GadgetTabControlGetEnabledColorTabZero( tabControl );

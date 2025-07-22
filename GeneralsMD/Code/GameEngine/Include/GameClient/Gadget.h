@@ -321,7 +321,7 @@ typedef struct _TextData
 typedef struct _ListEntryCell
 {
 	Int cellType;									// Holds either LISTBOX_TEXT or LISTBOX_IMAGE
-	Color						color;				// use this color
+	GeneralsColor						color;				// use this color
 	void						*data;				// pointer to either a DisplayString or an image	
 	void						*userData;		// Attach user data to the cell
 	Int							width;				// Used if this is an image and we don't want to use the default
@@ -428,9 +428,9 @@ typedef struct _PushButtonData
 {
 	UnsignedByte drawClock;	///< We only want to draw the clock if, well, we want to
 	Int  percentClock;			///< The percentage of the clock we want to draw
-	Color colorClock;				///< The color to display the clock at
+	GeneralsColor colorClock;				///< The color to display the clock at
 	Bool drawBorder;				///< We only want to draw the border if we want to
-	Color colorBorder;			///< The color for the border around the button
+	GeneralsColor colorBorder;			///< The color for the border around the button
 	void *userData;					///< random additional data we can set
 	const Image *overlayImage; ///< An overlay image (like a veterancy symbol)
 	AsciiString altSound;		///< use an alternitive sound if one is set

@@ -1113,7 +1113,7 @@ void EditWindow::handleResizeAvailable( Int mouseX, Int mouseY )
 /** Draw an outline for a window that is see thru so we can still work
 	* with it in the editor */
 //=============================================================================
-void EditWindow::drawSeeThruOutlines( GameWindow *windowList, Color c )
+void EditWindow::drawSeeThruOutlines( GameWindow *windowList, GeneralsColor c )
 {
 
 	// end recursion
@@ -1149,7 +1149,7 @@ void EditWindow::drawSeeThruOutlines( GameWindow *windowList, Color c )
 /** Draw an outline for a window that is hidden so we can still work
 	* with it in the editor */
 //=============================================================================
-void EditWindow::drawHiddenOutlines( GameWindow *windowList, Color c )
+void EditWindow::drawHiddenOutlines( GameWindow *windowList, GeneralsColor c )
 {
 
 	// end recursion
@@ -1227,7 +1227,7 @@ void EditWindow::drawUIFeedback( void )
 	{
 		Int width, height;
 		Real selectBoxWidth = 2.0f;
-		Color selectBoxColor = GameMakeColor( 0, 255, 0, 255 );
+		GeneralsColor selectBoxColor = GameMakeColor( 0, 255, 0, 255 );
 
 		width = m_selectRegion.hi.x - m_selectRegion.lo.x;
 		height = m_selectRegion.hi.y - m_selectRegion.lo.y;
@@ -1243,7 +1243,7 @@ void EditWindow::drawUIFeedback( void )
 		ICoord2D origin, size;
 		GameWindow *window;
 		Real windowSelectWidth = 2.0f;
-		Color windowSelectColor;
+		GeneralsColor windowSelectColor;
 		
 		windowSelectColor = GameMakeColor( 0, color, 0, 255 );
 
@@ -1271,7 +1271,7 @@ void EditWindow::drawUIFeedback( void )
 		ICoord2D moveLoc, safeLoc;
 		GameWindow *window, *parent;
 		Real outlineWidth = 1.0f;
-		Color outlineColor;
+		GeneralsColor outlineColor;
 
 		// determine outline using pulse counter
 		outlineColor = GameMakeColor( m_pulse, m_pulse, m_pulse + 25, 255 );
@@ -1338,7 +1338,7 @@ void EditWindow::drawUIFeedback( void )
 	{
 		GameWindow *window = m_windowToResize;
 		ICoord2D loc, size;
-		Color outlineColor;
+		GeneralsColor outlineColor;
 		Real outlineWidth = 1.0f;
 		GameWindow *parent;
 		ICoord2D dest = m_resizeDest;
@@ -1377,7 +1377,7 @@ void EditWindow::drawUIFeedback( void )
 
 	// draw lines around any drag source and drag targets in the hierarchy view
 	GameWindow *dragSource = TheHierarchyView->getDragWindow();
-	Color dragColor = GameMakeColor( color, 0, color, 255 );
+	GeneralsColor dragColor = GameMakeColor( color, 0, color, 255 );
 	if( dragSource )
 	{
 		ICoord2D origin, size;
@@ -1417,7 +1417,7 @@ void EditWindow::drawGrid( void )
 	Int res = TheEditor->getGridResolution();
 	Int x, y;
 	RGBColorInt *gridColor = TheEditor->getGridColor();
-	Color color = GameMakeColor( gridColor->red, gridColor->green,	
+	GeneralsColor color = GameMakeColor( gridColor->red, gridColor->green,	
 															 gridColor->blue, gridColor->alpha );
 
 	// set us to invert where we draw
@@ -1631,7 +1631,7 @@ void EditWindow::drawFillRect( Int startX, Int startY,
 void EditWindow::drawImage( const Image *image, 
 														Int startX, Int startY, 
 														Int endX, Int endY,
-														Color color )
+														GeneralsColor color )
 {
 
 	// sanity

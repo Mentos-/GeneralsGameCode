@@ -76,8 +76,8 @@
 // drawTextEntryText ==========================================================
 //=============================================================================
 static void drawTextEntryText( GameWindow *window, WinInstanceData *instData,	
-															 Color textColor, Color textDropColor,
-															 Color compositeColor, Color compositeDropColor,
+															 GeneralsColor textColor, GeneralsColor textDropColor,
+															 GeneralsColor compositeColor, GeneralsColor compositeDropColor,
 															 Int x, Int y, Int width, Int fontHeight )
 {
 	static Byte drawCnt = 0;
@@ -222,7 +222,7 @@ void W3DGadgetTextEntryDraw( GameWindow *window, WinInstanceData *instData )
 {
 	EntryData *e = (EntryData *)window->winGetUserData();
 	ICoord2D origin, size, start, end;
-	Color backBorder, backColor, textColor, textBorder, 
+	GeneralsColor backBorder, backColor, textColor, textBorder, 
 			compositeColor, compositeBorder;
 
 	// cancel unichar flag
@@ -320,8 +320,8 @@ void W3DGadgetTextEntryImageDraw( GameWindow *window, WinInstanceData *instData 
 {
 	EntryData *e = (EntryData *)window->winGetUserData();
 	ICoord2D origin, size, start, end;
-	Color textColor, textBorder;
-	Color compositeColor, compositeBorder;
+	GeneralsColor textColor, textBorder;
+	GeneralsColor compositeColor, compositeBorder;
 	const Image *leftImage, *rightImage, *centerImage, *smallCenterImage;
 	Int xOffset, yOffset;
 	Int i;

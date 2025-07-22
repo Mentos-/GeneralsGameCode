@@ -190,7 +190,7 @@ static void drawListBoxText( GameWindow *window, WinInstanceData *instData,
 	Int i;
 	Bool selected;
 	Int listLineHeight;
-	Color textColor;
+	GeneralsColor textColor;
 //	W3DGameWindow *w3dWindow = static_cast<W3DGameWindow *>(window);
 	IRegion2D clipRegion;
 	ICoord2D start, end;
@@ -312,7 +312,7 @@ static void drawListBoxText( GameWindow *window, WinInstanceData *instData,
 			}  // end if, use images
 			else
 			{
-				Color selectColor = WIN_COLOR_UNDEFINED,
+				GeneralsColor selectColor = WIN_COLOR_UNDEFINED,
 							selectBorder = WIN_COLOR_UNDEFINED;
 
 				if( BitIsSet( window->winGetStatus(), WIN_STATUS_ENABLED ) == FALSE )
@@ -382,7 +382,7 @@ static void drawListBoxText( GameWindow *window, WinInstanceData *instData,
 		
 
 		
-		Color dropColor = TheWindowManager->winMakeColor( 0, 0, 0, 255 );
+		GeneralsColor dropColor = TheWindowManager->winMakeColor( 0, 0, 0, 255 );
 		DisplayString *string;
 
 		ListEntryCell *cells = list->listData[i].cell;
@@ -498,7 +498,7 @@ static void drawListBoxText( GameWindow *window, WinInstanceData *instData,
 void W3DGadgetListBoxDraw( GameWindow *window, WinInstanceData *instData )
 {
 	Int width, height, fontHeight, x, y;
-	Color background, border, titleColor, titleBorder;
+	GeneralsColor background, border, titleColor, titleBorder;
 	ListboxData *list = (ListboxData *)window->winGetUserData();
 	ICoord2D size;
 	DisplayString *title = instData->getTextDisplayString();
@@ -590,7 +590,7 @@ void W3DGadgetListBoxImageDraw( GameWindow *window, WinInstanceData *instData )
 	const Image *image;
 	ListboxData *list = (ListboxData *)window->winGetUserData();
 	ICoord2D size;
-	Color titleColor, titleBorder;
+	GeneralsColor titleColor, titleBorder;
 	DisplayString *title = instData->getTextDisplayString();
 
 	// get window position and size

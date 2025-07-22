@@ -75,7 +75,7 @@ private:
 	Real					m_minOpacity;
 	Real					m_maxOpacity;
 	UnsignedInt		m_opacityThrobTime;
-	Color					m_color;
+	GeneralsColor					m_color;
 	Bool					m_onlyVisibleToOwningPlayer;
 
 public:

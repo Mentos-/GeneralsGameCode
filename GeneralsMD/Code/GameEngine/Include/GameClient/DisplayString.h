@@ -90,12 +90,12 @@ public:
 	virtual GameFont *getFont( void );				///< return font in string
 	virtual void setWordWrap( Int wordWrap ) = 0;	///< Set the width that we want to start wrapping text
 	virtual void setWordWrapCentered( Bool isCentered ) = 0; ///< If this is set to true, the text on a new line is centered
-	virtual void draw( Int x, Int y, Color color, Color dropColor ) = 0;  ///< render text
-	virtual void draw( Int x, Int y, Color color, Color dropColor, Int xDrop, Int yDrop ) = 0;  ///< render text with the drop shadow being at the offsets passed in
+	virtual void draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor ) = 0;  ///< render text
+	virtual void draw( Int x, Int y, GeneralsColor color, GeneralsColor dropColor, Int xDrop, Int yDrop ) = 0;  ///< render text with the drop shadow being at the offsets passed in
 	virtual void getSize( Int *width, Int *height ) = 0;  ///< get render size
 	virtual Int getWidth( Int charPos = -1 ) = 0; ///< get text with up to charPos characters, 1- = all characters
 
-	virtual void setUseHotkey( Bool useHotkey, Color hotKeyColor ) = 0;
+	virtual void setUseHotkey( Bool useHotkey, GeneralsColor hotKeyColor ) = 0;
 
 	virtual void setClipRegion( IRegion2D *region );  ///< clip text in this region
 

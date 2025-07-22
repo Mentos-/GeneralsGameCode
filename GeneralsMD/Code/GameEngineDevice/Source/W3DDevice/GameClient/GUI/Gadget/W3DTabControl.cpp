@@ -107,7 +107,7 @@ void W3DGadgetTabControlDraw( GameWindow *tabControl, WinInstanceData *instData 
 		tabDeltaY = tabHeight;
 	}
 
-	Color color, border;
+	GeneralsColor color, border;
 
 	if( tabData->tabCount >= 1 )//Does exist
 	{

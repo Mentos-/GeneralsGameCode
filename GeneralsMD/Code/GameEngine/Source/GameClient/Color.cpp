@@ -89,7 +89,7 @@
 //Put on ice until later M Lorenzen
 //static UnsignedByte s_cheaterHasBeenSpied = 0;
 
-void GameGetColorComponents( Color color,
+void GameGetColorComponents( GeneralsColor color,
 														 UnsignedByte *red,
 														 UnsignedByte *green,
 														 UnsignedByte *blue,
@@ -104,7 +104,7 @@ void GameGetColorComponents( Color color,
 }  // end GameGetColorComponents
 
 //Put on ice until later M Lorenzen
-//void GameGetColorComponentsWithCheatSpy( Color color,
+//void GameGetColorComponentsWithCheatSpy( GeneralsColor color,
 //														 UnsignedByte *red,
 //														 UnsignedByte *green,
 //														 UnsignedByte *blue,
@@ -122,7 +122,7 @@ void GameGetColorComponents( Color color,
 //	
 //}  // end GameGetColorComponents
 
-void GameGetColorComponentsReal( Color color, Real *red, Real *green, Real *blue, Real *alpha )
+void GameGetColorComponentsReal( GeneralsColor color, Real *red, Real *green, Real *blue, Real *alpha )
 {
 	*alpha	= ((color & 0xFF000000) >> 24) / 255.0f;
 	*red		= ((color & 0x00FF0000) >> 16) / 255.0f;
@@ -131,7 +131,7 @@ void GameGetColorComponentsReal( Color color, Real *red, Real *green, Real *blue
 }
 															
 
-Color GameDarkenColor( Color color, Int percent )
+GeneralsColor GameDarkenColor( GeneralsColor color, Int percent )
 {
 	// if they try to go to dark, just return their old color
 	if(percent >= 90 || percent <= 0)

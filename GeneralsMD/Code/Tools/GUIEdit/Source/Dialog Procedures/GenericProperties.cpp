@@ -175,7 +175,7 @@ static LRESULT CALLBACK genericPropertiesCallback( HWND hWndDialog,
 
 						if( newColor )
 						{
-							Color newGameColor = GameMakeColor( newColor->red,
+							GeneralsColor newGameColor = GameMakeColor( newColor->red,
 																									newColor->green,
 																									newColor->blue,
 																									newColor->alpha );
@@ -200,7 +200,7 @@ static LRESULT CALLBACK genericPropertiesCallback( HWND hWndDialog,
 					{
 						const Image *image;
 						RGBColorInt *rgbColor;
-						Color color;
+						GeneralsColor color;
 
 						// save the common properties
 						if( SaveCommonDialogProperties( hWndDialog, window ) == FALSE )

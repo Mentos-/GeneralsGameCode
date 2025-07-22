@@ -86,7 +86,7 @@ void INI::parseOnlineChatColorDefinition( INI* ini )
 }
 
 
-Color GameSpyColor[GSCOLOR_MAX] =
+GeneralsColor GameSpyColor[GSCOLOR_MAX] =
 {
 	GameMakeColor(255,255,255,255),	// GSCOLOR_DEFAULT
 	GameMakeColor(255,255,  0,255),	// GSCOLOR_CURRENTROOM
@@ -312,7 +312,7 @@ void GameSpyInfo::addChat( PlayerInfo p, UnicodeString msg, Bool isPublic, Bool 
 	}
 }
 
-Int GameSpyInfo::addText( UnicodeString message, Color c, GameWindow *win )
+Int GameSpyInfo::addText( UnicodeString message, GeneralsColor c, GameWindow *win )
 {
 	if (TheGameSpyGame && TheGameSpyGame->isInGame() && TheGameSpyGame->isGameInProgress())
 	{

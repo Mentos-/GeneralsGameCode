@@ -76,7 +76,7 @@
 //-----------------------------------------------------------------------------
 
 void drawText( GameWindow *window, WinInstanceData *instData );
-static Color BrownishColor = GameMakeColor(167,134,94,255);
+static GeneralsColor BrownishColor = GameMakeColor(167,134,94,255);
 static IRegion2D clipRegion;
 //-----------------------------------------------------------------------------
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////
@@ -782,7 +782,7 @@ static void drawText( GameWindow *window, WinInstanceData *instData )
 {
 	ICoord2D origin, size, textPos;
 	Int width, height;
-	Color textColor, dropColor;
+	GeneralsColor textColor, dropColor;
 	DisplayString *text = instData->getTextDisplayString();
 
 	// sanity
@@ -835,7 +835,7 @@ static void drawText( GameWindow *window, WinInstanceData *instData )
 void W3DMainMenuRandomTextDraw( GameWindow *window, WinInstanceData *instData )
 {
 	TextData *tData = (TextData *)window->winGetUserData();
-	Color textColor, textOutlineColor;
+	GeneralsColor textColor, textOutlineColor;
 	ICoord2D size, origin, textPos;
 	Int textWidth, textHeight;
 	IRegion2D textclipRegion;

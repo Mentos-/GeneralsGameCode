@@ -366,7 +366,7 @@ HWND InitSliderPropertiesDialog( GameWindow *window )
 	// init values
 	//
 	const Image *image;
-	Color color, borderColor;
+	GeneralsColor color, borderColor;
 	Bool vert = BitIsSet( window->winGetStyle(), GWS_VERT_SLIDER );
 
 	// --------------------------------------------------------------------------

@@ -70,7 +70,7 @@ static void drawRadioButtonText( GameWindow *window, WinInstanceData *instData )
 {
 	ICoord2D origin, size, textPos;
 	Int width, height;
-	Color textColor, dropColor;
+	GeneralsColor textColor, dropColor;
 	DisplayString *text = instData->getTextDisplayString();
 
 	// sanity
@@ -126,7 +126,7 @@ static void drawRadioButtonText( GameWindow *window, WinInstanceData *instData )
 void W3DGadgetRadioButtonDraw( GameWindow *window, WinInstanceData *instData )
 {
 	Int checkOffsetFromLeft;
-	Color backColor,
+	GeneralsColor backColor,
 				backBorder,
 				boxColor,
 				boxBorder;

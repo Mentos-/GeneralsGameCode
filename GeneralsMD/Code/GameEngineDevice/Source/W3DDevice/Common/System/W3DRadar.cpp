@@ -290,8 +290,8 @@ void W3DRadar::drawViewBox( Int pixelX, Int pixelY, Int width, Int height )
 	ICoord2D start, end;
 	ICoord2D clipStart, clipEnd;
 	Real lineWidth = 1.0f;
-	Color topColor = GameMakeColor( 225, 225, 0, 255 );
-	Color bottomColor = GameMakeColor( 158, 158, 0, 255 );
+	GeneralsColor topColor = GameMakeColor( 225, 225, 0, 255 );
+	GeneralsColor bottomColor = GameMakeColor( 158, 158, 0, 255 );
 
 	//
 	// setup the clipping region ... note that this clipping region is not over just the
@@ -374,7 +374,7 @@ void W3DRadar::drawSingleBeaconEvent( Int pixelX, Int pixelY, Int width, Int hei
 	ICoord2D tri[ 3 ];
 	ICoord2D start, end;
 	Real angle, addAngle;
-	Color startColor, endColor;
+	GeneralsColor startColor, endColor;
 	Real lineWidth = 1.0f;
 	UnsignedInt currentFrame = TheGameLogic->getFrame();
 	UnsignedInt frameDiff;							// frames the event has been alive for
@@ -473,7 +473,7 @@ void W3DRadar::drawSingleGenericEvent( Int pixelX, Int pixelY, Int width, Int he
 	ICoord2D tri[ 3 ];
 	ICoord2D start, end;
 	Real angle, addAngle;
-	Color startColor, endColor;
+	GeneralsColor startColor, endColor;
 	Real lineWidth = 1.0f;
 	UnsignedInt currentFrame = TheGameLogic->getFrame();
 	UnsignedInt frameDiff;							// frames the event has been alive for
@@ -685,7 +685,7 @@ void W3DRadar::renderObjectList( const RadarObject *listHead, TextureClass *text
       continue;
 
     // get the color we're going to draw in
-		Color c = rObj->getColor();
+		GeneralsColor c = rObj->getColor();
 
 		
 		
@@ -1367,8 +1367,8 @@ void W3DRadar::draw( Int pixelX, Int pixelY, Int width, Int height )
 	Int scaledHeight = lr.y - ul.y;
 
 	// draw black border areas where we need map
-	Color fillColor = GameMakeColor( 0, 0, 0, 255 );
-	Color lineColor = GameMakeColor( 50, 50, 50, 255 );
+	GeneralsColor fillColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor lineColor = GameMakeColor( 50, 50, 50, 255 );
 	if( m_mapExtent.width()/width >= m_mapExtent.height()/height )
 	{
 		

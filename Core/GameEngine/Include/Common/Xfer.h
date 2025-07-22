@@ -48,7 +48,7 @@
 
 // FORWARD REFERENCES /////////////////////////////////////////////////////////////////////////////
 class Snapshot;
-typedef Int Color;
+typedef Int GeneralsColor;
 enum ObjectID CPP_11(: Int);
 enum DrawableID CPP_11(: Int);
 enum KindOfType CPP_11(: Int);
@@ -164,7 +164,7 @@ public:
 	virtual void xferRegion2D( Region2D *region2D );
 	virtual void xferIRegion2D( IRegion2D *iRegion2D );
 	virtual void xferRealRange( RealRange *realRange );
-	virtual void xferColor( Color *color );
+	virtual void xferColor( GeneralsColor *color );
 	virtual void xferRGBColor( RGBColor *rgbColor );
 	virtual void xferRGBAColorReal( RGBAColorReal *rgbaColorReal );
 	virtual void xferRGBAColorInt( RGBAColorInt *rgbaColorInt );

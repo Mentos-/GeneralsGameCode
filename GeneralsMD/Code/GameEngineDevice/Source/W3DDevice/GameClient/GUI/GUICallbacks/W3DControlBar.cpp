@@ -475,7 +475,7 @@ void W3DCommandBarGridDraw( GameWindow *window, WinInstanceData *instData )
 	window->winGetScreenPosition( &pos.x, &pos.y );
 	window->winGetSize( &size.x, &size.y );
 		
-	Color color = TheControlBar->getBorderColor();
+	GeneralsColor color = TheControlBar->getBorderColor();
 	window->winSetEnabledBorderColor(0, color);
 	W3DGameWinDefaultDraw( window, instData );
 
@@ -726,8 +726,8 @@ void W3DDrawMapPreview( GameWindow *window, WinInstanceData *instData)
 //	Int scaledHeight = lr.y - ul.y;
 
 	// draw black border areas where we need map
-	Color fillColor = GameMakeColor( 0, 0, 0, 255 );
-	Color lineColor = GameMakeColor( 50, 50, 50, 255 );
+	GeneralsColor fillColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor lineColor = GameMakeColor( 50, 50, 50, 255 );
 	
 	if( mmData->m_extent.width()/width >= mmData->m_extent.height()/height )
 	{

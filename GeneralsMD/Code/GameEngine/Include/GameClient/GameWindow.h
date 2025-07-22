@@ -273,25 +273,25 @@ public:
 	// --------------------------------------------------------------------------
 	// new methods for setting images
 	Int winSetEnabledImage( Int index, const Image *image );
-	Int winSetEnabledColor( Int index, Color color );
-	Int winSetEnabledBorderColor( Int index, Color color );
+	Int winSetEnabledColor( Int index, GeneralsColor color );
+	Int winSetEnabledBorderColor( Int index, GeneralsColor color );
 	const Image *winGetEnabledImage( Int index ) { return m_instData.m_enabledDrawData[ index ].image; }
-	Color winGetEnabledColor( Int index ) { return m_instData.m_enabledDrawData[ index ].color; }
-	Color winGetEnabledBorderColor( Int index ) { return m_instData.m_enabledDrawData[ index ].borderColor; }
+	GeneralsColor winGetEnabledColor( Int index ) { return m_instData.m_enabledDrawData[ index ].color; }
+	GeneralsColor winGetEnabledBorderColor( Int index ) { return m_instData.m_enabledDrawData[ index ].borderColor; }
 
 	Int winSetDisabledImage( Int index, const Image *image );
-	Int winSetDisabledColor( Int index, Color color );
-	Int winSetDisabledBorderColor( Int index, Color color );
+	Int winSetDisabledColor( Int index, GeneralsColor color );
+	Int winSetDisabledBorderColor( Int index, GeneralsColor color );
 	const Image *winGetDisabledImage( Int index ) { return m_instData.m_disabledDrawData[ index ].image; }
-	Color winGetDisabledColor( Int index ) { return m_instData.m_disabledDrawData[ index ].color; }
-	Color winGetDisabledBorderColor( Int index ) { return m_instData.m_disabledDrawData[ index ].borderColor; }
+	GeneralsColor winGetDisabledColor( Int index ) { return m_instData.m_disabledDrawData[ index ].color; }
+	GeneralsColor winGetDisabledBorderColor( Int index ) { return m_instData.m_disabledDrawData[ index ].borderColor; }
 
 	Int winSetHiliteImage( Int index, const Image *image );
-	Int winSetHiliteColor( Int index, Color color );
-	Int winSetHiliteBorderColor( Int index, Color color );
+	Int winSetHiliteColor( Int index, GeneralsColor color );
+	Int winSetHiliteBorderColor( Int index, GeneralsColor color );
 	const Image *winGetHiliteImage( Int index ) { return m_instData.m_hiliteDrawData[ index ].image; }
-	Color winGetHiliteColor( Int index ) { return m_instData.m_hiliteDrawData[ index ].color; }
-	Color winGetHiliteBorderColor( Int index ) { return m_instData.m_hiliteDrawData[ index ].borderColor; }
+	GeneralsColor winGetHiliteColor( Int index ) { return m_instData.m_hiliteDrawData[ index ].color; }
+	GeneralsColor winGetHiliteBorderColor( Int index ) { return m_instData.m_hiliteDrawData[ index ].borderColor; }
 
 	// --------------------------------------------------------------------------
 	// draw methods and data
@@ -310,18 +310,18 @@ public:
 	Int winGetTextLength(); ///< get number of chars in text string
 	GameFont *winGetFont( void );  ///< get the font being used by this window
 	virtual void winSetFont( GameFont *font );  ///< set font for window
-	void winSetEnabledTextColors( Color color, Color borderColor );
-	void winSetDisabledTextColors( Color color, Color borderColor );
-	void winSetIMECompositeTextColors( Color color, Color borderColor );
-	void winSetHiliteTextColors( Color color, Color borderColor );
-	Color winGetEnabledTextColor( void );
-	Color winGetEnabledTextBorderColor( void );
-	Color winGetDisabledTextColor( void );
-	Color winGetDisabledTextBorderColor( void );
-	Color winGetIMECompositeTextColor( void );
-	Color winGetIMECompositeBorderColor( void );
-	Color winGetHiliteTextColor( void );
-	Color winGetHiliteTextBorderColor( void );
+	void winSetEnabledTextColors( GeneralsColor color, GeneralsColor borderColor );
+	void winSetDisabledTextColors( GeneralsColor color, GeneralsColor borderColor );
+	void winSetIMECompositeTextColors( GeneralsColor color, GeneralsColor borderColor );
+	void winSetHiliteTextColors( GeneralsColor color, GeneralsColor borderColor );
+	GeneralsColor winGetEnabledTextColor( void );
+	GeneralsColor winGetEnabledTextBorderColor( void );
+	GeneralsColor winGetDisabledTextColor( void );
+	GeneralsColor winGetDisabledTextBorderColor( void );
+	GeneralsColor winGetIMECompositeTextColor( void );
+	GeneralsColor winGetIMECompositeBorderColor( void );
+	GeneralsColor winGetHiliteTextColor( void );
+	GeneralsColor winGetHiliteTextBorderColor( void );
 
 	// window instance data
 	Int winSetInstanceData( WinInstanceData *data );  ///< copy over instance data

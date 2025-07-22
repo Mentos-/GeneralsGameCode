@@ -252,10 +252,10 @@ public:
 	Player* getControllingPlayer() const;
 	Relationship getRelationship(const Object *that) const;
 
-	Color getIndicatorColor() const;
-	Color getNightIndicatorColor() const;
+	GeneralsColor getIndicatorColor() const;
+	GeneralsColor getNightIndicatorColor() const;
 	Bool hasCustomIndicatorColor() const { return m_indicatorColor != 0; }
-	void setCustomIndicatorColor(Color c);
+	void setCustomIndicatorColor(GeneralsColor c);
 	void removeCustomIndicatorColor();
 
 	Bool isLocallyControlled() const;
@@ -763,7 +763,7 @@ private:
 
 	Team*													m_team;								///< team that is current owner of this guy
 	AsciiString										m_originalTeamName;		///< team that was the original ("birth") team of this guy
-	Color													m_indicatorColor;			///< if nonzero, use this instead of controlling player's color
+	GeneralsColor													m_indicatorColor;			///< if nonzero, use this instead of controlling player's color
 
 	Coord3D												m_healthBoxOffset; ///< generally zero, except for special amorphous ones like angry mob
 	

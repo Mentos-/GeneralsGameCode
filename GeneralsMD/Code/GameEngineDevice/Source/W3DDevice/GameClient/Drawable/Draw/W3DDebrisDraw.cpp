@@ -101,7 +101,7 @@ void W3DDebrisDraw::setFullyObscuredByShroud(Bool fullyObscured)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-void W3DDebrisDraw::setModelName(AsciiString name, Color color, ShadowType t)
+void W3DDebrisDraw::setModelName(AsciiString name, GeneralsColor color, ShadowType t)
 {
   if (m_renderObject == NULL && !name.isEmpty())
 	{

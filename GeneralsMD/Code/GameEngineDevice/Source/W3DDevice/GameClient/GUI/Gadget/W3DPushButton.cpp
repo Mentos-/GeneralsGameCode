@@ -87,7 +87,7 @@ static void drawButtonText( GameWindow *window, WinInstanceData *instData )
 {
 	ICoord2D origin, size, textPos;
 	Int width, height;
-	Color textColor, dropColor;
+	GeneralsColor textColor, dropColor;
 	DisplayString *text = instData->getTextDisplayString();
 
 	// sanity
@@ -152,7 +152,7 @@ static void drawButtonText( GameWindow *window, WinInstanceData *instData )
 //=============================================================================
 void W3DGadgetPushButtonDraw( GameWindow *window, WinInstanceData *instData )
 {
-	Color color, border;
+	GeneralsColor color, border;
 	ICoord2D origin, size, start, end;
 
 	// get window position and size

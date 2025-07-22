@@ -295,15 +295,15 @@ public:
 	//---------------------------------------------------------------------------
 
 	/// draw image, coord are in screen and should be kepth within that box specified
-	virtual void winDrawImage( const Image *image, Int startX, Int startY, Int endX, Int endY, Color color = 0xFFFFFFFF );
+	virtual void winDrawImage( const Image *image, Int startX, Int startY, Int endX, Int endY, GeneralsColor color = 0xFFFFFFFF );
 	/// draw filled rect, coords are absolute screen coords
-	virtual void winFillRect( Color color, Real width, Int startX, Int startY, Int endX, Int endY );
+	virtual void winFillRect( GeneralsColor color, Real width, Int startX, Int startY, Int endX, Int endY );
 	/// draw rect outline, coords are absolute screen coords
-	virtual void winOpenRect( Color color, Real width, Int startX, Int startY, Int endX, Int endY );
+	virtual void winOpenRect( GeneralsColor color, Real width, Int startX, Int startY, Int endX, Int endY );
 	/// draw line, coords are absolute screen coords
-	virtual void winDrawLine( Color color, Real width, Int startX, Int startY, Int endX, Int endY );
+	virtual void winDrawLine( GeneralsColor color, Real width, Int startX, Int startY, Int endX, Int endY );
 	/// Make a color representation out of RGBA components
-	virtual Color winMakeColor( UnsignedByte red, UnsignedByte green, UnsignedByte blue, UnsignedByte alpha );
+	virtual GeneralsColor winMakeColor( UnsignedByte red, UnsignedByte green, UnsignedByte blue, UnsignedByte alpha );
 	/** Find an image reference and return a pointer to its image, you may
 	recreate all Image structs to suit your project */
 	virtual const Image *winFindImage( const char *name );
@@ -311,7 +311,7 @@ public:
 	virtual Int winIsDigit( Int c );  ///< is character a digit
 	virtual Int winIsAscii( Int c );  ///< is character a digit
 	virtual Int winIsAlNum( Int c );  ///< is character alpha-numeric
-	virtual void winFormatText( GameFont *font, UnicodeString text, Color color,
+	virtual void winFormatText( GameFont *font, UnicodeString text, GeneralsColor color,
 															Int x, Int y, Int width, Int height );
 	virtual void winGetTextSize( GameFont *font, UnicodeString text, 
 															 Int *width, Int *height, Int maxWidth );

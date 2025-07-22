@@ -728,9 +728,9 @@ static void saveTextLabel( HWND edit, GameWindow *window )
 /** Load the text state combo */
 //=============================================================================
 void LoadTextStateCombo( HWND comboBox, 
-												 Color enabled, Color enabledBorder,
-												 Color disabled, Color disabledBorder,
-												 Color hilite, Color hiliteBorder )
+												 GeneralsColor enabled, GeneralsColor enabledBorder,
+												 GeneralsColor disabled, GeneralsColor disabledBorder,
+												 GeneralsColor hilite, GeneralsColor hiliteBorder )
 	{
 
 	// sanity
@@ -1287,7 +1287,7 @@ RGBColorInt *GetControlColor( UnsignedInt controlID )
 // SetControlColor ============================================================
 /** Set the color in the table with the matching control ID */
 //=============================================================================
-void SetControlColor( UnsignedInt controlID, Color color )
+void SetControlColor( UnsignedInt controlID, GeneralsColor color )
 {
 	ColorControl *entry;
 	UnsignedByte red, green, blue, alpha;
@@ -1377,7 +1377,7 @@ void SwitchToState( StateIdentifier id, HWND dialog )
 /** Store the image and colors in the table */
 //=============================================================================
 void StoreImageAndColor( StateIdentifier id, const Image *image,
-												 Color color, Color borderColor )
+												 GeneralsColor color, Color borderColor )
 {
 	ImageAndColorInfo *entry;
 

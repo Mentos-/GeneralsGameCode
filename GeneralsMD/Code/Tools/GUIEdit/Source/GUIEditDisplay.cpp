@@ -129,7 +129,7 @@ void GUIEditDisplay::drawFillRect( Int startX, Int startY,
 void GUIEditDisplay::drawImage( const Image *image, 
 																Int startX, Int startY, 
 																Int endX, Int endY, 
-																Color color, DrawImageMode mode )
+																GeneralsColor color, DrawImageMode mode )
 {
 
 	TheEditWindow->drawImage( image,

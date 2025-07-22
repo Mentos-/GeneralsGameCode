@@ -637,7 +637,7 @@ void Anim2D::draw( Int x, Int y )
 	const ICoord2D *imageSize = image->getImageSize();
 
 	// draw the image
-	Color color = GameMakeColor( 255, 255, 255, 255 * m_alpha );
+	GeneralsColor color = GameMakeColor( 255, 255, 255, 255 * m_alpha );
 	TheDisplay->drawImage( image, x, y, x + imageSize->x, y + imageSize->y, color );
 
 	//
@@ -665,7 +665,7 @@ void Anim2D::draw( Int x, Int y, Int width, Int height )
 
 
 	// draw image to the display
-	Color color = GameMakeColor( 255, 255, 255, 255 * m_alpha );
+	GeneralsColor color = GameMakeColor( 255, 255, 255, 255 * m_alpha );
 	TheDisplay->drawImage( image, x, y, x + width, y + height, color );
 
 	//

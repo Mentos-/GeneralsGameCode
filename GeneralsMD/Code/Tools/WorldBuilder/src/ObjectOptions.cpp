@@ -251,7 +251,7 @@ BOOL ObjectOptions::OnInitDialog()
 		m_objectsList = pMap;
 			
 		// get display color for the editor
-		Color cc = tTemplate->getDisplayColor();
+		GeneralsColor cc = tTemplate->getDisplayColor();
 		pMap->setColor(cc);
 
 	}  // end for tTemplate

@@ -1521,8 +1521,8 @@ void W3DDisplay::drawDebugStats( void )
 {
 	Int	x = 3;
 	Int	y = 3;
-	Color textColor = GameMakeColor( 255, 255, 255, 255 );
-	Color dropColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor textColor = GameMakeColor( 255, 255, 255, 255 );
+	GeneralsColor dropColor = GameMakeColor( 0, 0, 0, 255 );
 
 	int linesOfStrings = DisplayStringCount;
 #ifdef EXTENDED_STATS
@@ -1551,8 +1551,8 @@ void W3DDisplay::drawFPSStats( void )
 {
 	Int	x = 3;
 	Int	y = 20;
-	Color textColor = GameMakeColor( 255, 255, 255, 255 );
-	Color dropColor = GameMakeColor( 0, 0, 0, 255 );
+	GeneralsColor textColor = GameMakeColor( 255, 255, 255, 255 );
+	GeneralsColor dropColor = GameMakeColor( 0, 0, 0, 255 );
 
 	int linesOfStrings = 1;
 
@@ -1965,8 +1965,8 @@ AGAIN:
 					UnicodeString text;
 					text.translate( m_cinematicText );
 					displayString->setText( text );
-					Color color = GameMakeColor( 255, 255, 255, 255 );  // white
-					Color backColor = GameMakeColor( 0, 0, 0, 0 );      // black
+					GeneralsColor color = GameMakeColor( 255, 255, 255, 255 );  // white
+					GeneralsColor backColor = GameMakeColor( 0, 0, 0, 0 );      // black
 					displayString->setFont( m_cinematicFont );
 					Int height = TheDisplay->getHeight() * .9;
 
@@ -2655,7 +2655,7 @@ void W3DDisplay::drawRemainingRectClock(Int startX, Int startY, Int width, Int h
 	* screen coords specified */
 //=============================================================================
 void W3DDisplay::drawImage( const Image *image, Int startX, Int startY, 
-														Int endX, Int endY, Color color, DrawImageMode mode)
+														Int endX, Int endY, GeneralsColor color, DrawImageMode mode)
 {
 
 	// sanity

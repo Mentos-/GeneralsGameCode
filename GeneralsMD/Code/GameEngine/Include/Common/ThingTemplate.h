@@ -394,7 +394,7 @@ public:
 	const AsciiString& getName() const { return m_nameString; }  ///< return the name of this template
 
 	/// get the display color (used for the editor)	
-	Color getDisplayColor() const { return m_displayColor; }
+	GeneralsColor getDisplayColor() const { return m_displayColor; }
 
 	/// get the editor sorting 
 	EditorSortingType getEditorSorting() const { return (EditorSortingType)m_editorSorting; }
@@ -735,7 +735,7 @@ private:
 	// ---- Int-sized things
 	Int						m_energyProduction;						///< how much Energy this takes (negative values produce Energy, rather than consuming it)
 	Int						m_energyBonus;								///< how much extra Energy this produces due to the upgrade
-	Color					m_displayColor;								///< for the editor display color
+	GeneralsColor					m_displayColor;								///< for the editor display color
 	UnsignedInt		m_occlusionDelay;							///< delay after object creation before building occlusion is allowed.
   NameKeyType   m_maxSimultaneousLinkKey;     ///< If this is not NAMEKEY_INVALID, it indicates that all the templates which have the same name key should be counted as the same "type" when looking at getMaxSimultaneousOfType().
 

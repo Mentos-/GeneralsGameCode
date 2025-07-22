@@ -93,7 +93,7 @@ public:
 	// chat
 	virtual void registerTextWindow( GameWindow *win );
 	virtual void unregisterTextWindow( GameWindow *win );
-	virtual Int addText( UnicodeString message, Color c, GameWindow *win );
+	virtual Int addText( UnicodeString message, GeneralsColor c, GameWindow *win );
 	virtual void addChat( PlayerInfo p, UnicodeString msg, Bool isPublic, Bool isAction, GameWindow *win );
 	virtual void addChat( AsciiString nick, Int profileID, UnicodeString msg, Bool isPublic, Bool isAction, GameWindow *win );
 	virtual Bool sendChat( UnicodeString message, Bool isAction, GameWindow *playerListbox );

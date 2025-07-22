@@ -75,7 +75,7 @@
 void W3DGadgetProgressBarDraw( GameWindow *window, WinInstanceData *instData )
 {
 	ICoord2D origin, size, start, end;
-	Color backColor, backBorder, barColor, barBorder;
+	GeneralsColor backColor, backBorder, barColor, barBorder;
 	Int progress = (Int)window->winGetUserData();
 
 	// get window size and position

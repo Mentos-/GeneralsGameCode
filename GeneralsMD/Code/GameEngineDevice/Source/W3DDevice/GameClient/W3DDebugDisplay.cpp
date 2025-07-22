@@ -138,8 +138,8 @@ void W3DDebugDisplay::drawText( Int x, Int y, Char *text )
 		return ;
 	}
 
-	::Color textColor = GameMakeColor( 255, 255, 255, 255 );
-	::Color dropColor = GameMakeColor( 0, 0, 0, 255 );
+	::GeneralsColor textColor = GameMakeColor( 255, 255, 255, 255 );
+	::GeneralsColor dropColor = GameMakeColor( 0, 0, 0, 255 );
 
 	UnicodeString unicode;
 

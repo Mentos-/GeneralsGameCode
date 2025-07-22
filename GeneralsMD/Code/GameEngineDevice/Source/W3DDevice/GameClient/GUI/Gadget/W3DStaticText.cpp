@@ -80,7 +80,7 @@
 /** Draw the text for a static text window */
 //=============================================================================
 static void drawStaticTextText( GameWindow *window, WinInstanceData *instData,
-																Color textColor, Color textDropColor )
+																GeneralsColor textColor, GeneralsColor textDropColor )
 {
 	TextData *tData = (TextData *)window->winGetUserData();
 	Int textWidth, textHeight, wordWrap;
@@ -155,7 +155,7 @@ static void drawStaticTextText( GameWindow *window, WinInstanceData *instData,
 void W3DGadgetStaticTextDraw( GameWindow *window, WinInstanceData *instData )
 {
 	TextData *tData = (TextData *)window->winGetUserData();
-	Color backColor, backBorder, textColor, textOutlineColor;
+	GeneralsColor backColor, backBorder, textColor, textOutlineColor;
 	ICoord2D size, origin, start, end;
 
 	// get window position and size
@@ -221,7 +221,7 @@ void W3DGadgetStaticTextDraw( GameWindow *window, WinInstanceData *instData )
 void W3DGadgetStaticTextImageDraw( GameWindow *window, WinInstanceData *instData )
 {
 	TextData *tData = (TextData *)window->winGetUserData();
-	Color textColor, textOutlineColor;
+	GeneralsColor textColor, textOutlineColor;
 	ICoord2D size, origin, start, end;
 	const Image *image;
 

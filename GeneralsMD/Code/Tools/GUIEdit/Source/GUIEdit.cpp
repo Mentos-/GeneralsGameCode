@@ -1652,7 +1652,7 @@ GameWindow *GUIEdit::newPushButton( GameWindow *parent,
 		GadgetButtonSetHiliteSelectedColor( window, info->color );
 		GadgetButtonSetHiliteSelectedBorderColor( window, info->borderColor );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -1757,7 +1757,7 @@ GameWindow *GUIEdit::newCheckBox( GameWindow *parent,
 		GadgetCheckBoxSetHiliteCheckedBoxColor( window, info->color );
 		GadgetCheckBoxSetHiliteCheckedBoxBorderColor( window, info->borderColor );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -1865,7 +1865,7 @@ GameWindow *GUIEdit::newRadioButton( GameWindow *parent,
 		GadgetRadioSetHiliteCheckedBoxColor( window, info->color );
 		GadgetRadioSetHiliteCheckedBoxBorderColor( window, info->borderColor );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -2440,7 +2440,7 @@ GameWindow *GUIEdit::newProgressBar( GameWindow *parent,
 		info = TheDefaultScheme->getImageAndColor( PROGRESS_BAR_HILITE_BAR_SMALL_CENTER );
 		GadgetProgressBarSetHiliteBarImageSmallCenter( window, info->image );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -2850,7 +2850,7 @@ GameWindow *GUIEdit::newComboBox( GameWindow *parent,
 
 		}  // end if
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -3118,7 +3118,7 @@ GameWindow *GUIEdit::newListbox( GameWindow *parent,
 
 		}  // end if, slider
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -3224,7 +3224,7 @@ GameWindow *GUIEdit::newTextEntry( GameWindow *parent,
 		info = TheDefaultScheme->getImageAndColor( TEXT_ENTRY_HILITE_SMALL_CENTER );
 		GadgetTextEntrySetHiliteImageSmallCenter( window, info->image );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();
@@ -3312,7 +3312,7 @@ GameWindow *GUIEdit::newStaticText( GameWindow *parent,
 		GadgetStaticTextSetDisabledColor( window, info->color );
 		GadgetStaticTextSetDisabledBorderColor( window, info->borderColor );
 
-		Color color, border;
+		GeneralsColor color, border;
 
 		color = TheDefaultScheme->getEnabledTextColor();
 		border = TheDefaultScheme->getEnabledTextBorderColor();

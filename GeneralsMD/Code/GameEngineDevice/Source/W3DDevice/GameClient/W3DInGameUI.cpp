@@ -323,7 +323,7 @@ static void loadText( char *filename, GameWindow *listboxText )
 
 	char buffer[ 1024 ];
 	UnicodeString line;
-	Color color = GameMakeColor(255, 255, 255, 255);
+	GeneralsColor color = GameMakeColor(255, 255, 255, 255);
 	while( fgets( buffer, 1024, fp ) != NULL )
 	{
 		line.translate(buffer);

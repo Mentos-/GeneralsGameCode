@@ -80,8 +80,8 @@ struct WinDrawData
 {
 
 	const Image *image;
-	Color color;
-	Color borderColor;
+	GeneralsColor color;
+	GeneralsColor borderColor;
 
 };
 
@@ -89,8 +89,8 @@ struct WinDrawData
 //-----------------------------------------------------------------------------
 struct TextDrawData
 {
-	Color color;  ///< the text color
-	Color borderColor;  ///< outline color
+	GeneralsColor color;  ///< the text color
+	GeneralsColor borderColor;  ///< outline color
 };
 
 // WinInstanceData ------------------------------------------------------------

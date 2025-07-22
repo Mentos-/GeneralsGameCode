@@ -44,8 +44,8 @@ class W3DLaserDrawModuleData : public ModuleData
 {
 public:
 
-  Color m_innerColor;
-  Color m_outerColor;
+  GeneralsColor m_innerColor;
+  GeneralsColor m_outerColor;
 	Real m_innerBeamWidth;
 	Real m_outerBeamWidth;
 	Real m_scrollRate;
