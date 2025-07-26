@@ -732,7 +732,7 @@ static void drawTerrainNormal( Drawable *draw, void *userData )
 // ------------------------------------------------------------------------------------------------
 // Draw a crude circle. Appears on top of any world geometry
 // ------------------------------------------------------------------------------------------------
-void drawDebugCircle( const Coord3D & center, Real radius, Real width, Color color )
+void drawDebugCircle( const Coord3D & center, Real radius, Real width, UnsignedInt color )
 {
   const Real inc = PI/4.0f;
   Real angle = 0.0f;
@@ -913,7 +913,7 @@ static void drawAudioLocations( Drawable *draw, void *userData )
   static const Int poleHeight = 20;
   static const Int flagHeight = 10;
   static const Int flagWidth = 10;
-  const Color color = GameMakeColor(0x25, 0x25, 0xEF, 0xFF);
+  const UnsignedInt color = GameMakeColor(0x25, 0x25, 0xEF, 0xFF);
 
   // Draw flag for audio-only objects:
   //  *

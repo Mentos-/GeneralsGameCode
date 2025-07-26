@@ -163,7 +163,7 @@ class LERPAnimationChannelClass : public PrimitiveAnimationChannelClass<T>
 	using PrimitiveAnimationChannelClass<T>::m_Data;
 	using PrimitiveAnimationChannelClass<T>::m_LastIndex;
 public:
-	using typename PrimitiveAnimationChannelClass<T>::KeyClass;
+	using KeyClass = typename PrimitiveAnimationChannelClass<T>::KeyClass;
 
 public:
 
@@ -187,7 +187,7 @@ int PrimitiveAnimationChannelClass<T>::Get_Key_Count (void) const
 //	Set_Key_Value
 /////////////////////////////////////////////////////////
 template<class T>
-const PrimitiveAnimationChannelClass<T>::KeyClass &PrimitiveAnimationChannelClass<T>::Get_Key (int index) const
+const typename PrimitiveAnimationChannelClass<T>::KeyClass &PrimitiveAnimationChannelClass<T>::Get_Key (int index) const
 {
 	return m_Data[index];
 }
@@ -219,7 +219,7 @@ void PrimitiveAnimationChannelClass<T>::Set_Key_Value (int index, const T &value
 template<class T>
 void PrimitiveAnimationChannelClass<T>::Add_Key (const T &value, float time)
 {
-	m_Data.Add (KeyClass (value, time));
+	m_Data.Add (typename PrimitiveAnimationChannelClass<T>::KeyClass (value, time));
 	return ;
 }
 
@@ -229,7 +229,7 @@ void PrimitiveAnimationChannelClass<T>::Add_Key (const T &value, float time)
 template<class T>
 void PrimitiveAnimationChannelClass<T>::Insert_Key (int index, const T &value, float time)
 {
-	m_Data.Insert (index, KeyClass (value, time));
+	m_Data.Insert (index, typename PrimitiveAnimationChannelClass<T>::KeyClass (value, time));
 	return ;
 }
 
