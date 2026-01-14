@@ -2759,8 +2759,119 @@ Bool Drawable::drawsAnyUIText( void )
 	* that we should overlay on the screen any 2D elements for purposes of user interface
 	* information (such as a heatlh bar, veterency levels, etc.) */
 // ------------------------------------------------------------------------------------------------
+static void DrawDebugUnitOutline2D( Drawable* drawable )
+{
+	if ( !drawable )
+		return;
+
+	int minX = 0x7fffffff, minY = 0x7fffffff;
+	int maxX = -0x7fffffff, maxY = -0x7fffffff;
+	Bool any = FALSE;
+
+	const GeometryInfo &ginfo = drawable->getDrawableGeometryInfo();
+	Coord3D basePos = *drawable->getPosition();
+
+	if (ginfo.getGeomType() == GEOMETRY_BOX)
+	{
+		Real angle = drawable->getOrientation();
+		Real c = (Real)cos(angle);
+		Real s = (Real)sin(angle);
+		Real exc = ginfo.getMajorRadius()*c;
+		Real eyc = ginfo.getMinorRadius()*c;
+		Real exs = ginfo.getMajorRadius()*s;
+		Real eys = ginfo.getMinorRadius()*s;
+		Coord3D pts[4];
+		pts[0].x = basePos.x - exc - eys; pts[0].y = basePos.y + eyc - exs;
+		pts[1].x = basePos.x + exc - eys; pts[1].y = basePos.y + eyc + exs;
+		pts[2].x = basePos.x + exc + eys; pts[2].y = basePos.y - eyc + exs;
+		pts[3].x = basePos.x - exc + eys; pts[3].y = basePos.y - eyc - exs;
+		Real z0 = basePos.z;
+		Real z1 = z0 + ginfo.getMaxHeightAbovePosition();
+		for (int corner = 0; corner < 4; ++corner)
+		{
+			ICoord2D sp;
+			Coord3D p = pts[corner];
+			p.z = z0;
+			if (TheTacticalView->worldToScreenTriReturn(&p, &sp) != View::WTS_INVALID)
+			{
+				if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+				if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+				any = TRUE;
+			}
+			p = pts[corner];
+			p.z = z1;
+			if (TheTacticalView->worldToScreenTriReturn(&p, &sp) != View::WTS_INVALID)
+			{
+				if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+				if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+				any = TRUE;
+			}
+		}
+	}
+	else if (ginfo.getGeomType() == GEOMETRY_SPHERE || ginfo.getGeomType() == GEOMETRY_CYLINDER)
+	{
+		const Real radius = ginfo.getMajorRadius();
+		Real z0 = basePos.z;
+		Real z1 = z0 + ginfo.getMaxHeightAbovePosition();
+		const Real inc = PI/4.0f;
+		for (Real a = 0.0f; a < 2.0f*PI; a += inc)
+		{
+			ICoord2D sp;
+			Coord3D p;
+			p.x = basePos.x + radius * (Real)cos(a);
+			p.y = basePos.y + radius * (Real)sin(a);
+			p.z = z0;
+			if (TheTacticalView->worldToScreenTriReturn(&p, &sp) != View::WTS_INVALID)
+			{
+				if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+				if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+				any = TRUE;
+			}
+			p.z = z1;
+			if (TheTacticalView->worldToScreenTriReturn(&p, &sp) != View::WTS_INVALID)
+			{
+				if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+				if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+				any = TRUE;
+			}
+		}
+	}
+	else
+	{
+		ICoord2D sp;
+		Coord3D p0 = basePos;
+		if (TheTacticalView->worldToScreenTriReturn(&p0, &sp) != View::WTS_INVALID)
+		{
+			if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+			if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+			any = TRUE;
+		}
+		Coord3D p1 = basePos; p1.z += ginfo.getMaxHeightAbovePosition();
+		if (TheTacticalView->worldToScreenTriReturn(&p1, &sp) != View::WTS_INVALID)
+		{
+			if (sp.x < minX) minX = sp.x; if (sp.x > maxX) maxX = sp.x;
+			if (sp.y < minY) minY = sp.y; if (sp.y > maxY) maxY = sp.y;
+			any = TRUE;
+		}
+	}
+
+	if (any && maxX > minX && maxY > minY)
+	{
+		UnsignedInt outlineColor = GameMakeColor( 0, 128, 255, 255 );
+		TheDisplay->drawOpenRect(minX, minY, maxX - minX, maxY - minY, 1.0f, outlineColor);
+	}
+}
+
+// ------------------------------------------------------------------------------------------------
+/** This is called as part of the "post draw" phase when drawable a drawable.  It is there
+	* that we should overlay on the screen any 2D elements for purposes of user interface
+	* information (such as a heatlh bar, veterency levels, etc.) */
+// ------------------------------------------------------------------------------------------------
 void Drawable::drawIconUI( void )
 {
+	// Draw debug unit outlines first, unconditionally (comment out this call to disable)
+	//DrawDebugUnitOutline2D( this );
+
 	if( TheGameLogic->getDrawIconUI() && (TheScriptEngine->getFade()==ScriptEngine::FADE_NONE) )
 	{
 		IRegion2D healthBarRegionStorage;
@@ -2809,6 +2920,8 @@ void Drawable::drawIconUI( void )
 #ifdef KRIS_BRUTAL_HACK_FOR_AIRCRAFT_CARRIER_DEBUGGING
 		drawUIText();
 #endif
+
+
 	}
 }
 

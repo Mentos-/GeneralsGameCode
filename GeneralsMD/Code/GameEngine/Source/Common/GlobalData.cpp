@@ -556,7 +556,7 @@ GlobalData::GlobalData()
 	m_fogOfWarOn = FALSE;
 	m_jabberOn = FALSE;
 	m_munkeeOn = FALSE;
-	m_showCollisionExtents = FALSE;
+	m_showCollisionExtents = TRUE;
   m_showAudioLocations = FALSE;
 	m_debugCamera = FALSE;
 	m_debugVisibility = FALSE;

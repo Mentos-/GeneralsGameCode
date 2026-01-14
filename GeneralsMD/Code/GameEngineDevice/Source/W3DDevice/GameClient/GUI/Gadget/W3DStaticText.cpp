@@ -181,7 +181,8 @@ void W3DGadgetStaticTextDraw( GameWindow *window, WinInstanceData *instData )
 		textOutlineColor	= window->winGetEnabledTextBorderColor();
 
 	}  // end else, enabled
-
+	//if (origin.y == 51)
+	{
 	// draw the back border
 	if( backBorder != WIN_COLOR_UNDEFINED )
 	{
@@ -194,7 +195,11 @@ void W3DGadgetStaticTextDraw( GameWindow *window, WinInstanceData *instData )
 																	 start.x, start.y, end.x, end.y );
 
 	}  // end if
-
+	else
+	{
+		DEBUG_LOG(("backBorder disabled"));
+	}
+	}
 	// draw the back fill area
 	if( backColor != WIN_COLOR_UNDEFINED )
 	{

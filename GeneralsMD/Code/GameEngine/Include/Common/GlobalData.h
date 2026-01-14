@@ -122,8 +122,9 @@ public:
 
 	// TheSuperHackers @feature helmutbuhler 11/04/2025
 	// Run game without graphics, input or audio.
+
 	Bool m_headless;
-	
+
 	Bool m_windowed;
 	Int m_xResolution;
 	Int m_yResolution;

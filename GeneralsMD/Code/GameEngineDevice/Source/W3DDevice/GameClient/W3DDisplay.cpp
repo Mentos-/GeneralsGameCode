@@ -2661,7 +2661,11 @@ void W3DDisplay::drawImage( const Image *image, Int startX, Int startY,
 	// sanity
 	if( image == NULL )
 		return;
-
+	if (image->getName().compare("GeneralsPowerWindow_American") == 0)
+	{
+		DEBUG_LOG(("%s\n", image->getName().str()));
+	}
+	
 	// !!
 	// Remember to update the GUIEditDisplay::drawImage when you make
 	// changes to this, it technically uses W3D code to render itself,
